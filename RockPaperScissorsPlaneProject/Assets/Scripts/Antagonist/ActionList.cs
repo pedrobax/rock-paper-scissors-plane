@@ -178,6 +178,13 @@ public class ActionList : MonoBehaviour
         SetTarget();
     }
 
+    public void AddAccelerateTowardsPlayerAction()
+    {
+        CreateTarget();
+        actionList.Add(this.gameObject.AddComponent<AccelerateTowardsPlayerAction>());
+        SetTarget();
+    }
+
     public void AddTurnTowardsTargetAction()
     {
         CreateTarget();

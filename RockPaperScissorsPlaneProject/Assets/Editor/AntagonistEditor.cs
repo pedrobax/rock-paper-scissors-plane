@@ -76,6 +76,11 @@ public class AntagonistEditor : Editor
             actionList.AddOrbitAroundTargetYAntiClockwiseAction();
         }
 
+        if (GUILayout.Button("Accelerate Towards Player"))
+        {
+            actionList.AddAccelerateTowardsPlayerAction();
+        }
+
         if (GUILayout.Button("Clear Lists"))
         {
             actionList.ClearLists();
