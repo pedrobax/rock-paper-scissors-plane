@@ -1,0 +1,4 @@
+repository "TI 01@Bicicletas@cloud"
+  path "/"
+    smartbranch "/main"             
+     
