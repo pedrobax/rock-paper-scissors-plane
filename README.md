@@ -1,2 +1,2 @@
-# rock-paper-scissors-plane
+# Rock! Paper! Scissors! Plane?
 Student Unity Shoot em' Up Game
