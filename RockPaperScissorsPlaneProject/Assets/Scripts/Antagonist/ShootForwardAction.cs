@@ -8,14 +8,18 @@ public class ShootForwardAction : Action
 {
     [SerializeField] Transform firePoint;
     BulletHolder bulletHolder;
-    //public new string actionName = "ShootForwardAction";
+
+    private void Start()
+    {
+        firePoint = transform.GetChild(0);
+        bulletHolder = GetComponent<BulletHolder>();
+    }
 
     public override void Act()
     {
         if (!isActing && !hasActed)
         {
-            bulletHolder = GetComponent<BulletHolder>();
-            Instantiate(bulletHolder.bullet1Prefab, transform.position, transform.rotation);
+            Instantiate(bulletHolder.bullet1Prefab, firePoint.transform.position, firePoint.transform.rotation);
             isActing = true;
             StartCoroutine(CountActionDuration(duration));
         }

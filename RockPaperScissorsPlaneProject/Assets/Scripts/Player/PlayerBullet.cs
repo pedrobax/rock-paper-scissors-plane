@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class PlayerBullet : Bullet
 {
-    /*void Start()
-    {
-        rb.velocity = transform.right * speed * Time.deltaTime;
-        startingBulletPosition = rb.transform.position;
-    }*/
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy") || other.CompareTag("EnemyRock") ||
@@ -23,10 +16,10 @@ public class PlayerBullet : Bullet
 
     private void Update()
     {
-        rb.transform.Translate(0, 0, speed * Time.deltaTime);
+        transform.Translate(0, 0, speed * Time.deltaTime);
 
-        if (rb.transform.position.x > startingBulletPosition.x + maxRange ||
-            rb.transform.position.x < startingBulletPosition.x - maxRange)
+        if (transform.position.x > startingBulletPosition.x + maxRange ||
+            transform.position.x < startingBulletPosition.x - maxRange)
         {
             Destroy(gameObject);
             Debug.Log("Player Bullet destroyed by distance!");

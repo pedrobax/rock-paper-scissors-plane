@@ -207,6 +207,13 @@ public class ActionList : MonoBehaviour
         SetTarget();
     }
 
+    public void AddShootBarrageForwardAction()
+    {
+        CreateTarget();
+        actionList.Add(this.gameObject.AddComponent<ShootBarrageForwardAction>());
+        SetTarget();
+    }
+
     public void AddSelfDestructAction()
     {
         CreateTarget();

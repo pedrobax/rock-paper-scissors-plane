@@ -81,6 +81,11 @@ public class AntagonistEditor : Editor
             actionList.AddAccelerateTowardsPlayerAction();
         }
 
+        if (GUILayout.Button("Shoot Barrage Forward"))
+        {
+            actionList.AddShootBarrageForwardAction();
+        }
+
         if (GUILayout.Button("Clear Lists"))
         {
             actionList.ClearLists();

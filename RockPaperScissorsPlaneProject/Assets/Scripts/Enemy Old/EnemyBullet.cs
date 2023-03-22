@@ -5,11 +5,10 @@ using UnityEngine.UIElements;
 
 public class EnemyBullet : Bullet
 {
-    /*void Start()
+    private void Start()
     {
-        rb.velocity = transform.forward * speed * Time.deltaTime;
-        startingBulletPosition = rb.transform.position;
-    }*/
+        startingBulletPosition = transform.position;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -25,10 +24,10 @@ public class EnemyBullet : Bullet
 
     private void Update()
     {
-        rb.transform.Translate(0, 0, speed * Time.deltaTime);
+        transform.Translate(0, 0, speed * Time.deltaTime);
 
-        if (rb.transform.position.x > startingBulletPosition.x + maxRange ||
-            rb.transform.position.x < startingBulletPosition.x - maxRange)
+        if (transform.position.x > startingBulletPosition.x + maxRange ||
+            transform.position.x < startingBulletPosition.x - maxRange)
         {
             Destroy(gameObject);
             Debug.Log("Enemy Bullet destroyed by distance!");
