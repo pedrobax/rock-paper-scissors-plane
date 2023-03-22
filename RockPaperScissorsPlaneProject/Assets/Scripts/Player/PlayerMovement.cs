@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        ResetVelocity();
         SetSpeedBasedOnCurrentType();
         SetMoveVelocity();
     }
@@ -50,6 +51,14 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 moveInput = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         moveVelocity = moveInput * currentMaxSpeed;
+    }
+
+    void ResetVelocity()
+    {
+        if (rb.velocity.magnitude > 0)
+        {
+            rb.velocity = new Vector3(0, 0, 0);
+        }
     }
 
     void MovePlayer()

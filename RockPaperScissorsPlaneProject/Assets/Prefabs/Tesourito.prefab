@@ -709,3 +709,4 @@ MonoBehaviour:
   currentAction: 0
   antagonistTargetPrefab: {fileID: 7575420701685749081, guid: 925174a381bf824488c6c97a00fbfb78, type: 3}
   listsSize: 0
+  autoSelect: 0

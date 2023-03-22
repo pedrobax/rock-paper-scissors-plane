@@ -26,6 +26,11 @@ public class AntagonistHealth : MonoBehaviour
         originalColor = meshRenderer.material.color;
     }
 
+    private void Update()
+    {
+        ResetVelocity();
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (enemyType == EnemyType.Rock && other.CompareTag("BulletPlayerRock"))
@@ -124,6 +129,14 @@ public class AntagonistHealth : MonoBehaviour
     public void ChangeSound(AudioClip sound)
     {
         soundSource.clip = sound;
+    }
+
+    void ResetVelocity()
+    {
+        if (rb.velocity.magnitude > 0)
+        {
+            rb.velocity = new Vector3(0, 0, 0);
+        }
     }
 
     IEnumerator DamageFlash()

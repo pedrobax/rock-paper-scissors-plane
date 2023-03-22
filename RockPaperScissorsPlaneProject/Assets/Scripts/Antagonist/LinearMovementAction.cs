@@ -15,6 +15,7 @@ public class LinearMovementAction : Action
 
     public override void Act()
     {
+        rb = GetComponent<Rigidbody>();
         targetPosition = targetTransform.position;
         MoveTowardsTarget();
     }
