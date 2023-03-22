@@ -69,13 +69,6 @@ public class AntagonistHealth : MonoBehaviour
         {
             IgnoreDamage();
         }
-
-
-        if (other.tag == "Player")
-        {
-            Debug.Log("Enemy Kamikaze'd!");
-            TakeDamage(10);
-        }
         if (other.CompareTag("Enemy Death Zone"))
         {
             Destroy(gameObject);

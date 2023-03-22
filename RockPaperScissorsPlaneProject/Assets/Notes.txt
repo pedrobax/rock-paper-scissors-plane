@@ -1,2 +1,6 @@
 21/03/2023
 - Accelerate Towards Player Action create and added to actionlist.
+
+22/03/2023
+- Changed enemies to be triggers
+- Created Test Spawner for testing.
