@@ -13,10 +13,13 @@ public class EnemyBullet : Bullet
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("Enemy Bullet destroyed by collision!");
-            Destroy(gameObject);
+            if(other.GetComponent<PlayerHealth>().canTakeDamage)
+            {
+                Debug.Log("Enemy Bullet destroyed by collision!");
+                Destroy(gameObject);
+            }
         }
     }
 

@@ -5,6 +5,17 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public float lives = 3;
+    public Vector3 respawnPosition;
+    public float respawnTime = 1;
+    public float respawnInvulnerabilityTime = 3;
+    public bool canTakeDamage = true;
+
+    [SerializeField] public MeshRenderer currentMeshRenderer;
+    [SerializeField] public MeshRenderer rockMeshRenderer;
+    [SerializeField] public MeshRenderer paperMeshRenderer;
+    [SerializeField] public MeshRenderer scissorsMeshRenderer;
+    Color originalColor;
+
     [SerializeField] public PlayerType currentType = PlayerType.Paper;
     public bool canSwitchType = true;
     public bool canBecomeRock = false;
@@ -16,19 +27,27 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] BoxCollider paperCollider;
     [SerializeField] BoxCollider scissorsCollider;
 
+    private void Start()
+    {
+        if (currentType == PlayerType.Paper) currentMeshRenderer = paperMeshRenderer;
+        if (currentType == PlayerType.Scissors) currentMeshRenderer = scissorsMeshRenderer;
+        if (currentType == PlayerType.Rock) currentMeshRenderer = rockMeshRenderer;
+        originalColor = currentMeshRenderer.material.color;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (currentType == PlayerType.Rock && other.CompareTag("BulletEnemyRock")) GetDamaged();
-        if (currentType == PlayerType.Rock && other.CompareTag("BulletEnemyPaper")) GetDoubleDamaged();
-        if (currentType == PlayerType.Rock && other.CompareTag("BulletEnemyScissors")) IgnoreDamage();
+        if (currentType == PlayerType.Rock && other.CompareTag("BulletEnemyRock") && canTakeDamage) StartCoroutine(DieOrRespawn());
+        if (currentType == PlayerType.Rock && other.CompareTag("BulletEnemyPaper") && canTakeDamage) StartCoroutine(DieOrRespawn());
+        if (currentType == PlayerType.Rock && other.CompareTag("BulletEnemyScissors") && canTakeDamage) IgnoreDamage();
 
-        if (currentType == PlayerType.Paper && other.CompareTag("BulletEnemyRock")) IgnoreDamage();
-        if (currentType == PlayerType.Paper && other.CompareTag("BulletEnemyPaper")) GetDamaged();
-        if (currentType == PlayerType.Paper && other.CompareTag("BulletEnemyScissors")) GetDoubleDamaged();
+        if (currentType == PlayerType.Paper && other.CompareTag("BulletEnemyRock") && canTakeDamage) IgnoreDamage();
+        if (currentType == PlayerType.Paper && other.CompareTag("BulletEnemyPaper") && canTakeDamage) StartCoroutine(DieOrRespawn());
+        if (currentType == PlayerType.Paper && other.CompareTag("BulletEnemyScissors") && canTakeDamage) StartCoroutine(DieOrRespawn());
 
-        if (currentType == PlayerType.Scissors && other.CompareTag("BulletEnemyRock")) GetDoubleDamaged();
-        if (currentType == PlayerType.Scissors && other.CompareTag("BulletEnemyPaper")) IgnoreDamage();
-        if (currentType == PlayerType.Scissors && other.CompareTag("BulletEnemyScissors")) GetDamaged();
+        if (currentType == PlayerType.Scissors && other.CompareTag("BulletEnemyRock") && canTakeDamage) StartCoroutine(DieOrRespawn());
+        if (currentType == PlayerType.Scissors && other.CompareTag("BulletEnemyPaper") && canTakeDamage) IgnoreDamage();
+        if (currentType == PlayerType.Scissors && other.CompareTag("BulletEnemyScissors") && canTakeDamage) StartCoroutine(DieOrRespawn());
 
         if (other.CompareTag("Extra Life")) GetALife();
         if (other.CompareTag("RockPowerUp"))
@@ -76,6 +95,8 @@ public class PlayerHealth : MonoBehaviour
         rockCollider.enabled = true;
         paperCollider.enabled = false;
         scissorsCollider.enabled = false;
+        currentMeshRenderer = rockMeshRenderer;
+        originalColor = rockMeshRenderer.material.color;
         StartCoroutine(CountTransformCooldown());
         Debug.Log("You are now a Rock!");
     }
@@ -89,6 +110,8 @@ public class PlayerHealth : MonoBehaviour
         rockCollider.enabled = false;
         paperCollider.enabled = true;
         scissorsCollider.enabled = false;
+        currentMeshRenderer = paperMeshRenderer;
+        originalColor = paperMeshRenderer.material.color;
         StartCoroutine(CountTransformCooldown());
         Debug.Log("You are now a Paper!");
     }
@@ -102,6 +125,8 @@ public class PlayerHealth : MonoBehaviour
         rockCollider.enabled = false;
         paperCollider.enabled = false;
         scissorsCollider.enabled = true;
+        currentMeshRenderer = scissorsMeshRenderer;
+        originalColor = scissorsMeshRenderer.material.color;
         StartCoroutine(CountTransformCooldown());
         Debug.Log("You are now Scissors!");
     }
@@ -138,6 +163,42 @@ public class PlayerHealth : MonoBehaviour
             Debug.Log("Game over!");
             Destroy(gameObject);
         }
+    }
+
+    public IEnumerator DieOrRespawn()
+    {
+        if (lives > 0)
+        {
+            lives--;
+            Debug.Log("Player lost a life! Remaining lives: " + lives);
+            currentMeshRenderer.enabled = false;
+            canTakeDamage = false;
+            yield return new WaitForSeconds(respawnTime);
+            transform.position = respawnPosition;
+            currentMeshRenderer.enabled = true;
+            StartCoroutine(DamageFlash(respawnInvulnerabilityTime / 10));
+            yield return new WaitForSeconds(respawnInvulnerabilityTime / 5);
+            StartCoroutine(DamageFlash(respawnInvulnerabilityTime / 10));
+            yield return new WaitForSeconds(respawnInvulnerabilityTime / 5);
+            StartCoroutine(DamageFlash(respawnInvulnerabilityTime / 10));
+            yield return new WaitForSeconds(respawnInvulnerabilityTime / 5);
+            StartCoroutine(DamageFlash(respawnInvulnerabilityTime / 10));
+            yield return new WaitForSeconds(respawnInvulnerabilityTime / 5);
+            StartCoroutine(DamageFlash(respawnInvulnerabilityTime / 10));
+            yield return new WaitForSeconds(respawnInvulnerabilityTime / 5);
+            canTakeDamage = true;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    IEnumerator DamageFlash(float duration)
+    {
+        currentMeshRenderer.material.color = Color.white;
+        yield return new WaitForSeconds(duration);
+        currentMeshRenderer.material.color = originalColor;
     }
 
     void IgnoreDamage()
