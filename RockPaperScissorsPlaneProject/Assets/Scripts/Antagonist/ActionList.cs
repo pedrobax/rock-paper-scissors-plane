@@ -228,6 +228,13 @@ public class ActionList : MonoBehaviour
         SetTarget();
     }
 
+    public void AddRotateInPlaceAction()
+    {
+        CreateTarget();
+        actionList.Add(this.gameObject.AddComponent<RotateInPlaceAction>());
+        SetTarget();
+    }
+
     public void CreateTarget()
     {
         listsSize = actionList.Count;

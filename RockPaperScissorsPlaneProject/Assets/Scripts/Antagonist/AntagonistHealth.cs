@@ -101,6 +101,7 @@ public class AntagonistHealth : MonoBehaviour
     void OnDestroy()
     {
         if (destroyedByPlayer) GameManager.UpdateScore(scoreValue);
+        Destroy(gameObject.transform.parent.gameObject);
     }
 
     void TakeDamage(float damage)

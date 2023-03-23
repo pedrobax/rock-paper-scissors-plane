@@ -86,6 +86,11 @@ public class AntagonistEditor : Editor
             actionList.AddShootBarrageForwardAction();
         }
 
+        if (GUILayout.Button("Rotate In Place"))
+        {
+            actionList.AddRotateInPlaceAction();
+        }
+
         if (GUILayout.Button("Clear Lists"))
         {
             actionList.ClearLists();
