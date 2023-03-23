@@ -11,13 +11,14 @@ public class PlayerShoot : MonoBehaviour
     public float cooldown = 1;
     float cooldownTimer;
     bool isSuperUpgraded = false;
+    public PlayerHealth playerHealth;
 
     void Update()
     {
 
         TickCooldown();
 
-        if (Input.GetButton("Fire1") && cooldownTimer == 0)
+        if (Input.GetButton("Fire1") && cooldownTimer == 0 && playerHealth.canTakeDamage == true)
         {
             Shoot();
             cooldownTimer = cooldown;

@@ -8,12 +8,13 @@ public class ShootBarrageForwardAction : Action
     [SerializeField] public float bulletAmount = 3;
     private float angleBetweenBullets;
     BulletHolder bulletHolder;
+    public float shootingAngle;
 
     private void Start()
     {
         firePoint = transform.GetChild(0);
         bulletHolder = GetComponent<BulletHolder>();
-        angleBetweenBullets = 180 / bulletAmount;
+        angleBetweenBullets = shootingAngle / bulletAmount;
     }
 
     public override void Act()

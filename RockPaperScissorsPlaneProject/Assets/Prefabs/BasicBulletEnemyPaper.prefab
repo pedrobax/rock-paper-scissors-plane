@@ -111,8 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce51831e63438df4c827102b12c2e57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  maxRange: 200
+  speed: 5
+  maxRange: 30
   damage: 1
   startingBulletPosition: {x: 0, y: 0, z: 0}
 --- !u!82 &-439559027228974764
