@@ -28,7 +28,7 @@ public class ActionList : MonoBehaviour
             {
                 actionList[i].hasActed = false;
             }
-            currentAction = 0;
+            currentAction = 1; //0 should always be a spawn action
         }
         actionList[currentAction].Act();
         if (actionList[currentAction].isActing && currentAction > 0)
@@ -42,7 +42,7 @@ public class ActionList : MonoBehaviour
     }
 
 
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
         for(int i = 0;i < actionList.Count;i++)
         {
@@ -137,7 +137,7 @@ public class ActionList : MonoBehaviour
                 }
             }
         }
-    }
+    } */
 
     public void AddLinearMovementAction()
     {  
@@ -232,6 +232,13 @@ public class ActionList : MonoBehaviour
     {
         CreateTarget();
         actionList.Add(this.gameObject.AddComponent<RotateInPlaceAction>());
+        SetTarget();
+    }
+
+    public void AddSpawnAction()
+    {
+        CreateTarget();
+        actionList.Add(this.gameObject.AddComponent<SpawnAction>());
         SetTarget();
     }
 

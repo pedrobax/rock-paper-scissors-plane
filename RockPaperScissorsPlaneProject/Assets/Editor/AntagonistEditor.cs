@@ -91,6 +91,11 @@ public class AntagonistEditor : Editor
             actionList.AddRotateInPlaceAction();
         }
 
+        if (GUILayout.Button("Spawn"))
+        {
+            actionList.AddSpawnAction();
+        }
+
         if (GUILayout.Button("Clear Lists"))
         {
             actionList.ClearLists();
