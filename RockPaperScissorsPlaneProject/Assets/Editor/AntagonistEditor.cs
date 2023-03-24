@@ -12,20 +12,15 @@ public class AntagonistEditor : Editor
 
         ActionList actionList = (ActionList)target;
 
-        GUILayout.BeginHorizontal();
-
         if (GUILayout.Button("Linear Movement"))
         {
             actionList.AddLinearMovementAction();
         }
 
-        if (GUILayout.Button("Ease In Movement"))
+        if (GUILayout.Button("Linear Movement Ease"))
         {
-            actionList.AddEaseInMovementAction();
+            actionList.AddLinearMovementEaseAction();
         }
-
-        GUILayout.EndHorizontal();
-        GUILayout.BeginHorizontal();
 
         if (GUILayout.Button("Turn Towards Target"))
         {
@@ -38,9 +33,6 @@ public class AntagonistEditor : Editor
             actionList.AddTurnTowardsPlayerAction();
         }
 
-        GUILayout.EndHorizontal();
-        GUILayout.BeginHorizontal();
-
         if (GUILayout.Button("Shoot Forward"))
         {
             actionList.AddShootForwardAction();
@@ -50,9 +42,6 @@ public class AntagonistEditor : Editor
         {
             actionList.AddSelfDestructAction();
         }
-
-        GUILayout.EndHorizontal();
-        GUILayout.BeginHorizontal();
 
         if (GUILayout.Button("Go Back to Action X"))
         {
@@ -64,7 +53,10 @@ public class AntagonistEditor : Editor
             actionList.AddParabolicMovementAction();
         }
 
-        GUILayout.EndHorizontal();
+        if (GUILayout.Button("Parabolic Movement Ease"))
+        {
+            actionList.AddParabolicMovementEaseAction();
+        }
 
         if (GUILayout.Button("Orbit Around Target Y Clockwise"))
         {

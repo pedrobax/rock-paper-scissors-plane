@@ -115,6 +115,8 @@ MonoBehaviour:
   maxRange: 30
   damage: 1
   startingBulletPosition: {x: 0, y: 0, z: 0}
+  aimType: 1
+  turnSpeed: 0.1
 --- !u!82 &-439559027228974764
 AudioSource:
   m_ObjectHideFlags: 0

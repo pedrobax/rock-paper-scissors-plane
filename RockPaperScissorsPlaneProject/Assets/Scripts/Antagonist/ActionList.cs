@@ -13,10 +13,14 @@ public class ActionList : MonoBehaviour
     [SerializeReference]
     public List<GameObject> targetList; //= new List<GameObject>();
 
+    [SerializeReference]
+    public List<GameObject> secondaryTargetList; //= new List<GameObject>();
+
     public int currentAction = 0;
     [SerializeField] GameObject antagonistTargetPrefab;
 
     public int listsSize;
+    public int secondaryTargetListSize;
 
     [SerializeField] bool autoSelect = false;
 
@@ -147,19 +151,30 @@ public class ActionList : MonoBehaviour
         SetTarget();
     }
 
-    public void AddEaseInMovementAction()
+    public void AddLinearMovementEaseAction()
     {
         CreateTarget();
         if (autoSelect == true) Selection.activeGameObject = targetList[listsSize];
-        actionList.Add(this.gameObject.AddComponent<EaseInMovementAction>());
+        actionList.Add(this.gameObject.AddComponent<LinearMovementEaseAction>());
         SetTarget();
     }
 
     public void AddParabolicMovementAction()
     {
         CreateTarget();
+        CreateSecondaryTarget();
         actionList.Add(this.gameObject.AddComponent<ParabolicMovementAction>());
         SetTarget();
+        SetSecondaryTarget();
+    }
+
+    public void AddParabolicMovementEaseAction()
+    {
+        CreateTarget();
+        CreateSecondaryTarget();
+        actionList.Add(this.gameObject.AddComponent<ParabolicMovementEaseAction>());
+        SetTarget();
+        SetSecondaryTarget();
     }
 
     public void AddOrbitAroundTargetYClockwiseAction()
@@ -249,10 +264,23 @@ public class ActionList : MonoBehaviour
         targetList[listsSize].name = "Target " + listsSize;
     }
 
+    public void CreateSecondaryTarget()
+    {
+        secondaryTargetListSize = secondaryTargetList.Count;
+        secondaryTargetList.Add(Instantiate(antagonistTargetPrefab));
+        secondaryTargetList[secondaryTargetListSize].name = "Secondary Target " + listsSize;
+    }
+
     public void SetTarget()
     {
         actionList[listsSize].targetTransform = targetList[listsSize].transform;
         targetList[listsSize].transform.parent = this.transform.parent;
+    }
+
+    public void SetSecondaryTarget()
+    {
+        actionList[listsSize].secondaryTargetTransform = secondaryTargetList[secondaryTargetListSize].transform;
+        secondaryTargetList[secondaryTargetListSize].transform.parent = this.transform.parent;
     }
 
     public void ClearLists()
@@ -265,9 +293,15 @@ public class ActionList : MonoBehaviour
         {
             DestroyImmediate(targetList[i]);
         }
+        for (int i = 0; i < secondaryTargetList.Count; i++)
+        {
+            DestroyImmediate(secondaryTargetList[i]);
+        }
         listsSize = 0;
+        secondaryTargetListSize = 0;
         targetList.Clear();
         actionList.Clear();
+        secondaryTargetList.Clear();
     }
 
 

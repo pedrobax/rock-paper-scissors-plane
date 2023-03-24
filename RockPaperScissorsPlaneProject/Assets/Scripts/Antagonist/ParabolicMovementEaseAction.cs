@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 
-public class ParabolicMovementAction : Action
+public class ParabolicMovementEaseAction : Action
 {
     private Vector3 startPoint;
     private Vector3 apexPoint;
@@ -24,6 +24,7 @@ public class ParabolicMovementAction : Action
         if (isActing)
         {
             float t = (Time.time - startTime) / duration;
+            t = EaseInOutQuad(t); // Apply easing function
             transform.position = CalculatePosition(t);
         }
     }
@@ -32,5 +33,19 @@ public class ParabolicMovementAction : Action
     {
         float u = 1.0f - t;
         return (u * u * startPoint) + (2 * u * t * apexPoint) + (t * t * endPoint);
+    }
+
+    // Easing function
+    private float EaseInOutQuad(float t)
+    {
+        t = Mathf.Clamp01(t);
+        if (t < 0.5f)
+        {
+            return 2 * t * t;
+        }
+        else
+        {
+            return -1 + (4 - 2 * t) * t;
+        }
     }
 }
