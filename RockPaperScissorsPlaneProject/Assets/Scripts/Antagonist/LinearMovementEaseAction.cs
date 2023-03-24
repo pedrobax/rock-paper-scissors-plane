@@ -32,7 +32,7 @@ public class LinearMovementEaseAction : Action
         }
         if (isActing)
         {
-            float t = (Time.time - startTime) / duration;
+            float t = (Time.fixedTime - startTime) / duration;
             t = EaseInOutQuad(t);
             rb.MovePosition(Vector3.Lerp(startPosition, targetPosition, t));
         }
@@ -42,7 +42,7 @@ public class LinearMovementEaseAction : Action
     {
         while (Time.time - startTime < duration)
         {
-            yield return null;
+            yield return new WaitForFixedUpdate();
         }
         isActing = false;
         hasActed = true;
