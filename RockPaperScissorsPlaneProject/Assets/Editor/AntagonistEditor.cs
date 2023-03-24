@@ -63,6 +63,11 @@ public class AntagonistEditor : Editor
             actionList.AddOrbitAroundTargetYClockwiseAction();
         }
 
+        if (GUILayout.Button("Orbit Around Target Y Clockwise Fixed Distance"))
+        {
+            actionList.AddOrbitAroundTargetYClockwiseFixedDistanceAction();
+        }
+
         if (GUILayout.Button("Orbit Around Target Y Anti Clockwise"))
         {
             actionList.AddOrbitAroundTargetYAntiClockwiseAction();

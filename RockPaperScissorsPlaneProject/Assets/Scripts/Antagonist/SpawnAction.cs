@@ -33,6 +33,10 @@ public class SpawnAction : Action
         movementVelocity = startingPosition - transform.position;
         isActing = true;
         yield return new WaitForSeconds(duration);
+        if (transform.position != startingPosition)
+        {
+            transform.position = startingPosition;
+        }
         hasActed = true;
     }
 

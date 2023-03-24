@@ -185,6 +185,14 @@ public class ActionList : MonoBehaviour
         SetTarget();
     }
 
+    public void AddOrbitAroundTargetYClockwiseFixedDistanceAction()
+    {
+        CreateTarget();
+        if (autoSelect == true) Selection.activeGameObject = targetList[listsSize];
+        actionList.Add(this.gameObject.AddComponent<OrbitateAroundTargetXClockwiseFixedDistanceAction>());
+        SetTarget();
+    }
+
     public void AddOrbitAroundTargetYAntiClockwiseAction()
     {
         CreateTarget();
