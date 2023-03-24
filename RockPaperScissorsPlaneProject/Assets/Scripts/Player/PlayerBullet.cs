@@ -18,8 +18,8 @@ public class PlayerBullet : Bullet
     {
         transform.Translate(0, 0, speed * Time.deltaTime);
 
-        if (transform.position.x > startingBulletPosition.x + maxRange ||
-            transform.position.x < startingBulletPosition.x - maxRange)
+        if (transform.position.z > startingBulletPosition.z + maxRange ||
+            transform.position.z < startingBulletPosition.z - maxRange)
         {
             Destroy(gameObject);
             Debug.Log("Player Bullet destroyed by distance!");
