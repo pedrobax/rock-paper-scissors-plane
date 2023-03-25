@@ -22,7 +22,7 @@ public class ActionList : MonoBehaviour
     public int listsSize;
     public int secondaryTargetListSize;
 
-    [SerializeField] bool autoSelect = false;
+    //[SerializeField] bool autoSelect = false;
 
     private void Update()
     {
@@ -146,7 +146,7 @@ public class ActionList : MonoBehaviour
     public void AddLinearMovementAction()
     {  
         CreateTarget();
-        if(autoSelect == true) Selection.activeGameObject = targetList[listsSize];
+        //if(autoSelect == true) Selection.activeGameObject = targetList[listsSize];
         actionList.Add(this.gameObject.AddComponent<LinearMovementAction>());
         SetTarget();
     }
@@ -154,7 +154,7 @@ public class ActionList : MonoBehaviour
     public void AddLinearMovementEaseAction()
     {
         CreateTarget();
-        if (autoSelect == true) Selection.activeGameObject = targetList[listsSize];
+        //if (autoSelect == true) Selection.activeGameObject = targetList[listsSize];
         actionList.Add(this.gameObject.AddComponent<LinearMovementEaseAction>());
         SetTarget();
     }
@@ -180,7 +180,7 @@ public class ActionList : MonoBehaviour
     public void AddOrbitAroundTargetYClockwiseAction()
     {
         CreateTarget();
-        if (autoSelect == true) Selection.activeGameObject = targetList[listsSize];
+        //if (autoSelect == true) Selection.activeGameObject = targetList[listsSize];
         actionList.Add(this.gameObject.AddComponent<OrbitAroundTargetYClockwiseAction>());
         SetTarget();
     }
@@ -188,7 +188,7 @@ public class ActionList : MonoBehaviour
     public void AddOrbitAroundTargetYClockwiseFixedDistanceAction()
     {
         CreateTarget();
-        if (autoSelect == true) Selection.activeGameObject = targetList[listsSize];
+        //if (autoSelect == true) Selection.activeGameObject = targetList[listsSize];
         actionList.Add(this.gameObject.AddComponent<OrbitateAroundTargetXClockwiseFixedDistanceAction>());
         SetTarget();
     }
@@ -196,7 +196,7 @@ public class ActionList : MonoBehaviour
     public void AddOrbitAroundTargetYAntiClockwiseAction()
     {
         CreateTarget();
-        if (autoSelect == true) Selection.activeGameObject = targetList[listsSize];
+        //if (autoSelect == true) Selection.activeGameObject = targetList[listsSize];
         actionList.Add(this.gameObject.AddComponent<OrbitAroundTargetYAntiClockwiseAction>());
         SetTarget();
     }
@@ -211,7 +211,7 @@ public class ActionList : MonoBehaviour
     public void AddTurnTowardsTargetAction()
     {
         CreateTarget();
-        if (autoSelect == true) Selection.activeGameObject = targetList[listsSize];
+        //if (autoSelect == true) Selection.activeGameObject = targetList[listsSize];
         actionList.Add(this.gameObject.AddComponent<TurnTowardsTargetAction>());
         SetTarget();
     }
