@@ -1289,8 +1289,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5d1812e8df754468774e64b46309fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  encounterList: []
-  timeBetweenEncounters: 
+  encounterList:
+  - {fileID: 4619235626580671309, guid: 90b4518955a3d3a4fa5f73267428c3d0, type: 3}
+  - {fileID: 1821850270539130190, guid: e3c4771841747de40a0b1c50c6ce78f6, type: 3}
+  - {fileID: 584248090051035639, guid: 8f320a77bd9c8344c844fcd1b8fa75d7, type: 3}
+  - {fileID: 3778735060258171446, guid: 60958ff0618a9a343a55f87787457acf, type: 3}
+  timeBetweenEncounters: 00000000000000000000000000000000
   currentEncounter: -1
 --- !u!4 &131922247
 Transform:
@@ -12390,7 +12394,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108846448}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
