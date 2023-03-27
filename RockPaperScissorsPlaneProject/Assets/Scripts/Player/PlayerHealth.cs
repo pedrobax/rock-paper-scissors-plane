@@ -49,6 +49,20 @@ public class PlayerHealth : MonoBehaviour
         if (currentType == PlayerType.Scissors && other.CompareTag("BulletEnemyPaper") && canTakeDamage) IgnoreDamage();
         if (currentType == PlayerType.Scissors && other.CompareTag("BulletEnemyScissors") && canTakeDamage) StartCoroutine(DieOrRespawn());
 
+
+
+        if (currentType == PlayerType.Rock && other.CompareTag("EnemyRock") && canTakeDamage) StartCoroutine(DieOrRespawn());
+        if (currentType == PlayerType.Rock && other.CompareTag("EnemyPaper") && canTakeDamage) StartCoroutine(DieOrRespawn());
+        if (currentType == PlayerType.Rock && other.CompareTag("EnemyScissors") && canTakeDamage) IgnoreDamage();
+
+        if (currentType == PlayerType.Paper && other.CompareTag("EnemyRock") && canTakeDamage) IgnoreDamage();
+        if (currentType == PlayerType.Paper && other.CompareTag("EnemyPaper") && canTakeDamage) StartCoroutine(DieOrRespawn());
+        if (currentType == PlayerType.Paper && other.CompareTag("EnemyScissors") && canTakeDamage) StartCoroutine(DieOrRespawn());
+
+        if (currentType == PlayerType.Scissors && other.CompareTag("EnemyRock") && canTakeDamage) StartCoroutine(DieOrRespawn());
+        if (currentType == PlayerType.Scissors && other.CompareTag("EnemyPaper") && canTakeDamage) IgnoreDamage();
+        if (currentType == PlayerType.Scissors && other.CompareTag("EnemyScissors") && canTakeDamage) StartCoroutine(DieOrRespawn());
+
         if (other.CompareTag("Extra Life")) GetALife();
         if (other.CompareTag("RockPowerUp"))
         {
@@ -61,15 +75,6 @@ public class PlayerHealth : MonoBehaviour
             SwitchTypeToScissors();
         }
     }
-
-    /*private void OnCollisionEnter(Collision collision)
-    {
-        GameObject collisionObject = collision.gameObject;
-        if (collisionObject.CompareTag("EnemyScissors"))
-        {
-            GetDamaged();
-        }
-    }*/
 
     private void Update()
     {

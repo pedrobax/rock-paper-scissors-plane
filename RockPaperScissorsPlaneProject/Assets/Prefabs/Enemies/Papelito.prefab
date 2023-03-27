@@ -575,8 +575,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Pedrito
-  maxHealth: 2
-  health: 2
+  maxHealth: 1
+  health: 1
   scoreValue: 10
   damageFlashDuration: 0.1
   enemyType: 1
@@ -622,7 +622,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionList: []
   targetList: []
+  secondaryTargetList: []
   currentAction: 0
   antagonistTargetPrefab: {fileID: 7575420701685749081, guid: 925174a381bf824488c6c97a00fbfb78, type: 3}
   listsSize: 0
-  autoSelect: 0
+  secondaryTargetListSize: 0

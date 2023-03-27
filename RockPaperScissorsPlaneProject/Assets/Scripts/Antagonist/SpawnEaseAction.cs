@@ -10,6 +10,8 @@ public class SpawnEaseAction : Action
     private float movementTime;
     float elapsedTime;
     float startTime;
+    public bool randomSpawnPosition;
+    public Vector3 spawnPosition;
 
     private void Start()
     {
@@ -33,11 +35,6 @@ public class SpawnEaseAction : Action
             rb.MovePosition(Vector3.Lerp(movementStartPosition, startingPosition, t));
         }
 
-        else if (isActing && elapsedTime < waitTime)
-        {
-            Debug.Log("Waiting to spawn");
-        }
-
         if (hasActed == true)
         {
             rb.MovePosition(startingPosition);
@@ -49,7 +46,8 @@ public class SpawnEaseAction : Action
     IEnumerator Spawn()
     {
         startingPosition = transform.position;
-        MoveToRandonSpawnPlaceLocation();
+        if (randomSpawnPosition) MoveToRandonSpawnPlaceLocation();
+        else transform.position = spawnPosition;
         movementStartPosition = transform.position;
         startTime = Time.time;
         isActing = true;

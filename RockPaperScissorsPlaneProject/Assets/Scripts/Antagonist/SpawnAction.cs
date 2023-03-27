@@ -10,6 +10,8 @@ public class SpawnAction : Action
     private float movementTime;
     float elapsedTime;
     float startTime;
+    public bool randomSpawnPosition;
+    public Vector3 spawnPosition;
 
     private void Start()
     {
@@ -43,7 +45,8 @@ public class SpawnAction : Action
     IEnumerator Spawn()
     {
         startingPosition = transform.position;
-        MoveToRandonSpawnPlaceLocation();
+        if (randomSpawnPosition) MoveToRandonSpawnPlaceLocation();
+        else transform.position = spawnPosition;
         movementVelocity = startingPosition - transform.position;
         startTime = Time.time;
         isActing = true;
