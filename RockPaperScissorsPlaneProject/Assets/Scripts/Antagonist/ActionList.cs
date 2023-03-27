@@ -265,6 +265,13 @@ public class ActionList : MonoBehaviour
         SetTarget();
     }
 
+    public void AddSpawnEaseAction()
+    {
+        CreateTarget();
+        actionList.Add(this.gameObject.AddComponent<SpawnEaseAction>());
+        SetTarget();
+    }
+
     public void CreateTarget()
     {
         listsSize = actionList.Count;

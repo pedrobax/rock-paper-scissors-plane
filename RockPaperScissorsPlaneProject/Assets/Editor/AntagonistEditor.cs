@@ -93,6 +93,11 @@ public class AntagonistEditor : Editor
             actionList.AddSpawnAction();
         }
 
+        if (GUILayout.Button("Spawn Ease"))
+        {
+            actionList.AddSpawnEaseAction();
+        }
+
         if (GUILayout.Button("Clear Lists"))
         {
             actionList.ClearLists();
