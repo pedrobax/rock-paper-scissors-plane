@@ -6,10 +6,15 @@ using UnityEngine;
 public class SpawnAction : Action
 {
     Vector3 movementVelocity;
+    public float waitTime = 1;
+    private float movementTime;
+    float elapsedTime;
+    float startTime;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        movementTime = duration - waitTime;
         if (!isActing && !hasActed)
         {
             StartCoroutine(Spawn());
@@ -18,9 +23,18 @@ public class SpawnAction : Action
 
     public override void Act()
     {
-        if (isActing)
+        elapsedTime = Time.time - startTime;
+        if (isActing && elapsedTime > waitTime)
         {
-            rb.MovePosition(rb.position + movementVelocity / duration * Time.deltaTime);
+            rb.MovePosition(rb.position + movementVelocity / movementTime * Time.deltaTime);
+        }
+        else if (isActing && elapsedTime < waitTime)
+        {
+            Debug.Log("Waiting to spawn");
+        }
+        if (hasActed == true)
+        {
+            rb.MovePosition(startingPosition);
         }
     }
 
@@ -31,12 +45,9 @@ public class SpawnAction : Action
         startingPosition = transform.position;
         MoveToRandonSpawnPlaceLocation();
         movementVelocity = startingPosition - transform.position;
+        startTime = Time.time;
         isActing = true;
-        yield return new WaitForSeconds(duration);
-        if (transform.position != startingPosition)
-        {
-            transform.position = startingPosition;
-        }
+        yield return new WaitForSeconds(duration);            
         hasActed = true;
     }
 
