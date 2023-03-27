@@ -1293,7 +1293,8 @@ MonoBehaviour:
   - {fileID: 8718022523603463520, guid: 01256597ed924374aa939fddf7bf7c8d, type: 3}
   - {fileID: 5264062194843141774, guid: f7def71387950974a8286dc5ec267f21, type: 3}
   - {fileID: 7557660851249456754, guid: e21225deb7816c34db6eaf3d7a95f081, type: 3}
-  timeBetweenEncounters: 000000000000000000000000
+  - {fileID: 3879257408014042306, guid: 06107d7a12c58b64ab484e6c694d27a7, type: 3}
+  timeBetweenEncounters: 00000000000000000000000000000000
   currentEncounter: -1
 --- !u!4 &131922247
 Transform:
@@ -12393,7 +12394,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108846448}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

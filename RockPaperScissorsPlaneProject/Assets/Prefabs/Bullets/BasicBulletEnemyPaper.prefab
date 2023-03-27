@@ -111,11 +111,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce51831e63438df4c827102b12c2e57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  maxRange: 30
+  speed: 8
+  maxRange: 50
   damage: 1
   startingBulletPosition: {x: 0, y: 0, z: 0}
-  aimType: 1
+  aimType: 0
   turnSpeed: 0.1
 --- !u!82 &-439559027228974764
 AudioSource:
