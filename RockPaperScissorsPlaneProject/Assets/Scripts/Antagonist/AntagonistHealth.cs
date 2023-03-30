@@ -74,11 +74,8 @@ public class AntagonistHealth : MonoBehaviour
             Destroy(gameObject);
             Debug.Log(unitName + " destroyed by DZ");
         }
-    }
 
-    private void OnCollisionStay(Collision collision)
-    {
-        PlayerHealth _playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+        PlayerHealth _playerHealth = other.gameObject.GetComponent<PlayerHealth>();
         if (_playerHealth.currentType == PlayerHealth.PlayerType.Scissors && enemyType == EnemyType.Rock && canTakeScissorsDamage)
         {
             IgnoreDamage();
