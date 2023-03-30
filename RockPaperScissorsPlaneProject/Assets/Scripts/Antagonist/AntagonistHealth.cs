@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AntagonistHealth : MonoBehaviour
@@ -15,6 +16,9 @@ public class AntagonistHealth : MonoBehaviour
     [SerializeField] public AudioSource soundSource;
     [SerializeField] public AudioClip hitClip;
     [SerializeField] AudioClip deathClip;
+    [SerializeField] public GameObject deathVFX;
+    [SerializeField] public float deathShakeTime = 0.2f;
+    [SerializeField] public float deathShakeIntensity = 0.5f;
     Bullet _bullet;
     public bool isColliding;
     Color originalColor;
@@ -75,24 +79,27 @@ public class AntagonistHealth : MonoBehaviour
             Debug.Log(unitName + " destroyed by DZ");
         }
 
-        PlayerHealth _playerHealth = other.gameObject.GetComponent<PlayerHealth>();
-        if (_playerHealth.currentType == PlayerHealth.PlayerType.Scissors && enemyType == EnemyType.Rock && canTakeScissorsDamage)
+        if (other.CompareTag("Player"))
         {
-            IgnoreDamage();
-            StartCoroutine(GetDamagedByScissorsCooldown());
-        }
-        if (_playerHealth.currentType == PlayerHealth.PlayerType.Scissors && enemyType == EnemyType.Paper && canTakeScissorsDamage)
-        {
-            Debug.Log(unitName + " has taken " + 2 + " damage!");
-            TakeDamage(2);
-            StartCoroutine(GetDamagedByScissorsCooldown());
-        }
-        if (_playerHealth.currentType == PlayerHealth.PlayerType.Scissors && enemyType == EnemyType.Scissors && canTakeScissorsDamage)
-        {
-            Debug.Log(unitName + " has taken " + 1 + " damage!");
-            TakeDamage(1);
-            StartCoroutine(GetDamagedByScissorsCooldown());
-        }
+            PlayerHealth _playerHealth = other.gameObject.GetComponent<PlayerHealth>();
+            if (_playerHealth.currentType == PlayerHealth.PlayerType.Scissors && enemyType == EnemyType.Rock && canTakeScissorsDamage)
+            {
+                IgnoreDamage();
+                StartCoroutine(GetDamagedByScissorsCooldown());
+            }
+            if (_playerHealth.currentType == PlayerHealth.PlayerType.Scissors && enemyType == EnemyType.Paper && canTakeScissorsDamage)
+            {
+                Debug.Log(unitName + " has taken " + 2 + " damage!");
+                TakeDamage(2);
+                StartCoroutine(GetDamagedByScissorsCooldown());
+            }
+            if (_playerHealth.currentType == PlayerHealth.PlayerType.Scissors && enemyType == EnemyType.Scissors && canTakeScissorsDamage)
+            {
+                Debug.Log(unitName + " has taken " + 1 + " damage!");
+                TakeDamage(1);
+                StartCoroutine(GetDamagedByScissorsCooldown());
+            }
+        }   
     }
 
     void OnDestroy()
@@ -108,7 +115,7 @@ public class AntagonistHealth : MonoBehaviour
         StartCoroutine(DamageFlash());
         if (health <= 0)
         {
-            StartCoroutine(Die());
+            Die();          
         }
     }
 
@@ -144,46 +151,32 @@ public class AntagonistHealth : MonoBehaviour
         canTakeScissorsDamage = true;
     }
 
-    IEnumerator Die()
+    public void Die()
     {
         destroyedByPlayer = true;
         this.GetComponent<Collider>().enabled = false;
+        this.GetComponent<ActionList>().enabled = false;
         rb.useGravity = true;
 
         rb.constraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationX
             | RigidbodyConstraints.FreezePositionY;
 
+        DisableVisuals();
+
         ChangeSound(deathClip);
         soundSource.Play();
-        yield return new WaitForSeconds(0.05f);
-        LowerTransformSize(0.1f);
-        yield return new WaitForSeconds(0.05f);
-        LowerTransformSize(0.1f);
-        yield return new WaitForSeconds(0.05f);
-        LowerTransformSize(0.1f);
-        yield return new WaitForSeconds(0.05f);
-        LowerTransformSize(0.1f);
-        yield return new WaitForSeconds(0.05f);
-        LowerTransformSize(0.1f);
-        yield return new WaitForSeconds(0.05f);
-        LowerTransformSize(0.1f);
-        yield return new WaitForSeconds(0.05f);
-        LowerTransformSize(0.1f);
-        yield return new WaitForSeconds(0.05f);
-        LowerTransformSize(0.1f);
-        yield return new WaitForSeconds(0.05f);
-        LowerTransformSize(0.1f);
-        yield return new WaitForSeconds(0.05f);
-        LowerTransformSize(0.1f);
-        yield return new WaitForSeconds(0.05f);
-        Destroy(gameObject);
+        CinemachineShake.Instance.ShakeCamera(deathShakeIntensity, deathShakeTime);
+        
+     
+        Instantiate(deathVFX, transform.position, transform.rotation);
+        Destroy(gameObject, 1);
         Debug.Log(unitName + " has been destroyed!");
     }
 
-    void LowerTransformSize(float amount)
+    void DisableVisuals()
     {
-        rb.transform.localScale = new Vector3(rb.transform.localScale.x - amount,
-        rb.transform.localScale.y - amount, rb.transform.localScale.z - amount);
+        foreach (Transform child in transform)
+            child.gameObject.SetActive(false);
     }
 
     enum EnemyType

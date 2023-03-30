@@ -432,6 +432,7 @@ MonoBehaviour:
   soundSource: {fileID: 3340047996042409595}
   hitClip: {fileID: 8300000, guid: f21e684d14c524142842efa12f970fa7, type: 3}
   deathClip: {fileID: 8300000, guid: fb13f4f6237add64d95f4b95690c8770, type: 3}
+  deathVFX: {fileID: 6260299754975489240, guid: b574a6d1abdd6b042927c982a3f997a3, type: 3}
   isColliding: 0
 --- !u!114 &4847338812953453996
 MonoBehaviour:
@@ -469,10 +470,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionList: []
   targetList: []
+  secondaryTargetList: []
   currentAction: 0
   antagonistTargetPrefab: {fileID: 7575420701685749081, guid: 925174a381bf824488c6c97a00fbfb78, type: 3}
   listsSize: 0
-  autoSelect: 0
+  secondaryTargetListSize: 0
 --- !u!1001 &8564323534608137979
 PrefabInstance:
   m_ObjectHideFlags: 0

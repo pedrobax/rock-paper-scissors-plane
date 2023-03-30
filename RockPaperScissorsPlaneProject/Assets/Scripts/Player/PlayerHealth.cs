@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public float respawnTime = 1;
     public float respawnInvulnerabilityTime = 3;
     public bool canTakeDamage = true;
+    [SerializeField] public AudioSource soundSource;
 
     [SerializeField] public MeshRenderer currentMeshRenderer;
     [SerializeField] public MeshRenderer rockMeshRenderer;
@@ -26,6 +27,9 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] BoxCollider rockCollider;
     [SerializeField] BoxCollider paperCollider;
     [SerializeField] BoxCollider scissorsCollider;
+    [SerializeField] GameObject rockDeathVFX;
+    [SerializeField] GameObject paperDeathVFX;
+    [SerializeField] GameObject scissorsDeathVFX;
 
     private void Start()
     {
@@ -142,40 +146,19 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("You got an extra life! You have " + lives + " remaining lives!");
     }
 
-    void GetDamaged()
-    {
-        if (lives > 0)
-        {
-            lives--;
-            Debug.Log(lives + " lives remaining!");
-        }
-        else
-        {
-            Debug.Log("Game over!");
-            Destroy(gameObject);
-        }
-    }
-    void GetDoubleDamaged()
-    {
-        if (lives > 1)
-        {
-            lives--;
-            lives--;
-            Debug.Log(lives + " lives remaining!");
-        }
-        else
-        {
-            Debug.Log("Game over!");
-            Destroy(gameObject);
-        }
-    }
-
     public IEnumerator DieOrRespawn()
     {
         if (lives > 0)
         {
             lives--;
             Debug.Log("Player lost a life! Remaining lives: " + lives);
+
+            soundSource.Play();
+
+            if (currentType == PlayerType.Rock) Instantiate(rockDeathVFX, transform.position, transform.rotation);
+            if (currentType == PlayerType.Paper) Instantiate(paperDeathVFX, transform.position, transform.rotation);
+            if (currentType == PlayerType.Scissors) Instantiate(scissorsDeathVFX, transform.position, transform.rotation);
+
             currentMeshRenderer.enabled = false;
             canTakeDamage = false;
             yield return new WaitForSeconds(respawnTime);
@@ -195,8 +178,20 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(gameObject, 2);
+            DisableVisuals();
+            soundSource.Play();
+            canTakeDamage = false;
+            if (currentType == PlayerType.Rock) Instantiate(rockDeathVFX, transform.position, transform.rotation);
+            if (currentType == PlayerType.Paper) Instantiate(paperDeathVFX, transform.position, transform.rotation);
+            if (currentType == PlayerType.Scissors) Instantiate(scissorsDeathVFX, transform.position, transform.rotation);
         }
+    }
+
+    void DisableVisuals()
+    {
+        foreach (Transform child in transform)
+            child.gameObject.SetActive(false);
     }
 
     IEnumerator DamageFlash(float duration)
