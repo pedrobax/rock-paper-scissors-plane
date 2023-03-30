@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerBullet : Bullet
 {
+    public GameObject hitVFX;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy") || other.CompareTag("EnemyRock") ||
@@ -11,6 +13,7 @@ public class PlayerBullet : Bullet
         {
             Debug.Log("Player Bullet destroyed by collision!");
             Destroy(gameObject);
+            Instantiate(hitVFX, new Vector3(transform.position.x, transform.position.y, transform.position.z+1), transform.rotation);
         }
     }
 

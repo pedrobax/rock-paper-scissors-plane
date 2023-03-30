@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public float respawnTime = 1;
     public float respawnInvulnerabilityTime = 3;
     public bool canTakeDamage = true;
+    public float typeChangeCooldown = 0.1f;
     [SerializeField] public AudioSource soundSource;
 
     [SerializeField] public MeshRenderer currentMeshRenderer;
@@ -27,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] BoxCollider rockCollider;
     [SerializeField] BoxCollider paperCollider;
     [SerializeField] BoxCollider scissorsCollider;
+    [SerializeField] GameObject typeChangeVFX;
     [SerializeField] GameObject rockDeathVFX;
     [SerializeField] GameObject paperDeathVFX;
     [SerializeField] GameObject scissorsDeathVFX;
@@ -71,32 +73,37 @@ public class PlayerHealth : MonoBehaviour
         if (other.CompareTag("RockPowerUp"))
         {
             canBecomeRock = true;
-            SwitchTypeToRock();
+            StartCoroutine(SwitchTypeToRock());
         }
         if (other.CompareTag("ScissorsPowerUp"))
         {
             canBecomeScissors = true;
-            SwitchTypeToScissors();
+            StartCoroutine(SwitchTypeToScissors());
         }
     }
 
     private void Update()
     {
-        if (Input.GetButtonDown("NextType") && currentType == PlayerType.Rock && canSwitchType) SwitchTypeToPaper();
-        if (Input.GetButtonDown("PreviousType") && currentType == PlayerType.Rock && canSwitchType && canBecomeScissors) SwitchTypeToScissors();
-        else if (Input.GetButtonDown("PreviousType") && currentType == PlayerType.Rock && canSwitchType && !canBecomeScissors) SwitchTypeToPaper();
+        if (Input.GetButtonDown("NextType") && currentType == PlayerType.Rock && canSwitchType) StartCoroutine(SwitchTypeToPaper());
+        if (Input.GetButtonDown("PreviousType") && currentType == PlayerType.Rock && canSwitchType && canBecomeScissors) StartCoroutine(SwitchTypeToScissors());
+        else if (Input.GetButtonDown("PreviousType") && currentType == PlayerType.Rock && canSwitchType && !canBecomeScissors) StartCoroutine(SwitchTypeToPaper());
 
-        if (Input.GetButtonDown("NextType") && currentType == PlayerType.Paper && canSwitchType && canBecomeScissors) SwitchTypeToScissors();
-        else if (Input.GetButtonDown("NextType") && currentType == PlayerType.Paper && canSwitchType && !canBecomeScissors && canBecomeRock) SwitchTypeToRock();
-        if (Input.GetButtonDown("PreviousType") && currentType == PlayerType.Paper && canSwitchType && canBecomeRock) SwitchTypeToRock();
-        else if (Input.GetButtonDown("PreviousType") && currentType == PlayerType.Paper && canSwitchType && !canBecomeRock && canBecomeScissors) SwitchTypeToScissors();
+        if (Input.GetButtonDown("NextType") && currentType == PlayerType.Paper && canSwitchType && canBecomeScissors) StartCoroutine(SwitchTypeToScissors());
+        else if (Input.GetButtonDown("NextType") && currentType == PlayerType.Paper && canSwitchType && !canBecomeScissors && canBecomeRock) StartCoroutine(SwitchTypeToRock());
+        if (Input.GetButtonDown("PreviousType") && currentType == PlayerType.Paper && canSwitchType && canBecomeRock) StartCoroutine(SwitchTypeToRock());
+        else if (Input.GetButtonDown("PreviousType") && currentType == PlayerType.Paper && canSwitchType && !canBecomeRock && canBecomeScissors) StartCoroutine(SwitchTypeToScissors());
 
-        if (Input.GetButtonDown("NextType") && currentType == PlayerType.Scissors && canSwitchType && canBecomeRock) SwitchTypeToRock();
-        else if (Input.GetButtonDown("NextType") && currentType == PlayerType.Scissors && canSwitchType && !canBecomeRock) SwitchTypeToPaper();
-        if (Input.GetButtonDown("PreviousType") && currentType == PlayerType.Scissors && canSwitchType) SwitchTypeToPaper();
+        if (Input.GetButtonDown("NextType") && currentType == PlayerType.Scissors && canSwitchType && canBecomeRock) StartCoroutine(SwitchTypeToRock());
+        else if (Input.GetButtonDown("NextType") && currentType == PlayerType.Scissors && canSwitchType && !canBecomeRock) StartCoroutine(SwitchTypeToPaper());
+        if (Input.GetButtonDown("PreviousType") && currentType == PlayerType.Scissors && canSwitchType) StartCoroutine(SwitchTypeToPaper());
     }
-    void SwitchTypeToRock()
+    IEnumerator SwitchTypeToRock()
     {
+        GameObject changeVfx = Instantiate(typeChangeVFX, transform.position, transform.rotation);
+        changeVfx.transform.parent = this.transform;
+        currentMeshRenderer.enabled = false;
+        yield return new WaitForSeconds(0.15f);
+        currentMeshRenderer.enabled = true;
         currentType = PlayerType.Rock;
         playerRockObject.SetActive(true);
         playerPaperObject.SetActive(false);
@@ -110,8 +117,13 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("You are now a Rock!");
     }
 
-    void SwitchTypeToPaper()
-    { 
+    IEnumerator SwitchTypeToPaper()
+    {
+        GameObject changeVfx = Instantiate(typeChangeVFX, transform.position, transform.rotation);
+        changeVfx.transform.parent = this.transform;
+        currentMeshRenderer.enabled = false;
+        yield return new WaitForSeconds(0.15f);
+        currentMeshRenderer.enabled = true;
         currentType = PlayerType.Paper;
         playerPaperObject.SetActive(true);
         playerRockObject.SetActive(false);
@@ -125,8 +137,13 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("You are now a Paper!");
     }
 
-    void SwitchTypeToScissors()
+    IEnumerator SwitchTypeToScissors()
     {
+        GameObject changeVfx = Instantiate(typeChangeVFX, transform.position, transform.rotation);
+        changeVfx.transform.parent = this.transform;
+        currentMeshRenderer.enabled = false;
+        yield return new WaitForSeconds(0.15f);
+        currentMeshRenderer.enabled = true;
         currentType = PlayerType.Scissors;
         playerScissorsObject.SetActive(true);
         playerRockObject.SetActive(false);
@@ -209,7 +226,7 @@ public class PlayerHealth : MonoBehaviour
     public IEnumerator CountTransformCooldown()
     {
         canSwitchType = false;
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(typeChangeCooldown);
         canSwitchType = true;
     }
 
