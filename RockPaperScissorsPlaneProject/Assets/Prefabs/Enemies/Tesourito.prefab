@@ -668,8 +668,11 @@ MonoBehaviour:
   meshRenderer: {fileID: 8387082237242599056}
   soundSource: {fileID: 3340047996042409595}
   hitClip: {fileID: 8300000, guid: f21e684d14c524142842efa12f970fa7, type: 3}
+  shieldVFX: {fileID: 5867600136002297323, guid: 391ec6f32a17a3d43851601745036002, type: 3}
   deathClip: {fileID: 8300000, guid: fb13f4f6237add64d95f4b95690c8770, type: 3}
   deathVFX: {fileID: 6181710295968246962, guid: e355e1f0c8ea0214983f4ed3622be92a, type: 3}
+  deathShakeTime: 0.2
+  deathShakeIntensity: 0.5
   isColliding: 0
 --- !u!114 &4847338812953453996
 MonoBehaviour:

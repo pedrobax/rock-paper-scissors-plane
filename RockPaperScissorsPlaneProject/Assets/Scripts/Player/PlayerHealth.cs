@@ -32,6 +32,9 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] GameObject rockDeathVFX;
     [SerializeField] GameObject paperDeathVFX;
     [SerializeField] GameObject scissorsDeathVFX;
+    [SerializeField] GameObject rockShieldVFX;
+    [SerializeField] GameObject paperShieldVFX;
+    [SerializeField] GameObject scissorsShieldVFX;
 
     private void Start()
     {
@@ -66,7 +69,6 @@ public class PlayerHealth : MonoBehaviour
         if (currentType == PlayerType.Paper && other.CompareTag("EnemyScissors") && canTakeDamage) StartCoroutine(DieOrRespawn());
 
         if (currentType == PlayerType.Scissors && other.CompareTag("EnemyRock") && canTakeDamage) StartCoroutine(DieOrRespawn());
-        if (currentType == PlayerType.Scissors && other.CompareTag("EnemyPaper") && canTakeDamage) IgnoreDamage();
         if (currentType == PlayerType.Scissors && other.CompareTag("EnemyScissors") && canTakeDamage) StartCoroutine(DieOrRespawn());
 
         if (other.CompareTag("Extra Life")) GetALife();
@@ -171,6 +173,7 @@ public class PlayerHealth : MonoBehaviour
             Debug.Log("Player lost a life! Remaining lives: " + lives);
 
             soundSource.Play();
+            CinemachineShake.Instance.ShakeCamera(5f, 0.5f);
 
             if (currentType == PlayerType.Rock) Instantiate(rockDeathVFX, transform.position, transform.rotation);
             if (currentType == PlayerType.Paper) Instantiate(paperDeathVFX, transform.position, transform.rotation);
@@ -221,6 +224,21 @@ public class PlayerHealth : MonoBehaviour
     void IgnoreDamage()
     {
         Debug.Log("Damage ignored by type!");
+        if(currentType == PlayerType.Rock)
+        {
+            GameObject shieldVfx = Instantiate(rockShieldVFX, transform.position, transform.rotation);
+            shieldVfx.transform.parent = this.transform;
+        }
+        if (currentType == PlayerType.Paper)
+        {
+            GameObject shieldVfx = Instantiate(paperShieldVFX, transform.position, transform.rotation);
+            shieldVfx.transform.parent = this.transform;
+        }
+        if (currentType == PlayerType.Scissors)
+        {
+            GameObject shieldVfx = Instantiate(scissorsShieldVFX, transform.position, transform.rotation);
+            shieldVfx.transform.parent = this.transform;
+        }
     }
 
     public IEnumerator CountTransformCooldown()

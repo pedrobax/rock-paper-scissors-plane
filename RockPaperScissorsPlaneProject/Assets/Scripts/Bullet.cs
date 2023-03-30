@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public GameObject hitVFX;
+
     [SerializeField] public float speed = 20f;
     [SerializeField] public float maxRange = 100;
     [SerializeField] public float damage = 1;

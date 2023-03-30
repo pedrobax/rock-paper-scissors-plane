@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerBullet : Bullet
 {
-    public GameObject hitVFX;
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy") || other.CompareTag("EnemyRock") ||

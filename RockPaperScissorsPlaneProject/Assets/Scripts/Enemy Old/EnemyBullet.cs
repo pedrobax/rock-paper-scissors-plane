@@ -21,6 +21,7 @@ public class EnemyBullet : Bullet
             if(other.GetComponent<PlayerHealth>().canTakeDamage)
             {
                 Debug.Log("Enemy Bullet destroyed by collision!");
+                Instantiate(hitVFX, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
                 Destroy(gameObject);
             }
         }
