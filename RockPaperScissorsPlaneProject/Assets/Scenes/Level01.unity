@@ -7565,6 +7565,7 @@ MonoBehaviour:
   respawnTime: 2
   respawnInvulnerabilityTime: 3
   canTakeDamage: 1
+  typeChangeCooldown: 0.1
   soundSource: {fileID: 660645806}
   currentMeshRenderer: {fileID: 1797294808}
   rockMeshRenderer: {fileID: 267173990}
@@ -11799,6 +11800,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1031594966}
   - component: {fileID: 1031594965}
+  - component: {fileID: 1031594967}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -11817,8 +11819,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1.5
+  m_Color: {r: 1, g: 0.93865186, b: 0.8443396, a: 1}
+  m_Intensity: 1.8
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -11830,7 +11832,7 @@ Light:
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 0.1
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -11883,6 +11885,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 52.799, y: -40.617, z: -43.974}
+--- !u!114 &1031594967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031594964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1001 &1034852820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18683,7 +18705,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709802834}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

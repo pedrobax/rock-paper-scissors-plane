@@ -15,6 +15,7 @@ public class AntagonistHealth : MonoBehaviour
     [SerializeField] MeshRenderer meshRenderer;
     [SerializeField] public AudioSource soundSource;
     [SerializeField] public AudioClip hitClip;
+    [SerializeField] public GameObject shieldVFX;
     [SerializeField] AudioClip deathClip;
     [SerializeField] public GameObject deathVFX;
     [SerializeField] public float deathShakeTime = 0.2f;
@@ -122,6 +123,8 @@ public class AntagonistHealth : MonoBehaviour
     void IgnoreDamage()
     {
         Debug.Log("Enemy ignored damage by type!");
+        GameObject shieldVfx = Instantiate(shieldVFX, transform.position, transform.rotation);
+        shieldVfx.transform.parent = this.transform;
     }
 
     public void ChangeSound(AudioClip sound)
