@@ -8,6 +8,7 @@ public class PlayerShoot : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefabBasic;
     public GameObject bulletPrefabSuper;
+    public GameObject muzzleFlashVFX;
     public float cooldown = 1;
     float cooldownTimer;
     bool isSuperUpgraded = false;
@@ -42,6 +43,8 @@ public class PlayerShoot : MonoBehaviour
     void ShootBasicBullet()
     {
         Instantiate(bulletPrefabBasic, firePoint.position, firePoint.rotation);
+        GameObject vfx = Instantiate(muzzleFlashVFX, firePoint.position, firePoint.rotation);
+        vfx.transform.parent = this.transform;
     }
     void ShootSuperBullet()
     {
