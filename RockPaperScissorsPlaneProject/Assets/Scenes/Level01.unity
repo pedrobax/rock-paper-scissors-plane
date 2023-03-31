@@ -1330,7 +1330,8 @@ MonoBehaviour:
   - {fileID: 5264062194843141774, guid: f7def71387950974a8286dc5ec267f21, type: 3}
   - {fileID: 7557660851249456754, guid: e21225deb7816c34db6eaf3d7a95f081, type: 3}
   - {fileID: 3879257408014042306, guid: 06107d7a12c58b64ab484e6c694d27a7, type: 3}
-  timeBetweenEncounters: 00000000000000000000000000000000
+  - {fileID: 541818694481583032, guid: f1e46ed403f43b146aae65b83fd65f84, type: 3}
+  timeBetweenEncounters: 0000000000000000000000000000000000000000
   currentEncounter: -1
   overText: {fileID: 1861587997}
 --- !u!4 &131922247
@@ -2649,7 +2650,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 223883600}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.8, y: -49.7, z: 44.5}
+  m_LocalPosition: {x: -0.8, y: -50, z: 44.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13434,7 +13435,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.05882353}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.3137255}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.47058824}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -14601,6 +14602,7 @@ GameObject:
   - component: {fileID: 1302225767}
   - component: {fileID: 1302225769}
   - component: {fileID: 1302225768}
+  - component: {fileID: 1302225770}
   m_Layer: 5
   m_Name: TextScore
   m_TagString: Untagged
@@ -14725,6 +14727,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302225766}
   m_CullTransparentMesh: 1
+--- !u!114 &1302225770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302225766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46cd298810dbbb1418471091b6b7d6a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
 --- !u!1001 &1303249570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17360,7 +17375,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.05882353}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.3137255}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.47058824}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -17482,6 +17497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  highscore: 0
 --- !u!114 &1599163646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21089,6 +21105,7 @@ GameObject:
   - component: {fileID: 1858874621}
   - component: {fileID: 1858874623}
   - component: {fileID: 1858874622}
+  - component: {fileID: 1858874624}
   m_Layer: 5
   m_Name: TextScore
   m_TagString: Untagged
@@ -21213,6 +21230,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858874620}
   m_CullTransparentMesh: 1
+--- !u!114 &1858874624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858874620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7715068aad87bc4c94f8b06d169ddd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalScore: {fileID: 0}
 --- !u!1001 &1860753952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21434,7 +21464,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.05882353}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.3137255}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.47058824}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -23739,6 +23769,10 @@ PrefabInstance:
       propertyPath: muzzleFlashVFX
       value: 
       objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
+    - target: {fileID: 7043786514479697486, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
+      propertyPath: cooldown
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 7043786514479697486, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
       propertyPath: muzzleFlashVFX
       value: 

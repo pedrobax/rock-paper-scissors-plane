@@ -16,18 +16,18 @@ public class EncounterManager : MonoBehaviour
     private void Update()
     {
         if (currentEncounter == -1) StartCoroutine(MoveToNextEncounter());
-        if (currentEncounter >= encounterList.Count) StartCoroutine(GoBackToMenu());
+        if (currentEncounter >= encounterList.Count) StartCoroutine(GoToFinalScreen());
         else if (encounterList[currentEncounter].GetComponent<Encounter>().isEncounterDone == true && !isOnTimeBetweenEncounters)
         {
             StartCoroutine(MoveToNextEncounter());
         }
     }
 
-    IEnumerator GoBackToMenu()
+    IEnumerator GoToFinalScreen()
     {
         overText.gameObject.SetActive(true);
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
 
     IEnumerator MoveToNextEncounter()

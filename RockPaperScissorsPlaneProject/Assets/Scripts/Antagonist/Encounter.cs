@@ -10,6 +10,7 @@ public class Encounter : MonoBehaviour
     public int currentEnemyNumber;
     public float maxDuration = 30;
     public float currentDuration = 0;
+    public bool clearAtEnd = false;
 
     private void Update()
     {
@@ -22,9 +23,16 @@ public class Encounter : MonoBehaviour
 
     void ClearEncounter()
     {
-        for (int i = 0; i < enemyList.Count; i++)
+        if (clearAtEnd == true)
         {
-            Destroy(enemyList[i]);
+            for (int i = 0; i < enemyList.Count; i++)
+            {
+                Destroy(enemyList[i]);
+            }
+        }
+        else
+        {
+            FinishEncounter();
         }
     }
 

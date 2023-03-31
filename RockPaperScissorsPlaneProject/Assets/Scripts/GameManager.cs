@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Activation Area: " + activationArea);
         playerHealth = player.GetComponent<PlayerHealth>();
         Time.timeScale = 1f;
+        PlayerPrefs.SetInt("score", 0);
     }
 
     private void OnDrawGizmos()
