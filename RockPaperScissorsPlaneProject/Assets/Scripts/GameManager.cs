@@ -9,10 +9,14 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public static event Action<float> ScoreUpdated;
+    public GameObject player;
+    private PlayerHealth playerHealth;
     public LevelArea _levelArea;
     public Transform _playerTransform;
     static float activationArea;
     static Vector3 playerPosition;
+    public GameObject pauseMenu;
+    public GameObject deathMenu;
 
     private void Awake()
     {
@@ -23,6 +27,8 @@ public class GameManager : MonoBehaviour
     {
         activationArea = _levelArea.verticalAreaLimit * 2;
         Debug.Log("Activation Area: " + activationArea);
+        playerHealth = player.GetComponent<PlayerHealth>();
+        Time.timeScale = 1f;
     }
 
     private void OnDrawGizmos()
@@ -33,6 +39,15 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         playerPosition = _playerTransform.position;
+        if (playerHealth.isAlive == false)
+        {
+            deathMenu.SetActive(true);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 
     public static void UpdateScore(float score)

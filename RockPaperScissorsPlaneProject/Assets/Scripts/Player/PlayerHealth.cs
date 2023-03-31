@@ -5,12 +5,15 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public float lives = 3;
+    public bool isAlive = true;
     public Vector3 respawnPosition;
     public float respawnTime = 1;
     public float respawnInvulnerabilityTime = 3;
     public bool canTakeDamage = true;
     public float typeChangeCooldown = 0.1f;
     [SerializeField] public AudioSource soundSource;
+
+    [SerializeField] public GameObject deathMenu; //pelo amor de deus remova essa gambiarra depois e faça um evento de morte direito no gamemanager
 
     [SerializeField] public MeshRenderer currentMeshRenderer;
     [SerializeField] public MeshRenderer rockMeshRenderer;
@@ -138,6 +141,7 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine(CountTransformCooldown());
         Debug.Log("You are now a Paper!");
     }
+    
 
     IEnumerator SwitchTypeToScissors()
     {
@@ -205,6 +209,9 @@ public class PlayerHealth : MonoBehaviour
             if (currentType == PlayerType.Rock) Instantiate(rockDeathVFX, transform.position, transform.rotation);
             if (currentType == PlayerType.Paper) Instantiate(paperDeathVFX, transform.position, transform.rotation);
             if (currentType == PlayerType.Scissors) Instantiate(scissorsDeathVFX, transform.position, transform.rotation);
+            Time.timeScale = 0.25f;
+            yield return new WaitForSeconds(0.5f);
+            isAlive = false;
         }
     }
 
