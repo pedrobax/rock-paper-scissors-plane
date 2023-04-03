@@ -12,7 +12,7 @@ public class Cloud : Movement
     void Start()
     {
         GetRigidBody();
-        teleportDistanceVector.x = teleportDistance;
+        teleportDistanceVector.z = teleportDistance;
     }
 
     // Update is called once per frame
