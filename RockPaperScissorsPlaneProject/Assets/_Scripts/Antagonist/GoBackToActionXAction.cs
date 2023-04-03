@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class GoBackToActionXAction : Action
 {
-    ActionList _actionList;
+    public ActionList _actionList;
     [SerializeField] public int action;
 
     public override void Act()
     {
-        _actionList = GetComponent<ActionList>();
         if (!isActing && !hasActed)
         {
             isActing = true;

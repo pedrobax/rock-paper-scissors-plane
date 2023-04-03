@@ -1320,7 +1320,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131922245}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be5d1812e8df754468774e64b46309fb, type: 3}
   m_Name: 
@@ -1331,7 +1331,8 @@ MonoBehaviour:
   - {fileID: 7557660851249456754, guid: e21225deb7816c34db6eaf3d7a95f081, type: 3}
   - {fileID: 3879257408014042306, guid: 06107d7a12c58b64ab484e6c694d27a7, type: 3}
   - {fileID: 541818694481583032, guid: f1e46ed403f43b146aae65b83fd65f84, type: 3}
-  timeBetweenEncounters: 0000000000000000000000000000000000000000
+  - {fileID: 2268703400537673931, guid: d60d1e9b95adc4d4e8bbc489cb5714c9, type: 3}
+  timeBetweenEncounters: 000000000000000000000000000000000000000000000000
   currentEncounter: -1
   overText: {fileID: 1861587997}
 --- !u!4 &131922247
@@ -12451,7 +12452,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108846448}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -23705,6 +23706,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7043786513063837087, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.22
+      objectReference: {fileID: 0}
     - target: {fileID: 7043786513488450949, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
       propertyPath: m_Name
       value: Player
@@ -23721,6 +23726,10 @@ PrefabInstance:
       propertyPath: levelArea
       value: 
       objectReference: {fileID: 1108846450}
+    - target: {fileID: 7043786513488450953, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
+      propertyPath: m_Size.x
+      value: 0.51
+      objectReference: {fileID: 0}
     - target: {fileID: 7043786513488450955, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -23769,6 +23778,22 @@ PrefabInstance:
       propertyPath: muzzleFlashVFX
       value: 
       objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
+    - target: {fileID: 7043786514479697485, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043786514479697485, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043786514479697485, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043786514479697485, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7043786514479697486, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
       propertyPath: cooldown
       value: 0.05
