@@ -1320,7 +1320,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131922245}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be5d1812e8df754468774e64b46309fb, type: 3}
   m_Name: 
@@ -1333,7 +1333,8 @@ MonoBehaviour:
   - {fileID: 541818694481583032, guid: f1e46ed403f43b146aae65b83fd65f84, type: 3}
   - {fileID: 2268703400537673931, guid: d60d1e9b95adc4d4e8bbc489cb5714c9, type: 3}
   - {fileID: 7798535794115378370, guid: efd60b9554a5db14d8f63b0aab10113e, type: 3}
-  timeBetweenEncounters: 00000000000000000000000000000000000000000000000000000000
+  - {fileID: 6153073725198137339, guid: e977a719b7f8ae44a851edac3bf66dac, type: 3}
+  timeBetweenEncounters: 0000000000000000000000000000000000000000000000000000000000000000
   currentEncounter: -1
   overText: {fileID: 1861587997}
 --- !u!4 &131922247
