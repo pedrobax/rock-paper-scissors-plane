@@ -10201,7 +10201,7 @@ MonoBehaviour:
   targetTransform: {fileID: 6153073723874575121}
   secondaryTargetTransform: {fileID: 0}
   firePoint: {fileID: 0}
-  bulletAmount: 16
+  bulletAmount: 14
   shootingAngle: 120
 --- !u!114 &6153073725606713731
 MonoBehaviour:
@@ -10222,7 +10222,7 @@ MonoBehaviour:
   targetTransform: {fileID: 6153073723716472363}
   secondaryTargetTransform: {fileID: 0}
   firePoint: {fileID: 0}
-  bulletAmount: 15
+  bulletAmount: 13
   shootingAngle: 90
 --- !u!114 &6153073725606713732
 MonoBehaviour:

@@ -1334,7 +1334,10 @@ MonoBehaviour:
   - {fileID: 2268703400537673931, guid: d60d1e9b95adc4d4e8bbc489cb5714c9, type: 3}
   - {fileID: 7798535794115378370, guid: efd60b9554a5db14d8f63b0aab10113e, type: 3}
   - {fileID: 6153073725198137339, guid: e977a719b7f8ae44a851edac3bf66dac, type: 3}
-  timeBetweenEncounters: 0000000000000000000000000000000000000000000000000000000000000000
+  - {fileID: 2787899528746301139, guid: 53525fb4419beb249b0d134f5fb0b795, type: 3}
+  - {fileID: 4775085462971564101, guid: c35a130c17ac7394699ca4ffadbee3a0, type: 3}
+  - {fileID: 3140722200189008293, guid: edb3fa141beb387468eed334216e75f4, type: 3}
+  timeBetweenEncounters: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   currentEncounter: -1
   overText: {fileID: 1861587997}
 --- !u!4 &131922247
@@ -12454,7 +12457,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108846448}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
