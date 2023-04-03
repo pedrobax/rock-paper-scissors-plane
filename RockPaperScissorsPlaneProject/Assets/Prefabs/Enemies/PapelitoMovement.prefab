@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 4847338812953453996}
   - component: {fileID: 2133813445424906313}
   m_Layer: 0
-  m_Name: Papelito
+  m_Name: PapelitoMovement
   m_TagString: EnemyPaper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
