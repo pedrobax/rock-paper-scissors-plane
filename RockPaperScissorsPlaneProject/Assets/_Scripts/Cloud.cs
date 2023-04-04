@@ -21,11 +21,11 @@ public class Cloud : Movement
         MoveDown(speed);
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Cloud TP Zone")
         {
             rb.position = rb.GetComponent<Rigidbody>().position + teleportDistanceVector; 
         }
-    }
+    }*/
 }

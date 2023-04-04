@@ -227,6 +227,14 @@ PrefabInstance:
       propertyPath: targetList.Array.data[2]
       value: 
       objectReference: {fileID: 3666981407252622438}
+    - target: {fileID: 3450973784264905494, guid: 59cdb08c17a5c514a85d013acd231bdc, type: 3}
+      propertyPath: health
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3450973784264905494, guid: 59cdb08c17a5c514a85d013acd231bdc, type: 3}
+      propertyPath: maxHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8958665384240154021, guid: 59cdb08c17a5c514a85d013acd231bdc, type: 3}
       propertyPath: m_RootOrder
       value: 0
