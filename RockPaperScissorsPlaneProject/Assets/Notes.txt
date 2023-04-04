@@ -1,11 +1,5 @@
-Vai ter um gameObject com o encounter dentro dele. Ele vai ser o prefab daquele encounter específico.
-Dentro dele vão ficar os inimigos que vão ser gerados junto com ele.
-Vai ter um outro gameObject externo com um script para listar todos os encounters que vão ser gerados no jogo.
-Quando um acabar, o próximo começa.
-
-O EncounterManager move de um encounter para o outro quando todos os inimigos de um encounter forem derrotados/sumirem.
-
-A classe Encounter vai ficar dentro de cada um dos prefabs de encounter.
-
-Criar uma SpawnAction na ActionList para teleportar os inimigos para um local aleatório out of sight,
-e depois criar uma ação para mover eles para o local de spawn.
+Encounter order:
+Papelito 01-08
+Tesourito 01-03
+Pedrito 01-04
+Aberration

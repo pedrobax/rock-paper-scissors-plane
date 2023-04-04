@@ -12,6 +12,6 @@ public class PickupMovement : Movement
 
     void Update()
     {
-        MoveDown(speed);
+        if(transform.position.z > 5) MoveDown(speed);
     }
 }

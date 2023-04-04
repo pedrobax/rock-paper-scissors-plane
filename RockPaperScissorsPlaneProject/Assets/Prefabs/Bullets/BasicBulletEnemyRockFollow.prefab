@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -439559027228974764}
   - component: {fileID: 338821613674295522}
   m_Layer: 0
-  m_Name: BasicBulletEnemyRock
+  m_Name: BasicBulletEnemyRockFollow
   m_TagString: BulletEnemyRock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,9 +208,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitVFX: {fileID: 5912171667578520412, guid: 89d76a3e3c0190e45a49a79afb825829, type: 3}
-  speed: 5
+  speed: 3
   maxRange: 200
   damage: 1
   startingBulletPosition: {x: 0, y: 0, z: 0}
-  aimType: 0
-  turnSpeed: 1
+  aimType: 1
+  turnSpeed: 5

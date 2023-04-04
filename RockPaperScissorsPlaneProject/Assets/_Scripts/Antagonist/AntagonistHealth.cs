@@ -20,6 +20,8 @@ public class AntagonistHealth : MonoBehaviour
     [SerializeField] public GameObject deathVFX;
     [SerializeField] public float deathShakeTime = 0.2f;
     [SerializeField] public float deathShakeIntensity = 0.5f;
+    [SerializeField] public GameObject loot;
+    public bool hasLoot = false;
     Bullet _bullet;
     public bool isColliding;
     Color originalColor;
@@ -29,6 +31,10 @@ public class AntagonistHealth : MonoBehaviour
     private void Start()
     {
         originalColor = meshRenderer.material.color;
+        if (loot != null)
+        {
+            hasLoot = true;
+        }
     }
 
     private void Update()
@@ -170,7 +176,7 @@ public class AntagonistHealth : MonoBehaviour
         soundSource.Play();
         CinemachineShake.Instance.ShakeCamera(deathShakeIntensity, deathShakeTime);
         
-     
+        if (hasLoot) Instantiate(loot, transform.position, transform.rotation);
         Instantiate(deathVFX, transform.position, transform.rotation);
         Destroy(gameObject, 1);
         Debug.Log(unitName + " has been destroyed!");
