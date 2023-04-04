@@ -23732,6 +23732,14 @@ PrefabInstance:
       propertyPath: deathMenu
       value: 
       objectReference: {fileID: 973577147}
+    - target: {fileID: 7043786513488450950, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
+      propertyPath: canBecomeRock
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043786513488450950, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
+      propertyPath: canBecomeScissors
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7043786513488450952, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
       propertyPath: levelArea
       value: 
