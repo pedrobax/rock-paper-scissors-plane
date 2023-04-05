@@ -2,4 +2,4 @@ Encounter order:
 Papelito 01-08
 Tesourito 01-03
 Pedrito 01-04
-Aberration
+Miniboss 01
