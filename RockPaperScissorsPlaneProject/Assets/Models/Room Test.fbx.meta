@@ -3,7 +3,12 @@ guid: 1574214c58eba1548bc91731789e3f7b
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LilacBase.006
+    second: {fileID: 2100000, guid: 698983c2cacfbe64ca83761c557e27c6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
