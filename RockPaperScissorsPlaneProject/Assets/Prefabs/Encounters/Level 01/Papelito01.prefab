@@ -7768,6 +7768,7 @@ MonoBehaviour:
   currentEnemyNumber: 0
   maxDuration: 30
   currentDuration: 0
+  clearAtEnd: 0
 --- !u!1 &7524682220787046081
 GameObject:
   m_ObjectHideFlags: 0
@@ -8469,6 +8470,7 @@ MonoBehaviour:
   currentEnemyNumber: 0
   maxDuration: 18
   currentDuration: 0
+  clearAtEnd: 0
 --- !u!1 &8718022523831155784
 GameObject:
   m_ObjectHideFlags: 0
@@ -19145,6 +19147,10 @@ PrefabInstance:
       objectReference: {fileID: 8718022523839545530}
     - target: {fileID: 2133813445424906313, guid: 0fbaeb3ee17ce4a43a46031f362c8ad8, type: 3}
       propertyPath: secondaryTargetList.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3450973784264905494, guid: 0fbaeb3ee17ce4a43a46031f362c8ad8, type: 3}
+      propertyPath: loot
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8958665384240154021, guid: 0fbaeb3ee17ce4a43a46031f362c8ad8, type: 3}

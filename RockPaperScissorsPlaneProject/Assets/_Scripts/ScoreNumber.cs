@@ -28,9 +28,9 @@ public class ScoreNumber : MonoBehaviour
 
     void ChangeToPaperColor()
     {
-        Color32 faceColor = new Color32(0, 169, 255, 255);
-        Color32 outlineColor = new Color32(0, 14, 72, 255);
-        Color32 gradientColor = new Color32(0, 95, 212, 255);
+        Color32 faceColor = new Color32(0, 255, 255, 255);
+        Color32 outlineColor = new Color32(0, 12, 26, 255);
+        Color32 gradientColor = new Color32(0, 62, 180, 255);
 
         text.colorGradient = new VertexGradient(Color.white, Color.white, gradientColor, gradientColor);
         text.faceColor = faceColor;

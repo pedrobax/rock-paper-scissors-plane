@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 7557660851249456753}
   - component: {fileID: 7557660851249456752}
   m_Layer: 0
-  m_Name: Papelito03
+  m_Name: Papelito03REMOVED
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
