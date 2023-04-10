@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 2b4f807dacd91cf449cecca1fe8491a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: LilacBase.006
     second: {fileID: 2100000, guid: 698983c2cacfbe64ca83761c557e27c6, type: 2}
   materials:
