@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject deathMenu;
     public static PlayerType currentPlayerType;
+    public static float currentPlayerHealth;
 
     private void Awake()
     {
@@ -54,6 +55,8 @@ public class GameManager : MonoBehaviour
         if (playerHealth.currentType == PlayerHealth.PlayerType.Rock) SetCurrentPlayerType(PlayerType.Rock);
         if (playerHealth.currentType == PlayerHealth.PlayerType.Paper) SetCurrentPlayerType(PlayerType.Paper);
         if (playerHealth.currentType == PlayerHealth.PlayerType.Scissors) SetCurrentPlayerType(PlayerType.Scissors);
+
+        currentPlayerHealth = playerHealth.lives;
     }
 
     public static void UpdateScore(float score)
@@ -84,6 +87,11 @@ public class GameManager : MonoBehaviour
     public static Vector3 GetPlayerPosition()
     {
         return playerPosition;
+    }
+
+    public static float GetPlayerHealth()
+    {
+        return currentPlayerHealth;
     }
 
     public enum PlayerType { Rock, Paper, Scissors}
