@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   speed: 0.2
+  maxPosition: -30
 --- !u!65 &6818842338784967644
 BoxCollider:
   m_ObjectHideFlags: 0

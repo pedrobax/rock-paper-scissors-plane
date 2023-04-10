@@ -5,6 +5,7 @@ using UnityEngine;
 public class PickupMovement : Movement
 {
     [SerializeField] float speed;
+    [SerializeField] float maxPosition;
     void Start()
     {
         GetRigidBody();
@@ -12,6 +13,6 @@ public class PickupMovement : Movement
 
     void Update()
     {
-        if(transform.position.z > 5) MoveDown(speed);
+        if(transform.position.z > maxPosition) MoveDown(speed);
     }
 }
