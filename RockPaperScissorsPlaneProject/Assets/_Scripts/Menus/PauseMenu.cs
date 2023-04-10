@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    public GameObject HUD;
+    public GameObject PauseMenuObject;
+    public GameObject OptionsMenuObject;
+
     public void ResumeGame()
     {
         Time.timeScale = 1f;
@@ -21,5 +25,23 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    public void GoToOptionsMenu()
+    {
+        OptionsMenuObject.SetActive(true);
+        PauseMenuObject.SetActive(false);     
+    }
+
+    public void GoToPauseMenu()
+    {
+        PauseMenuObject.SetActive(true);
+        OptionsMenuObject.SetActive(false);
+    }
+
+    public void ToggleHUD()
+    {
+        if (HUD.activeSelf) HUD.SetActive(false);
+        else HUD.SetActive(true);
     }
 }
