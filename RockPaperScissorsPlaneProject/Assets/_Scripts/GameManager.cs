@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     static Vector3 playerPosition;
     public GameObject pauseMenu;
     public GameObject deathMenu;
+    public static PlayerType currentPlayerType;
 
     private void Awake()
     {
@@ -50,6 +51,9 @@ public class GameManager : MonoBehaviour
             pauseMenu.SetActive(true);
             Time.timeScale = 0f;
         }
+        if (playerHealth.currentType == PlayerHealth.PlayerType.Rock) SetCurrentPlayerType(PlayerType.Rock);
+        if (playerHealth.currentType == PlayerHealth.PlayerType.Paper) SetCurrentPlayerType(PlayerType.Paper);
+        if (playerHealth.currentType == PlayerHealth.PlayerType.Scissors) SetCurrentPlayerType(PlayerType.Scissors);
     }
 
     public static void UpdateScore(float score)
@@ -62,6 +66,16 @@ public class GameManager : MonoBehaviour
         CinemachineShake.Instance.ShakeCamera(intensity, duration);
     }
 
+    private static void SetCurrentPlayerType(PlayerType playerType)
+    {
+        currentPlayerType = playerType;
+    }
+
+    public static PlayerType GetCurrentPlayerType()
+    {
+        return currentPlayerType;
+    }
+
     public static float GetActivationArea()
     {
         return activationArea;
@@ -71,4 +85,6 @@ public class GameManager : MonoBehaviour
     {
         return playerPosition;
     }
+
+    public enum PlayerType { Rock, Paper, Scissors}
 } 
