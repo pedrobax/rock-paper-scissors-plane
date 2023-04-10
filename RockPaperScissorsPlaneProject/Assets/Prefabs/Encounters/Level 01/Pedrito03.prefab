@@ -2094,6 +2094,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8151768667553795586}
     - target: {fileID: 3450973784264905494, guid: 59cdb08c17a5c514a85d013acd231bdc, type: 3}
+      propertyPath: loot
+      value: 
+      objectReference: {fileID: 8647987648394905962, guid: d0839e1f5a484ca4eab2de667e1254cf, type: 3}
+    - target: {fileID: 3450973784264905494, guid: 59cdb08c17a5c514a85d013acd231bdc, type: 3}
       propertyPath: health
       value: 20
       objectReference: {fileID: 0}

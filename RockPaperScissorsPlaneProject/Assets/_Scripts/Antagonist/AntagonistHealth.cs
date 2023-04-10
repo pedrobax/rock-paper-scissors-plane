@@ -16,7 +16,6 @@ public class AntagonistHealth : MonoBehaviour
     [SerializeField] public AudioSource soundSource;
     [SerializeField] public AudioClip hitClip;
     [SerializeField] public GameObject shieldVFX;
-    [SerializeField] AudioClip deathClip;
     [SerializeField] public GameObject deathVFX;
     [SerializeField] public float deathShakeTime = 0.2f;
     [SerializeField] public float deathShakeIntensity = 0.5f;
@@ -111,7 +110,11 @@ public class AntagonistHealth : MonoBehaviour
 
     void OnDestroy()
     {
-        if (destroyedByPlayer) GameManager.UpdateScore(scoreValue);
+        if (destroyedByPlayer)
+        {
+            GameManager.UpdateScore(scoreValue);
+            GameManager.ShakeScreen(deathShakeIntensity, deathShakeTime);
+        }
         Destroy(gameObject.transform.parent.gameObject);
     }
 
@@ -162,30 +165,11 @@ public class AntagonistHealth : MonoBehaviour
 
     public void Die()
     {
-        destroyedByPlayer = true;
-        this.GetComponent<Collider>().enabled = false;
-        this.GetComponent<ActionList>().enabled = false;
-        rb.useGravity = true;
-
-        rb.constraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationX
-            | RigidbodyConstraints.FreezePositionY;
-
-        DisableVisuals();
-
-        ChangeSound(deathClip);
-        soundSource.Play();
-        CinemachineShake.Instance.ShakeCamera(deathShakeIntensity, deathShakeTime);
-        
+        destroyedByPlayer = true;  
         if (hasLoot) Instantiate(loot, transform.position, transform.rotation);
         Instantiate(deathVFX, transform.position, transform.rotation);
-        Destroy(gameObject, 1);
+        Destroy(gameObject);
         Debug.Log(unitName + " has been destroyed!");
-    }
-
-    void DisableVisuals()
-    {
-        foreach (Transform child in transform)
-            child.gameObject.SetActive(false);
     }
 
     enum EnemyType

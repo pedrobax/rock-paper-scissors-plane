@@ -62,7 +62,10 @@ public class EnemyHealth : MonoBehaviour
 
     void OnDestroy()
     {
-        if (destroyedByPlayer) GameManager.UpdateScore(scoreValue);
+        if (destroyedByPlayer)
+        {
+            GameManager.UpdateScore(scoreValue);
+        }      
     }
 
     void TakeDamage(float damage)

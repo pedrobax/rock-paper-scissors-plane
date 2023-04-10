@@ -53,8 +53,13 @@ public class GameManager : MonoBehaviour
     }
 
     public static void UpdateScore(float score)
-    {
+    {   
         ScoreUpdated?.Invoke(score);
+    }
+
+    public static void ShakeScreen(float intensity, float duration)
+    {
+        CinemachineShake.Instance.ShakeCamera(intensity, duration);
     }
 
     public static float GetActivationArea()
