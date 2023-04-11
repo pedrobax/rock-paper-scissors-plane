@@ -9,6 +9,12 @@ public class PauseMenu : MonoBehaviour
     public GameObject PauseMenuObject;
     public GameObject OptionsMenuObject;
 
+    private void Update()
+    {    
+        if (OptionsMenuObject.activeSelf == true && Input.GetKeyDown(KeyCode.Escape)) GoToPauseMenu();
+        else if (PauseMenuObject.activeSelf == true && Input.GetKeyDown(KeyCode.Escape)) ResumeGame();
+    }
+
     public void ResumeGame()
     {
         Time.timeScale = 1f;
