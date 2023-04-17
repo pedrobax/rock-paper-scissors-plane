@@ -108,8 +108,8 @@ public class PlayerHealth : MonoBehaviour
     }
     IEnumerator SwitchTypeToRock()
     {
-        GameObject changeVfx = Instantiate(typeChangeVFX, transform.position, transform.rotation);
-        changeVfx.transform.parent = this.transform;
+        //GameObject changeVfx = Instantiate(typeChangeVFX, transform.position, transform.rotation);
+        //changeVfx.transform.parent = this.transform;
         currentMeshRenderer.enabled = false;
         yield return new WaitForSeconds(0.15f);
         currentMeshRenderer.enabled = true;
@@ -128,8 +128,8 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator SwitchTypeToPaper()
     {
-        GameObject changeVfx = Instantiate(typeChangeVFX, transform.position, transform.rotation);
-        changeVfx.transform.parent = this.transform;
+        //GameObject changeVfx = Instantiate(typeChangeVFX, transform.position, transform.rotation);
+        //changeVfx.transform.parent = this.transform;
         currentMeshRenderer.enabled = false;
         yield return new WaitForSeconds(0.15f);
         currentMeshRenderer.enabled = true;
@@ -149,8 +149,8 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator SwitchTypeToScissors()
     {
-        GameObject changeVfx = Instantiate(typeChangeVFX, transform.position, transform.rotation);
-        changeVfx.transform.parent = this.transform;
+        //GameObject changeVfx = Instantiate(typeChangeVFX, transform.position, transform.rotation);
+        //changeVfx.transform.parent = this.transform;
         currentMeshRenderer.enabled = false;
         yield return new WaitForSeconds(0.15f);
         currentMeshRenderer.enabled = true;
