@@ -12,7 +12,7 @@ public class SpawnEaseAction : Action
     float startTime;
     public bool randomSpawnPosition;
     public Vector3 spawnPosition;
-    public SpawnType spawnType = SpawnType.vertical;
+    public SpawnType spawnType = SpawnType.Vertical;
 
     private void Start()
     {
@@ -62,14 +62,14 @@ public class SpawnEaseAction : Action
 
     void MoveToRandonSpawnPlaceLocation()
     {
-        if (spawnType == SpawnType.vertical)
+        if (spawnType == SpawnType.Vertical)
         {
             Vector3 minPosition = new Vector3(-50, 40, 0);
             Vector3 maxPosition = new Vector3(50, 40, 100);
             transform.position = new Vector3(Random.Range(minPosition.x, maxPosition.x),
                 Random.Range(minPosition.y, maxPosition.y), Random.Range(minPosition.z, maxPosition.z));
         }
-        else if (spawnType == SpawnType.horizontal)
+        else if (spawnType == SpawnType.Horizontal)
         {
             int random = Random.Range(0, 2);
             if (random == 0)
@@ -87,6 +87,20 @@ public class SpawnEaseAction : Action
                 Random.Range(minPosition.y, maxPosition.y), Random.Range(minPosition.z, maxPosition.z));
             }
         }
+        else if (spawnType == SpawnType.Left)
+        {
+            Vector3 minPosition = new Vector3(-100, 0, 0);
+            Vector3 maxPosition = new Vector3(-50, 0, 0);
+            transform.position = new Vector3(Random.Range(minPosition.x, maxPosition.x),
+            Random.Range(minPosition.y, maxPosition.y), Random.Range(minPosition.z, maxPosition.z));
+        }
+        else if (spawnType == SpawnType.Right)
+        {
+            Vector3 minPosition = new Vector3(100, 0, 0);
+            Vector3 maxPosition = new Vector3(50, 0, 0);
+            transform.position = new Vector3(Random.Range(minPosition.x, maxPosition.x),
+            Random.Range(minPosition.y, maxPosition.y), Random.Range(minPosition.z, maxPosition.z));
+        }
     }
 
     private float EaseInOutQuad(float t)
@@ -102,5 +116,5 @@ public class SpawnEaseAction : Action
         }
     }
 
-    public enum SpawnType { vertical, horizontal };
+    public enum SpawnType { Vertical, Horizontal, Left, Right };
 }

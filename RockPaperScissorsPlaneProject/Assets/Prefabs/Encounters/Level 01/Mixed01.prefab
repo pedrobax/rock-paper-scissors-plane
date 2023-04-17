@@ -3310,7 +3310,7 @@ MonoBehaviour:
   - 25.9
   - 26.2
   - 26.5
-  setWaitTime: 3
+  setWaitTime: 5
 --- !u!1 &8073343247937331586
 GameObject:
   m_ObjectHideFlags: 0
@@ -5079,7 +5079,7 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 4608600198768340954}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 5
+  waitTime: 3
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnType: 0
@@ -5294,7 +5294,7 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343246726623943}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 14
+  waitTime: 12
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnType: 0
@@ -5539,7 +5539,7 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343246663205884}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 22.3
+  waitTime: 20.3
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnType: 0
@@ -5736,7 +5736,7 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343247823602556}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 16
+  waitTime: 14
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnType: 0
@@ -5957,7 +5957,7 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343248484353647}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 6
+  waitTime: 4
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnType: 0
@@ -6105,10 +6105,10 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343248489307075}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 10
+  waitTime: 8
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
-  spawnType: 1
+  spawnType: 3
 --- !u!114 &8073343246590315123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6406,7 +6406,7 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343247376217291}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 7
+  waitTime: 5
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnType: 0
@@ -6575,10 +6575,10 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343246607398016}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 11
+  waitTime: 9
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
-  spawnType: 1
+  spawnType: 2
 --- !u!114 &8073343246799764628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6784,10 +6784,10 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343246899296501}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 19
+  waitTime: 17
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
-  spawnType: 1
+  spawnType: 2
 --- !u!114 &8073343246945279532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7045,7 +7045,7 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343247033922271}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 22.9
+  waitTime: 20.9
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnType: 0
@@ -7219,10 +7219,10 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343247290880939}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 10
+  waitTime: 8
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
-  spawnType: 1
+  spawnType: 2
 --- !u!114 &8073343247080622126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7456,7 +7456,7 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343247004466426}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 22
+  waitTime: 20
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnType: 0
@@ -7649,10 +7649,10 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343247974341741}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 3
+  waitTime: 1
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
-  spawnType: 1
+  spawnType: 3
 --- !u!114 &8073343247180396698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7905,7 +7905,7 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343246913751409}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 23.5
+  waitTime: 21.5
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnType: 0
@@ -8107,7 +8107,7 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343247256462961}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 15
+  waitTime: 13
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnType: 0
@@ -8300,10 +8300,10 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343247678323161}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 19
+  waitTime: 17
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
-  spawnType: 1
+  spawnType: 3
 --- !u!114 &8073343247476013710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8537,7 +8537,7 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343248008918341}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 22.6
+  waitTime: 20.6
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnType: 0
@@ -8738,7 +8738,7 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343247740708205}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 16.5
+  waitTime: 14.5
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnType: 0
@@ -8946,10 +8946,10 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343246613497397}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 3
+  waitTime: 1
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
-  spawnType: 1
+  spawnType: 2
 --- !u!114 &8073343247820629228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9175,7 +9175,7 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343247407719141}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 6
+  waitTime: 4
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnType: 0
@@ -9433,7 +9433,7 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343246692503036}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 14.5
+  waitTime: 12.5
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnType: 0
@@ -9654,7 +9654,7 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343247888361337}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 7
+  waitTime: 5
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnType: 0
@@ -9856,7 +9856,7 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343247686202911}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 15.5
+  waitTime: 13.5
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnType: 0
@@ -10096,7 +10096,7 @@ MonoBehaviour:
   hasActed: 0
   targetTransform: {fileID: 8073343247178664735}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 23.2
+  waitTime: 21.2
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnType: 0
