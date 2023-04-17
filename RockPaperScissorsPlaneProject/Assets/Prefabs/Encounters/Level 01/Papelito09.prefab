@@ -314,6 +314,8 @@ MonoBehaviour:
   maxDuration: 60
   currentDuration: 0
   clearAtEnd: 0
+  spawnTimes: []
+  setWaitTime: 3
 --- !u!1 &8878866544505464377
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +385,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8878866544441678999}
     m_Modifications:
+    - target: {fileID: 8674409523454824554, guid: d46e6693148d4154085ee7f2bd0e16e2, type: 3}
+      propertyPath: spawnType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8674409524143112932, guid: d46e6693148d4154085ee7f2bd0e16e2, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -611,6 +617,7 @@ MonoBehaviour:
   waitTime: 2
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 1
 --- !u!114 &8878866543739727836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -814,6 +821,7 @@ MonoBehaviour:
   waitTime: 2
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 1
 --- !u!114 &8878866542966116008
 MonoBehaviour:
   m_ObjectHideFlags: 0
