@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 4847338812953453996}
   - component: {fileID: 2133813445424906313}
   m_Layer: 0
-  m_Name: Tesourito
+  m_Name: TesouritoBase
   m_TagString: EnemyScissors
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
