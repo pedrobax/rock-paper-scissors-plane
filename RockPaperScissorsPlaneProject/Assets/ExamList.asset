@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f04993ba0c000147bae49ad1e055f1e, type: 3}
+  m_Name: ExamList
+  m_EditorClassIdentifier: 
+  exams:
+  - {fileID: 7493047293994368880, guid: e53e9124295358942813f0019dc09142, type: 3}
+  - {fileID: 7493047293994368880, guid: 096396c79bd7915438b773dd79038f66, type: 3}
+  - {fileID: 7854737963669860264, guid: eb61964487df80d4fbae19f99b33c23e, type: 3}
+  maxScore: 90010000b80b000088130000

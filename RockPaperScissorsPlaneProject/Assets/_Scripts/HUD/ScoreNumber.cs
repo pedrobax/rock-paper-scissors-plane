@@ -12,7 +12,7 @@ public class ScoreNumber : MonoBehaviour
 
     private void Start()
     {
-        text.text = score.score.ToString();
+        text.text = GameManager.overallScore.ToString();
         if (GameManager.currentPlayerType == GameManager.PlayerType.Rock) ChangeToRockColor();
         if (GameManager.currentPlayerType == GameManager.PlayerType.Paper) ChangeToPaperColor();
         if (GameManager.currentPlayerType == GameManager.PlayerType.Scissors) ChangeToScissorsColor();
@@ -20,7 +20,7 @@ public class ScoreNumber : MonoBehaviour
 
     void Update()
     {
-        text.text = score.score.ToString();
+        text.text = GameManager.overallScore.ToString();
         if (GameManager.currentPlayerType == GameManager.PlayerType.Rock) ChangeToRockColor();
         if (GameManager.currentPlayerType == GameManager.PlayerType.Paper) ChangeToPaperColor();
         if (GameManager.currentPlayerType == GameManager.PlayerType.Scissors) ChangeToScissorsColor();

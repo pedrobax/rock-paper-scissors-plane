@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UIElements;
@@ -9,7 +10,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public static event Action<float> ScoreUpdated;
     public GameObject player;
     private PlayerHealth playerHealth;
     public LevelArea _levelArea;
@@ -21,18 +21,41 @@ public class GameManager : MonoBehaviour
     public static PlayerType currentPlayerType;
     public static float currentPlayerHealth;
 
+    public GameObject examCompletedScreenObject;
+    public static GameObject examCompletedScreen;
+
+    public static float examScore;
+    public static float overallScore;
+    public static float highscore;
+    public static float enemiesDefeated;
+
+    public static int currentExam = 0;
+
+    public static ExamListReader examList;
+    public ExamList examListScriptableObject;
+
     private void Awake()
     {
         Instance = this;
+        DontDestroyOnLoad(gameObject);
+        examList = GetComponent<ExamListReader>();
     }
 
     private void Start()
     {
+        examList.exams = examListScriptableObject.exams;
+        examList.maxScore = examListScriptableObject.maxScore;
+        examCompletedScreen = examCompletedScreenObject;
         activationArea = _levelArea.verticalAreaLimit * 2;
         Debug.Log("Activation Area: " + activationArea);
         playerHealth = player.GetComponent<PlayerHealth>();
         Time.timeScale = 1f;
-        PlayerPrefs.SetInt("score", 0);
+        examScore = 0;
+        overallScore = 0;
+        highscore = PlayerPrefs.GetInt("highscore", 0);
+        PlayerPrefs.SetInt("examScore", 0);
+        PlayerPrefs.SetInt("enemiesDefeated", 0);
+        Instantiate(examList.exams[0], transform.position, transform.rotation); 
     }
 
     private void OnDrawGizmos()
@@ -59,9 +82,38 @@ public class GameManager : MonoBehaviour
         currentPlayerHealth = playerHealth.lives;
     }
 
-    public static void UpdateScore(float score)
-    {   
-        ScoreUpdated?.Invoke(score);
+    public static void StartLevel()
+    {
+        examScore = 0;
+        PlayerPrefs.SetInt("examScore", (int)examScore);
+    }
+
+    public static void StartExam()
+    {
+        examScore = 0;
+        PlayerPrefs.SetInt("examScore", (int)examScore);
+        enemiesDefeated = 0;
+        PlayerPrefs.SetInt("enemiesDefeated", (int)enemiesDefeated);
+        Instantiate(examList.exams[currentExam]);
+    }
+
+    public static void FinishExam()
+    {
+        examCompletedScreen.SetActive(true);
+    }
+
+    public static void UpdateScore(float scoreToAdd)
+    {
+        examScore += scoreToAdd;
+        overallScore += scoreToAdd;
+        enemiesDefeated++;
+        PlayerPrefs.SetInt("examScore", (int)examScore);
+        PlayerPrefs.SetInt("overallScore", (int)overallScore);
+        PlayerPrefs.SetInt("enemiesDefeated", (int)enemiesDefeated);
+        if (highscore < overallScore)
+        {
+            PlayerPrefs.SetInt("highscore", (int)overallScore);
+        }
     }
 
     public static void ShakeScreen(float intensity, float duration)

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    public float score;
+   /* public float score;
     public float highscore;
 
     private void Awake()
@@ -31,5 +31,5 @@ public class Score : MonoBehaviour
     private void OnDestroy()
     {
         GameManager.ScoreUpdated -= AddToScore;
-    }
+    }*/
 }
