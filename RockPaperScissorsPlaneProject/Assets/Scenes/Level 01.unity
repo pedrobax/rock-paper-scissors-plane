@@ -1850,22 +1850,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   teleportDistance: 0
   speed: 6
---- !u!54 &509972037
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509972034}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 116
-  m_CollisionDetection: 0
 --- !u!1 &534528740
 GameObject:
   m_ObjectHideFlags: 0
@@ -8885,6 +8869,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.02
       objectReference: {fileID: 0}
+    - target: {fileID: 7043786513488450954, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7043786513488450955, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -8977,7 +8965,8 @@ PrefabInstance:
       propertyPath: muzzleFlashVFX
       value: 
       objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7043786513488450954, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
 --- !u!1 &7043786513003983393 stripped
 GameObject:

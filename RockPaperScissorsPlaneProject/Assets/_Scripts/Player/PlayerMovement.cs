@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public LevelArea levelArea;
-    [SerializeField] Rigidbody rb;
     public PlayerHealth playerHealth;
 
     [SerializeField] float rockMaxSpeed;
@@ -28,13 +27,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        ResetVelocity();
         SetSpeedBasedOnCurrentType();
         SetMoveVelocity();
-    }
-
-    private void FixedUpdate()
-    {
         MovePlayer();
         MovePlayerBackToArea();
     }
@@ -53,17 +47,10 @@ public class PlayerMovement : MonoBehaviour
         moveVelocity = moveInput * currentMaxSpeed;
     }
 
-    void ResetVelocity()
-    {
-        if (rb.velocity.magnitude > 0)
-        {
-            rb.velocity = new Vector3(0, 0, 0);
-        }
-    }
-
     void MovePlayer()
     {
-        rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+        //rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+        transform.Translate(moveVelocity * Time.deltaTime);
     }
 
     void SetSpeedBasedOnCurrentType()
@@ -75,15 +62,15 @@ public class PlayerMovement : MonoBehaviour
 
     void MovePlayerBackToArea()
     {
-        Vector3 maxHorizontalLimit = new(maxHorizontalPosition, rb.position.y, rb.position.z);
-        Vector3 minHorizontalLimit = new(minHorizontalPosition, rb.position.y, rb.position.z);
-        if (rb.position.x > maxHorizontalPosition) rb.MovePosition(maxHorizontalLimit);
-        if (rb.position.x < minHorizontalPosition) rb.MovePosition(minHorizontalLimit);
+        Vector3 maxHorizontalLimit = new(maxHorizontalPosition, transform.position.y, transform.position.z);
+        Vector3 minHorizontalLimit = new(minHorizontalPosition, transform.position.y, transform.position.z);
+        if (transform.position.x > maxHorizontalPosition) transform.position = maxHorizontalLimit;
+        if (transform.position.x < minHorizontalPosition) transform.position = minHorizontalLimit;
 
 
-        Vector3 maxVerticalLimit = new(rb.position.x, rb.position.y, maxVerticalPosition);
-        Vector3 minVerticalLimit = new(rb.position.x, rb.position.y, minVerticalPosition);
-        if (rb.position.z > maxVerticalPosition) rb.MovePosition(maxVerticalLimit);
-        if (rb.position.z < minVerticalPosition) rb.MovePosition(minVerticalLimit);
+        Vector3 maxVerticalLimit = new(transform.position.x, transform.position.y, maxVerticalPosition);
+        Vector3 minVerticalLimit = new(transform.position.x, transform.position.y, minVerticalPosition);
+        if (transform.position.z > maxVerticalPosition) transform.position = maxVerticalLimit;
+        if (transform.position.z < minVerticalPosition) transform.position = minVerticalLimit;
     }
 }
