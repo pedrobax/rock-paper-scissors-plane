@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         examScore = 0;
         overallScore = 0;
+        currentExam = 0;
         highscore = PlayerPrefs.GetInt("highscore", 0);
         PlayerPrefs.SetInt("examScore", 0);
         PlayerPrefs.SetInt("enemiesDefeated", 0);
