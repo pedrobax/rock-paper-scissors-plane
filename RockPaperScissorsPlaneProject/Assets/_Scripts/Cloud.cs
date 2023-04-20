@@ -11,21 +11,12 @@ public class Cloud : Movement
 
     void Start()
     {
-        GetRigidBody();
         teleportDistanceVector.z = teleportDistance;
     }
 
     // Update is called once per frame
     void Update()
     {
-        MoveDown(speed);
+        transform.Translate(0, 0, speed * -1 * Time.deltaTime);
     }
-
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Cloud TP Zone")
-        {
-            rb.position = rb.GetComponent<Rigidbody>().position + teleportDistanceVector; 
-        }
-    }*/
 }

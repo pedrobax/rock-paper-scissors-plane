@@ -60,6 +60,7 @@ public class ExamCompleted : MonoBehaviour
         gradeString = CalculateGrade();
         gradeStringText.text = gradeString;
 
+        Time.timeScale = 0.25f;
         examCompletedText.SetActive(false); examScoreText.SetActive(false); examScore.SetActive(false); overallScoreText.SetActive(false); overallScore.SetActive(false);
         enemiesDefeatedText.SetActive(false); enemiesDefeated.SetActive(false); gradeText.SetActive(false); grade.SetActive(false);
         yield return new WaitForSecondsRealtime(0.5f);
@@ -104,6 +105,7 @@ public class ExamCompleted : MonoBehaviour
         enemiesDefeatedText.SetActive(false); enemiesDefeated.SetActive(false); gradeText.SetActive(false); grade.SetActive(false);
         GameManager.currentExam++;
         GameManager.StartExam();
+        Time.timeScale = 1f;
         isCoroutineRunning = false;
         gameObject.SetActive(false);
     }
