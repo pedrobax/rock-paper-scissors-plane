@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7854737963669860310}
   - component: {fileID: 7854737963669860311}
   m_Layer: 0
-  m_Name: EncounterManager01-02
+  m_Name: Exam01-02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
