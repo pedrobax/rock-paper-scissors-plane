@@ -13,6 +13,6 @@ public class TextFinalScore : MonoBehaviour
 
     void Update()
     {
-        finalScore.text = "FINAL SCORE: " + PlayerPrefs.GetInt("score", 0);
+        finalScore.text = "FINAL SCORE: " + PlayerPrefs.GetInt("overallScore", 0);
     }
 }

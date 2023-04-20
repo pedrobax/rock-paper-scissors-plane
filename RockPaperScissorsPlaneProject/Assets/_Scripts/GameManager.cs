@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -90,11 +91,19 @@ public class GameManager : MonoBehaviour
 
     public static void StartExam()
     {
-        examScore = 0;
-        PlayerPrefs.SetInt("examScore", (int)examScore);
-        enemiesDefeated = 0;
-        PlayerPrefs.SetInt("enemiesDefeated", (int)enemiesDefeated);
-        Instantiate(examList.exams[currentExam]);
+        if (currentExam < examList.exams.Count)
+        {
+            examScore = 0;
+            PlayerPrefs.SetInt("examScore", (int)examScore);
+            enemiesDefeated = 0;
+            PlayerPrefs.SetInt("enemiesDefeated", (int)enemiesDefeated);
+            Instantiate(examList.exams[currentExam]);
+        }      
+        else
+        {
+            Debug.Log("Exams over, going to end screen");
+            GoToFinalScreen();
+        }
     }
 
     public static void FinishExam()
@@ -124,6 +133,11 @@ public class GameManager : MonoBehaviour
     private static void SetCurrentPlayerType(PlayerType playerType)
     {
         currentPlayerType = playerType;
+    }
+
+    static void GoToFinalScreen()
+    {
+        SceneManager.LoadScene(2);
     }
 
     public static PlayerType GetCurrentPlayerType()

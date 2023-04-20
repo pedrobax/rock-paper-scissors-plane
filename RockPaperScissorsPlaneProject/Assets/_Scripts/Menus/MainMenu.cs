@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
+        if (FindObjectOfType<GameManager>() != null) Destroy(FindObjectOfType<GameManager>().gameObject);
         StartCoroutine(LoadAsynchronously(1));
     }
 

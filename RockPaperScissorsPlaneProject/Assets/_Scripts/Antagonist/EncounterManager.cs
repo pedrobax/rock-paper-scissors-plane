@@ -27,12 +27,7 @@ public class EncounterManager : MonoBehaviour
         }
     }
 
-    /*IEnumerator GoToFinalScreen()
-    {
-        overText.gameObject.SetActive(true);
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(2);
-    }*/
+    
 
     IEnumerator MoveToNextEncounter()
     {

@@ -13,6 +13,6 @@ public class TextCurrentScore : MonoBehaviour
 
     void Update()
     {
-        text.text = "CURRENT SCORE: " + PlayerPrefs.GetInt("score", 0);
+        text.text = "CURRENT SCORE: " + PlayerPrefs.GetInt("overallScore", 0);
     }
 }

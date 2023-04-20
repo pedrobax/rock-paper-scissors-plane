@@ -24,12 +24,14 @@ public class PauseMenu : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f;
+        Destroy(FindObjectOfType<GameManager>().gameObject);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
+        Destroy(FindObjectOfType<GameManager>().gameObject);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 

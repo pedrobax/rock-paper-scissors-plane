@@ -28,8 +28,21 @@ public class ExamCompleted : MonoBehaviour
     TMP_Text enemiesDefeatedNumberText;
     TMP_Text gradeStringText;
 
-    IEnumerator Start()
+    bool isCoroutineRunning = false;
+
+    private void Start()
     {
+        if (!isCoroutineRunning) StartCoroutine(CompleteExam());
+    }
+
+    private void Update()
+    {
+        if (!isCoroutineRunning) StartCoroutine(CompleteExam());
+    }
+
+    IEnumerator CompleteExam()
+    {
+        isCoroutineRunning = true;
         audioSource = GetComponent<AudioSource>();
         examScoreNumberText = examScore.GetComponent<TMP_Text>();
         overallScoreNumberText = overallScore.GetComponent<TMP_Text>();
@@ -47,7 +60,7 @@ public class ExamCompleted : MonoBehaviour
         gradeString = CalculateGrade();
         gradeStringText.text = gradeString;
 
-        examCompletedText.SetActive(false); examScoreText.SetActive(false); examScore.SetActive(false); overallScoreText.SetActive(false); overallScore.SetActive(false); 
+        examCompletedText.SetActive(false); examScoreText.SetActive(false); examScore.SetActive(false); overallScoreText.SetActive(false); overallScore.SetActive(false);
         enemiesDefeatedText.SetActive(false); enemiesDefeated.SetActive(false); gradeText.SetActive(false); grade.SetActive(false);
         yield return new WaitForSeconds(0.5f);
         examCompletedText.SetActive(true);
@@ -86,11 +99,12 @@ public class ExamCompleted : MonoBehaviour
         grade.SetActive(true);
         audioSource.Play();
         audioSource.pitch += .1f;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         examCompletedText.SetActive(false); examScoreText.SetActive(false); examScore.SetActive(false); overallScoreText.SetActive(false); overallScore.SetActive(false);
         enemiesDefeatedText.SetActive(false); enemiesDefeated.SetActive(false); gradeText.SetActive(false); grade.SetActive(false);
         GameManager.currentExam++;
         GameManager.StartExam();
+        isCoroutineRunning = false;
         gameObject.SetActive(false);
     }
 
