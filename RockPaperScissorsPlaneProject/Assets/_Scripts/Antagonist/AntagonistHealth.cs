@@ -9,10 +9,11 @@ public class AntagonistHealth : MonoBehaviour
     [SerializeField] float maxHealth;
     [SerializeField] float health;
     [SerializeField] float scoreValue;
-    [SerializeField] float damageFlashDuration;
+    [SerializeField] float damageFlashDuration = 0.025f;
     [SerializeField] EnemyType enemyType;
     [SerializeField] Rigidbody rb;
     [SerializeField] MeshRenderer meshRenderer;
+    [SerializeField] SkinnedMeshRenderer skinnedMeshRenderer;
     [SerializeField] public AudioSource soundSource;
     [SerializeField] public AudioClip hitClip;
     [SerializeField] public GameObject shieldVFX;
@@ -29,7 +30,8 @@ public class AntagonistHealth : MonoBehaviour
 
     private void Start()
     {
-        originalColor = meshRenderer.material.color;
+        if (meshRenderer != null) originalColor = meshRenderer.material.color;
+        if (skinnedMeshRenderer != null) originalColor = skinnedMeshRenderer.material.color;
         if (loot != null)
         {
             hasLoot = true;
@@ -151,9 +153,18 @@ public class AntagonistHealth : MonoBehaviour
 
     IEnumerator DamageFlash()
     {
-        meshRenderer.material.color = Color.white;
-        yield return new WaitForSeconds(damageFlashDuration);
-        meshRenderer.material.color = originalColor;
+        if (meshRenderer != null)
+        {
+            meshRenderer.material.color = Color.white;
+            yield return new WaitForSeconds(damageFlashDuration);
+            meshRenderer.material.color = originalColor;
+        }
+        if (skinnedMeshRenderer != null)
+        {
+            skinnedMeshRenderer.material.color = Color.white;
+            yield return new WaitForSeconds(damageFlashDuration);
+            skinnedMeshRenderer.material.color = originalColor;
+        }
     }
 
     IEnumerator GetDamagedByScissorsCooldown()
