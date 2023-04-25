@@ -25,6 +25,10 @@ public class EncounterManager : MonoBehaviour
         {
             StartCoroutine(MoveToNextEncounter());
         }
+        if (encounterList[currentEncounter] == null && currentEncounter >= encounterList.Count)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     
