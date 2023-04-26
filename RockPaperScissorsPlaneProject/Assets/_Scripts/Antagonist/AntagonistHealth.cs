@@ -177,7 +177,16 @@ public class AntagonistHealth : MonoBehaviour
         }
         if (skinnedMeshRenderer != null)
         {
-
+            foreach (var mat in skinnedMeshRenderer.materials)
+            {
+                mat.SetFloat("_isDamageFlashing", 1);
+                Debug.Log("Material flashing");
+            }
+            yield return new WaitForSeconds(damageFlashDuration);
+            foreach (var mat in skinnedMeshRenderer.materials)
+            {
+                mat.SetFloat("_isDamageFlashing", 0);
+            }
         }
     }
 
