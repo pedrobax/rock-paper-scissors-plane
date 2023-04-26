@@ -31,11 +31,14 @@ public class AntagonistHealth : MonoBehaviour
 
     private void Start()
     {
-        originalColors = new Color[meshRenderer.materials.Length];
-        for (int i = 0; i < meshRenderer.materials.Length; i++)
+        if ( meshRenderer != null)
         {
-            originalColors[i] = meshRenderer.materials[i].color;
-        }
+            originalColors = new Color[meshRenderer.materials.Length];
+            for (int i = 0; i < meshRenderer.materials.Length; i++)
+            {
+                originalColors[i] = meshRenderer.materials[i].color;
+            }
+        }       
 
         if (loot != null)
         {
@@ -172,12 +175,10 @@ public class AntagonistHealth : MonoBehaviour
                 meshRenderer.materials[i].color = originalColors[i];
             }
         }
-        /*if (skinnedMeshRenderer != null)
+        if (skinnedMeshRenderer != null)
         {
-            skinnedMeshRenderer.material.color = Color.white;
-            yield return new WaitForSeconds(damageFlashDuration);
-            skinnedMeshRenderer.material.color = originalColor;
-        }*/
+
+        }
     }
 
     IEnumerator GetDamagedByScissorsCooldown()

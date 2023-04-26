@@ -11964,6 +11964,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LawnmowerRegular
       objectReference: {fileID: 0}
+    - target: {fileID: 201169165806791925, guid: d6d7591e4c925de4a931927cd26ad623, type: 3}
+      propertyPath: m_TagString
+      value: EnemyScissors
+      objectReference: {fileID: 0}
     - target: {fileID: 2338468491948220974, guid: d6d7591e4c925de4a931927cd26ad623, type: 3}
       propertyPath: m_LocalPosition.z
       value: 34.47
@@ -12012,6 +12016,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4049092265878835792, guid: d6d7591e4c925de4a931927cd26ad623, type: 3}
+      propertyPath: whiteTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: da0f2823ebaa3a246a9a5ac90b0b8b09, type: 3}
     - target: {fileID: 4928669874469154245, guid: d6d7591e4c925de4a931927cd26ad623, type: 3}
       propertyPath: listsSize
       value: 6
@@ -12100,5 +12108,9 @@ PrefabInstance:
       propertyPath: secondaryTargetList.Array.data[2]
       value: 
       objectReference: {fileID: 817868591}
+    - target: {fileID: 6853941875291296640, guid: d6d7591e4c925de4a931927cd26ad623, type: 3}
+      propertyPath: m_TagString
+      value: EnemyScissors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6d7591e4c925de4a931927cd26ad623, type: 3}
