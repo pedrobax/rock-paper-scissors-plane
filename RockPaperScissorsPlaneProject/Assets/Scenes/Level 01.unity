@@ -2797,7 +2797,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeGroup: 0
   mixer: {fileID: 24100000, guid: 6a95e35e2c0c4684a95b76755113e3de, type: 2}
-  volumeSlider: {fileID: 0}
+  volumeSlider: {fileID: 473171371}
 --- !u!114 &473171371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6238,9 +6238,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 130e0e54d6ed94d48a23131f620f268a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeGroup: 0
+  volumeGroup: 2
   mixer: {fileID: 24100000, guid: 6a95e35e2c0c4684a95b76755113e3de, type: 2}
-  volumeSlider: {fileID: 0}
+  volumeSlider: {fileID: 1183874288}
 --- !u!114 &1183874288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8714,9 +8714,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 130e0e54d6ed94d48a23131f620f268a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeGroup: 0
+  volumeGroup: 1
   mixer: {fileID: 24100000, guid: 6a95e35e2c0c4684a95b76755113e3de, type: 2}
-  volumeSlider: {fileID: 0}
+  volumeSlider: {fileID: 1711196096}
 --- !u!1 &1712715107
 GameObject:
   m_ObjectHideFlags: 0
