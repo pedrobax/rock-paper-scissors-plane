@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class AntagonistAnimation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    Animator animator;
+    public Vector3 currentVelocity;
+    private void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+        StartCoroutine(GetTransformVelocity());
+        Debug.Log(currentVelocity);
+        SetAnimatorSpeeds();
+    }
+
+    void SetAnimatorSpeeds()
+    {
+        animator.SetFloat("ForwardVelocity", currentVelocity.z * 10);
+        animator.SetFloat("SidewaysVelocity", currentVelocity.x * 10);
+    }
+
+    IEnumerator GetTransformVelocity()
+    {
+        Vector3 startingPosition = transform.parent.position;
+        yield return new WaitForFixedUpdate();
+        Vector3 endingPosition = transform.parent.position;
+        Vector3 delta = endingPosition - startingPosition;
+        currentVelocity = delta;
     }
 }
