@@ -174,10 +174,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d136be0a4ba2ab44dbbb797dc7467c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitVFX: {fileID: 0}
   speed: 200
   maxRange: 1000
   damage: 1
-  rb: {fileID: 7022964594734992512}
   startingBulletPosition: {x: 0, y: 0, z: 0}
 --- !u!82 &-3778830577256219442
 AudioSource:
@@ -188,7 +188,7 @@ AudioSource:
   m_GameObject: {fileID: 5402232347600444085}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3311544943875607383, guid: 6a95e35e2c0c4684a95b76755113e3de, type: 2}
   m_audioClip: {fileID: 8300000, guid: fca0aef654da62a478e5264e5be96f90, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.075

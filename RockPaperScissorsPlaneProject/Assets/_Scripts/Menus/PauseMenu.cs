@@ -6,19 +6,23 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject HUD;
-    public GameObject PauseMenuObject;
-    public GameObject OptionsMenuObject;
+    public GameObject pauseMenuObject;
+    public GameObject optionsMenuObject;
+    public GameObject soundMenuObject;
 
     private void Update()
     {    
-        if (OptionsMenuObject.activeSelf == true && Input.GetKeyDown(KeyCode.Escape)) GoToPauseMenu();
-        else if (PauseMenuObject.activeSelf == true && Input.GetKeyDown(KeyCode.Escape)) ResumeGame();
+        if (optionsMenuObject.activeSelf == true && Input.GetKeyDown(KeyCode.Escape)) GoToPauseMenu();
+        else if (pauseMenuObject.activeSelf == true && Input.GetKeyDown(KeyCode.Escape)) ResumeGame();
     }
 
     public void ResumeGame()
     {
         Time.timeScale = 1f;
         transform.gameObject.SetActive(false);
+        pauseMenuObject.SetActive(false);
+        optionsMenuObject.SetActive(false);
+        soundMenuObject.SetActive(false);
     }
 
     public void RestartGame()
@@ -36,15 +40,24 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void GoToOptionsMenu()
+    {      
+        soundMenuObject.SetActive(false);
+        pauseMenuObject.SetActive(false);
+        optionsMenuObject.SetActive(true);
+    }
+
+    public void GoToSoundMenu()
     {
-        OptionsMenuObject.SetActive(true);
-        PauseMenuObject.SetActive(false);     
+        pauseMenuObject.SetActive(false);
+        optionsMenuObject.SetActive(false);
+        soundMenuObject.SetActive(true);
     }
 
     public void GoToPauseMenu()
     {
-        PauseMenuObject.SetActive(true);
-        OptionsMenuObject.SetActive(false);
+        soundMenuObject.SetActive(false);
+        optionsMenuObject.SetActive(false);
+        pauseMenuObject.SetActive(true);
     }
 
     public void ToggleHUD()
