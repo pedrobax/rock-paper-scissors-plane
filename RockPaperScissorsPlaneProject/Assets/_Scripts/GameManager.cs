@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class GameManager : MonoBehaviour
     public GameObject deathMenu;
     public static PlayerType currentPlayerType;
     public static float currentPlayerHealth;
+
+    public AudioMixer audioMixer;
 
     public GameObject examCompletedScreenObject;
     public static GameObject examCompletedScreen;
@@ -144,6 +147,13 @@ public class GameManager : MonoBehaviour
     public static PlayerType GetCurrentPlayerType()
     {
         return currentPlayerType;
+    }
+
+    public void SetSavedVolume()
+    {
+        audioMixer.SetFloat("MasterVol", Mathf.Log10(PlayerPrefs.GetFloat("MasterVol", 1f)) * 20);
+        audioMixer.SetFloat("MusicVol", Mathf.Log10(PlayerPrefs.GetFloat("MusicVol", 1f)) * 20);
+        audioMixer.SetFloat("SFXVol", Mathf.Log10(PlayerPrefs.GetFloat("SFXVol", 1f)) * 20);
     }
 
     public static float GetActivationArea()

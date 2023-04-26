@@ -1319,6 +1319,7 @@ MonoBehaviour:
   _playerTransform: {fileID: 660645803}
   pauseMenu: {fileID: 1256076881}
   deathMenu: {fileID: 973577147}
+  audioMixer: {fileID: 24100000, guid: 6a95e35e2c0c4684a95b76755113e3de, type: 2}
   examCompletedScreenObject: {fileID: 1363907566}
   examListScriptableObject: {fileID: 11400000, guid: 29ed9bae134f2bc4ebc251d1cb1c2076, type: 2}
 --- !u!4 &218097353
@@ -2794,7 +2795,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 130e0e54d6ed94d48a23131f620f268a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  volumeGroup: 0
   mixer: {fileID: 24100000, guid: 6a95e35e2c0c4684a95b76755113e3de, type: 2}
+  volumeSlider: {fileID: 0}
 --- !u!114 &473171371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6235,7 +6238,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 130e0e54d6ed94d48a23131f620f268a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  volumeGroup: 0
   mixer: {fileID: 24100000, guid: 6a95e35e2c0c4684a95b76755113e3de, type: 2}
+  volumeSlider: {fileID: 0}
 --- !u!114 &1183874288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8709,7 +8714,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 130e0e54d6ed94d48a23131f620f268a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  volumeGroup: 0
   mixer: {fileID: 24100000, guid: 6a95e35e2c0c4684a95b76755113e3de, type: 2}
+  volumeSlider: {fileID: 0}
 --- !u!1 &1712715107
 GameObject:
   m_ObjectHideFlags: 0
