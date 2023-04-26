@@ -24,14 +24,19 @@ public class AntagonistHealth : MonoBehaviour
     public bool hasLoot = false;
     Bullet _bullet;
     public bool isColliding;
-    Color originalColor;
     bool destroyedByPlayer;
     bool canTakeScissorsDamage = true;
 
+    Color[] originalColors;
+
     private void Start()
     {
-        if (meshRenderer != null) originalColor = meshRenderer.material.color;
-        if (skinnedMeshRenderer != null) originalColor = skinnedMeshRenderer.material.color;
+        originalColors = new Color[meshRenderer.materials.Length];
+        for (int i = 0; i < meshRenderer.materials.Length; i++)
+        {
+            originalColors[i] = meshRenderer.materials[i].color;
+        }
+
         if (loot != null)
         {
             hasLoot = true;
@@ -155,16 +160,24 @@ public class AntagonistHealth : MonoBehaviour
     {
         if (meshRenderer != null)
         {
-            meshRenderer.material.color = Color.white;
+            for (int i = 0; i < meshRenderer.materials.Length; i++)
+            {
+                meshRenderer.materials[i].color = Color.white;
+            }
+
             yield return new WaitForSeconds(damageFlashDuration);
-            meshRenderer.material.color = originalColor;
+
+            for (int i = 0; i < meshRenderer.materials.Length; i++)
+            {
+                meshRenderer.materials[i].color = originalColors[i];
+            }
         }
-        if (skinnedMeshRenderer != null)
+        /*if (skinnedMeshRenderer != null)
         {
             skinnedMeshRenderer.material.color = Color.white;
             yield return new WaitForSeconds(damageFlashDuration);
             skinnedMeshRenderer.material.color = originalColor;
-        }
+        }*/
     }
 
     IEnumerator GetDamagedByScissorsCooldown()
