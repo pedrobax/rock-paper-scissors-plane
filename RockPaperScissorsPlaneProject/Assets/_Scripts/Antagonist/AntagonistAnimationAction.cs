@@ -32,7 +32,7 @@ public class AntagonistAnimationAction : MonoBehaviour
 
         if (startAnimationDuration + middleAnimationDuration + endAnimationDuration > animationSystem.actionList[actionIndex].duration)
         {
-            Debug.Log("ANIMATION DURATION IS LONGER THAN ACTION DURATION");
+            Debug.Log("ANIMATION" + actionIndex +"'s DURATION IS LONGER THAN ACTION DURATION");
         }
     }
 
