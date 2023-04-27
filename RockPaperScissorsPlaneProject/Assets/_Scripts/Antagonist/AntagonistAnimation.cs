@@ -1,35 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class AntagonistAnimation : MonoBehaviour
 {
-    Animator animator;
-    public Vector3 currentVelocity;
-    private void Start()
+    public ActionList actionListScript;
+    public List<Action> actionList;
+    public List<AntagonistAnimationAction> animationActions;
+    public Animator animator;
+    public int currentAction;
+
+    private void Update()
     {
-        animator = GetComponent<Animator>();
+        currentAction = actionListScript.currentAction;
     }
 
-    private void FixedUpdate()
+    public void GetActionList()
     {
-        StartCoroutine(GetTransformVelocity());
-        Debug.Log(currentVelocity);
-        SetAnimatorSpeeds();
+        actionList = actionListScript.actionList;
     }
 
-    void SetAnimatorSpeeds()
+    public void AddAnimation()
     {
-        animator.SetFloat("ForwardVelocity", currentVelocity.z * 10);
-        animator.SetFloat("SidewaysVelocity", currentVelocity.x * 10);
-    }
-
-    IEnumerator GetTransformVelocity()
-    {
-        Vector3 startingPosition = transform.parent.position;
-        yield return new WaitForFixedUpdate();
-        Vector3 endingPosition = transform.parent.position;
-        Vector3 delta = endingPosition - startingPosition;
-        currentVelocity = delta;
+        animationActions.Add(this.gameObject.AddComponent<AntagonistAnimationAction>());
+        animationActions[animationActions.Count - 1].actionIndex = animationActions.Count - 1;
+        animationActions[animationActions.Count - 1].animationSystem = GetComponent<AntagonistAnimation>();
+        animationActions[animationActions.Count - 1].animator = animator;
+        animationActions[animationActions.Count - 1].startAnimationDuration = actionList[animationActions.Count - 1].duration;
     }
 }

@@ -10394,7 +10394,180 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ae569ffce3e13240ad6e361628a3d07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentVelocity: {x: 0, y: 0, z: 0}
+  actionListScript: {fileID: 173077574}
+  actionList:
+  - {fileID: 173077581}
+  - {fileID: 173077580}
+  - {fileID: 173077579}
+  - {fileID: 173077583}
+  - {fileID: 173077582}
+  - {fileID: 173077585}
+  - {fileID: 173077584}
+  animationActions:
+  - {fileID: 1924078563}
+  - {fileID: 1924078564}
+  - {fileID: 1924078565}
+  - {fileID: 1924078566}
+  - {fileID: 1924078567}
+  - {fileID: 1924078568}
+  animator: {fileID: 1924078560}
+  currentAction: 0
+--- !u!114 &1924078563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924078558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780514b151126304fbf4883e62497a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionIndex: 0
+  animationSystem: {fileID: 1924078562}
+  animator: {fileID: 1924078560}
+  stage: 0
+  startAnimationName: empty
+  middleAnimationName: empty
+  endAnimationName: empty
+  startAnimationBool: 0
+  middleAnimationBool: 0
+  endAnimationBool: 0
+  startAnimationDuration: 1
+  middleAnimationDuration: 1
+  endAnimationDuration: 1
+  startTime: 0
+--- !u!114 &1924078564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924078558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780514b151126304fbf4883e62497a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionIndex: 1
+  animationSystem: {fileID: 1924078562}
+  animator: {fileID: 1924078560}
+  stage: 0
+  startAnimationName: isAccelerating
+  middleAnimationName: empty
+  endAnimationName: hasStopped
+  startAnimationBool: 0
+  middleAnimationBool: 0
+  endAnimationBool: 0
+  startAnimationDuration: 4
+  middleAnimationDuration: 0.1
+  endAnimationDuration: 0.8
+  startTime: 0
+--- !u!114 &1924078565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924078558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780514b151126304fbf4883e62497a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionIndex: 2
+  animationSystem: {fileID: 1924078562}
+  animator: {fileID: 1924078560}
+  stage: 0
+  startAnimationName: empty
+  middleAnimationName: isAttackPrepping
+  endAnimationName: empty
+  startAnimationBool: 0
+  middleAnimationBool: 0
+  endAnimationBool: 0
+  startAnimationDuration: 0.25
+  middleAnimationDuration: 1.25
+  endAnimationDuration: 0.4
+  startTime: 0
+--- !u!114 &1924078566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924078558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780514b151126304fbf4883e62497a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionIndex: 3
+  animationSystem: {fileID: 1924078562}
+  animator: {fileID: 1924078560}
+  stage: 0
+  startAnimationName: isMovingRight
+  middleAnimationName: empty
+  endAnimationName: isMovingLeft
+  startAnimationBool: 0
+  middleAnimationBool: 0
+  endAnimationBool: 0
+  startAnimationDuration: 2.4
+  middleAnimationDuration: 0.1
+  endAnimationDuration: 1.5
+  startTime: 0
+--- !u!114 &1924078567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924078558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780514b151126304fbf4883e62497a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionIndex: 4
+  animationSystem: {fileID: 1924078562}
+  animator: {fileID: 1924078560}
+  stage: 0
+  startAnimationName: isMovingLeft
+  middleAnimationName: empty
+  endAnimationName: isMovingRight
+  startAnimationBool: 0
+  middleAnimationBool: 0
+  endAnimationBool: 0
+  startAnimationDuration: 3
+  middleAnimationDuration: 0.25
+  endAnimationDuration: 4.75
+  startTime: 0
+--- !u!114 &1924078568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924078558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780514b151126304fbf4883e62497a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionIndex: 5
+  animationSystem: {fileID: 1924078562}
+  animator: {fileID: 1924078560}
+  stage: 0
+  startAnimationName: isMovingRight
+  middleAnimationName: empty
+  endAnimationName: isMovingLeft
+  startAnimationBool: 0
+  middleAnimationBool: 0
+  endAnimationBool: 0
+  startAnimationDuration: 3
+  middleAnimationDuration: 0.25
+  endAnimationDuration: 4.75
+  startTime: 0
 --- !u!1 &1945311352
 GameObject:
   m_ObjectHideFlags: 0
