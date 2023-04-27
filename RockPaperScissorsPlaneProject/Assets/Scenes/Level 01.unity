@@ -5782,7 +5782,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108846448}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -10430,12 +10430,12 @@ MonoBehaviour:
   stage: 0
   startAnimationName: empty
   middleAnimationName: empty
-  endAnimationName: empty
+  endAnimationName: isAccelerating
   startAnimationBool: 0
   middleAnimationBool: 0
   endAnimationBool: 0
-  startAnimationDuration: 1
-  middleAnimationDuration: 1
+  startAnimationDuration: 0.1
+  middleAnimationDuration: 1.9
   endAnimationDuration: 1
   startTime: 0
 --- !u!114 &1924078564
@@ -10460,9 +10460,9 @@ MonoBehaviour:
   startAnimationBool: 0
   middleAnimationBool: 0
   endAnimationBool: 0
-  startAnimationDuration: 4
-  middleAnimationDuration: 0.1
-  endAnimationDuration: 0.8
+  startAnimationDuration: 0.5
+  middleAnimationDuration: 0.5
+  endAnimationDuration: 4
   startTime: 0
 --- !u!114 &1924078565
 MonoBehaviour:
@@ -12201,6 +12201,14 @@ PrefabInstance:
     - target: {fileID: 3994295840697072744, guid: d6d7591e4c925de4a931927cd26ad623, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049092265878835792, guid: d6d7591e4c925de4a931927cd26ad623, type: 3}
+      propertyPath: health
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049092265878835792, guid: d6d7591e4c925de4a931927cd26ad623, type: 3}
+      propertyPath: maxHealth
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4049092265878835792, guid: d6d7591e4c925de4a931927cd26ad623, type: 3}
       propertyPath: whiteTexture
