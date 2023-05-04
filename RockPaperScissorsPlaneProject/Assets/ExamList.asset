@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f04993ba0c000147bae49ad1e055f1e, type: 3}
   m_Name: ExamList
   m_EditorClassIdentifier: 
-  exams: []
-  maxScore: 
+  exams:
+  - {fileID: 7493047293994368880, guid: 096396c79bd7915438b773dd79038f66, type: 3}
+  maxScore: 58020000
