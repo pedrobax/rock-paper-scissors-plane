@@ -73,6 +73,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log("current exam: " + currentExam);
+
         playerPosition = _playerTransform.position;
         if (playerHealth.isAlive == false)
         {
@@ -98,7 +100,12 @@ public class GameManager : MonoBehaviour
 
     public static void StartExam()
     {
-        if (currentExam < examList.exams.Count)
+        if(currentExam == 2 && currentLevel == 1)
+        {
+            Debug.Log("Level over, going to next level");
+            GoToNextLevel();
+        }
+        else if (currentExam < examList.exams.Count)
         {
             examScore = 0;
             PlayerPrefs.SetInt("examScore", (int)examScore);
@@ -106,11 +113,6 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("enemiesDefeated", (int)enemiesDefeated);
             Instantiate(examList.exams[currentExam]);
         }      
-        else if (currentLevel == 1)
-        {
-            Debug.Log("Level over, going to next level");
-            GoToNextLevel();
-        }
         else
         {
             Debug.Log("Exams over, going to end screen");
@@ -151,7 +153,6 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(2);
         currentLevel++;
-        currentExam++;
         StartExam();
     }
 
