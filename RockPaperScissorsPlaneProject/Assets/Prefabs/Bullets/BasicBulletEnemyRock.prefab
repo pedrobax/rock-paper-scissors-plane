@@ -209,7 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitVFX: {fileID: 5912171667578520412, guid: 89d76a3e3c0190e45a49a79afb825829, type: 3}
   speed: 5
-  maxRange: 200
+  maxRange: 150
   damage: 1
   startingBulletPosition: {x: 0, y: 0, z: 0}
   aimType: 0

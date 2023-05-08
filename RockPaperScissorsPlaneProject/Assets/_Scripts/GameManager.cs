@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     public static float enemiesDefeated;
 
     public static int currentExam = 0;
+    public static int currentLevel = 0;
 
     public static ExamListReader examList;
     public ExamList examListScriptableObject;
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
         examScore = 0;
         overallScore = 0;
         currentExam = 0;
+        currentLevel = 1;
         highscore = PlayerPrefs.GetInt("highscore", 0);
         PlayerPrefs.SetInt("examScore", 0);
         PlayerPrefs.SetInt("enemiesDefeated", 0);
@@ -104,6 +106,11 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("enemiesDefeated", (int)enemiesDefeated);
             Instantiate(examList.exams[currentExam]);
         }      
+        else if (currentLevel == 1)
+        {
+            Debug.Log("Level over, going to next level");
+            GoToNextLevel();
+        }
         else
         {
             Debug.Log("Exams over, going to end screen");
@@ -140,9 +147,17 @@ public class GameManager : MonoBehaviour
         currentPlayerType = playerType;
     }
 
-    static void GoToFinalScreen()
+    static void GoToNextLevel()
     {
         SceneManager.LoadScene(2);
+        currentLevel++;
+        currentExam++;
+        StartExam();
+    }
+
+    static void GoToFinalScreen()
+    {
+        SceneManager.LoadScene(3);
     }
 
     public static PlayerType GetCurrentPlayerType()

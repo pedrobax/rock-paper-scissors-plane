@@ -16,7 +16,7 @@ public class EncounterManager : MonoBehaviour
     private void Update()
     {
         if (currentEncounter == -1) StartCoroutine(MoveToNextEncounter());
-        if (currentEncounter >= encounterList.Count)
+        if (currentEncounter >= encounterList.Count || Input.GetKeyDown(KeyCode.F7))
         {
             GameManager.FinishExam();
             Destroy(gameObject);
