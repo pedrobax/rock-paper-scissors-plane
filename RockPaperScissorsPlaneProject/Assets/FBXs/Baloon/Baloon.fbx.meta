@@ -3,7 +3,22 @@ guid: 0ffa87687ffd84e45925069a51ba5384
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_RockFabric
+    second: {fileID: 2100000, guid: 717e3f8f37583fa429cde294f6d2ebaf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_RockRubber
+    second: {fileID: 2100000, guid: dc81353e4418aa24c87d4cbe0298de63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_RockStone
+    second: {fileID: 2100000, guid: 6377a56f5d33de241a76868931ba969d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

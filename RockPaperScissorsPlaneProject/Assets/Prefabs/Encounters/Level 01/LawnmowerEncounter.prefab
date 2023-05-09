@@ -2386,13 +2386,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyList:
   - {fileID: 503847722456796200}
-  - {fileID: 7076695581567194424}
-  - {fileID: 7076695582386906089}
   isEncounterDone: 0
   currentEnemyNumber: 0
-  maxDuration: 300
+  maxDuration: 120
   currentDuration: 0
-  clearAtEnd: 0
+  clearAtEnd: 1
   spawnTimes: []
   setWaitTime: 3
 --- !u!1 &7105131355831864094
