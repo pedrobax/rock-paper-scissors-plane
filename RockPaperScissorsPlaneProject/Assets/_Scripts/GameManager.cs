@@ -76,8 +76,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("current exam: " + currentExam);
-
         playerPosition = _playerTransform.position; //saves current player position each frame, TODO check if this is needed
 
         //checks if player is dead and activates death menu
@@ -116,7 +114,6 @@ public class GameManager : MonoBehaviour
         //TODO refactor this hard coded disgrace
         if(currentExam == 2 && currentLevel == 1)
         {
-            Debug.Log("Level over, going to next level");
             GoToNextLevel();
         }
         else if (currentExam < examList.exams.Count) //starts a new exam if there are more exams to be played
@@ -129,7 +126,6 @@ public class GameManager : MonoBehaviour
         }      
         else //if there aren't goes to final screen
         {
-            Debug.Log("Exams over, going to end screen");
             GoToFinalScreen();
         }
     }

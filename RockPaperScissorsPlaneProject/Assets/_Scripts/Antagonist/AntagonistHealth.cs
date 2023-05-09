@@ -64,13 +64,11 @@ public class AntagonistHealth : MonoBehaviour
         if (enemyType == EnemyType.Rock && other.CompareTag("BulletPlayerRock"))
         {
             _bullet = other.GetComponent<Bullet>();
-            Debug.Log(unitName + " has taken " + _bullet.damage + " damage!");
             TakeDamage(_bullet.damage);
         }
         if (enemyType == EnemyType.Rock && other.CompareTag("BulletPlayerPaper"))
         {
             _bullet = other.GetComponent<Bullet>();
-            Debug.Log(unitName + " has taken " + _bullet.damage * 2 + " damage!");
             TakeDamage(_bullet.damage * 2);
         }
 
@@ -82,7 +80,6 @@ public class AntagonistHealth : MonoBehaviour
         if (enemyType == EnemyType.Paper && other.CompareTag("BulletPlayerPaper"))
         {
             _bullet = other.GetComponent<Bullet>();
-            Debug.Log(unitName + " has taken " + _bullet.damage + " damage!");
             TakeDamage(_bullet.damage);
         }
 
@@ -90,7 +87,6 @@ public class AntagonistHealth : MonoBehaviour
         if (enemyType == EnemyType.Scissors && other.CompareTag("BulletPlayerRock"))
         {
             _bullet = other.GetComponent<Bullet>();
-            Debug.Log(unitName + " has taken " + _bullet.damage * 2 + " damage!");
             TakeDamage(_bullet.damage * 2);
         }
         if (enemyType == EnemyType.Scissors && other.CompareTag("BulletPlayerPaper"))
@@ -102,7 +98,6 @@ public class AntagonistHealth : MonoBehaviour
         if (other.CompareTag("Enemy Death Zone"))
         {
             Destroy(gameObject);
-            Debug.Log(unitName + " destroyed by DZ");
         }
 
         //takes damage from the player if the antagonist collides with the player and the player is scissors
@@ -157,7 +152,6 @@ public class AntagonistHealth : MonoBehaviour
     //ignores damage and plays a shield vfx for feedback
     void IgnoreDamage()
     {
-        Debug.Log("Enemy ignored damage by type!");
         GameObject shieldVfx = Instantiate(shieldVFX, transform.position, transform.rotation);
         shieldVfx.transform.parent = this.transform;
     }
@@ -227,7 +221,6 @@ public class AntagonistHealth : MonoBehaviour
         if (hasLoot) Instantiate(loot, transform.position, transform.rotation);
         Instantiate(deathVFX, transform.position, transform.rotation);
         Destroy(gameObject);
-        Debug.Log(unitName + " has been destroyed!");
     }
 
     //used for referencing the antagonist's type for damage calculations

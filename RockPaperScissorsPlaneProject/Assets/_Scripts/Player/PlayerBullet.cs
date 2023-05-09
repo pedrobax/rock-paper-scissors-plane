@@ -9,7 +9,6 @@ public class PlayerBullet : Bullet
         if (other.CompareTag("Enemy") || other.CompareTag("EnemyRock") ||
             other.CompareTag("EnemyPaper") || other.CompareTag("EnemyScissors"))
         {
-            Debug.Log("Player Bullet destroyed by collision!");
             Destroy(gameObject);
             Instantiate(hitVFX, new Vector3(transform.position.x, transform.position.y, transform.position.z+1), transform.rotation);
         }
@@ -23,7 +22,6 @@ public class PlayerBullet : Bullet
             transform.position.z < startingBulletPosition.z - maxRange)
         {
             Destroy(gameObject);
-            Debug.Log("Player Bullet destroyed by distance!");
         }
     }
 }

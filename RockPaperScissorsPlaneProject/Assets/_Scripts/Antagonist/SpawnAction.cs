@@ -32,10 +32,6 @@ public class SpawnAction : Action
         {
             rb.MovePosition(rb.position + movementVelocity / movementTime * Time.deltaTime);
         }
-        else if (isActing && elapsedTime < waitTime)
-        {
-            Debug.Log("Waiting to spawn");
-        }
         if (hasActed == true)
         {
             rb.MovePosition(startingPosition);
