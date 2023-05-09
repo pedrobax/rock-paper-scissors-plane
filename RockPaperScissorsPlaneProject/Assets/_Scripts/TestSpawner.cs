@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TestSpawner : MonoBehaviour
 {
+    //class for testing purposes, has buttons to spawn enemies in inspector
+
     public GameObject pedrito;
     public GameObject papelito;
     public GameObject tesourito;

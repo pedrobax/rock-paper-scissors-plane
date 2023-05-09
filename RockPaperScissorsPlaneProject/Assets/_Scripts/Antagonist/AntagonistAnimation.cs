@@ -5,23 +5,26 @@ using UnityEngine;
 
 public class AntagonistAnimation : MonoBehaviour
 {
-    public ActionList actionListScript;
-    public List<Action> actionList;
-    public List<AntagonistAnimationAction> animationActions;
+    public ActionList actionListScript; //references object's action list
+    public List<Action> actionList; //stores the referenced action list
+    public List<AntagonistAnimationAction> animationActions; //list of animations to be played, each animation
+                                                             //is an instance of the animation action class
     public Animator animator;
-    public int currentAction;
+    public int currentAction; //current animation being played
 
     private void Update()
     {
-        currentAction = actionListScript.currentAction;
+        currentAction = actionListScript.currentAction; //makes the current animation action the same
+                                                        //as the action list's current action
     }
 
     public void GetActionList()
     {
-        actionList = actionListScript.actionList;
+        actionList = actionListScript.actionList; //copies the action list from the action list script
+                                                  //is used as a button on inspector
     }
 
-    public void AddAnimation()
+    public void AddAnimation() //adds an animation action to the list, is a button on inspector
     {
         animationActions.Add(this.gameObject.AddComponent<AntagonistAnimationAction>());
         animationActions[animationActions.Count - 1].actionIndex = animationActions.Count - 1;

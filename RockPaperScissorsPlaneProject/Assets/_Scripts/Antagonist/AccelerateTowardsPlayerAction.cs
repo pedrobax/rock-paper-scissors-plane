@@ -13,18 +13,21 @@ public class AccelerateTowardsPlayerAction : Action
 
     public override void Act()
     {
+        //starts the action and its duration
         if (!isActing && !hasActed)
         {
             StartCoroutine(CountMovementDuration(duration));
             isActing = true;
         }
+        //turns to face the player and accelerates towards them
         if (isActing)
         {
-                    TurnTowardsPlayer();
+        TurnTowardsPlayer();
         AccelerateForward();
         }
     }
 
+    //lerps rotation to face Player
     void TurnTowardsPlayer()
     {
         Vector3 relativePosition = GameManager.GetPlayerPosition() - transform.position;
@@ -32,6 +35,7 @@ public class AccelerateTowardsPlayerAction : Action
         transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, turnSpeed * Time.deltaTime);
     }
 
+    //accelerates forward on local Z axis
     void AccelerateForward()
     {
         transform.Translate(0, 0, acceleration * Time.deltaTime);

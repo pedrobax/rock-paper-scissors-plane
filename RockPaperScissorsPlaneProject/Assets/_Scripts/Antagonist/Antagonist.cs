@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Antagonist : MonoBehaviour
 {
+    //THIS CLASS IS NOT USED ANYMORE
+    //I JUST DIDN'T DELETE IT YET BECAUSE I'M SCARED IT WILL BREAK SOMETHING
+
     Rigidbody rb;
 
     public float currentMovementStep = 0;

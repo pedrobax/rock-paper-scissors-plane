@@ -8,9 +8,9 @@ public class CinemachineShake : MonoBehaviour
     public static CinemachineShake Instance { get; private set; }
 
     private CinemachineVirtualCamera cinemachineVirtualCamera;
-    private float shakeTimer;
-    private float shakeTimerTotal;
-    private float startingIntensity;
+    private float shakeTimer; 
+    private float shakeTimerTotal; //time to spend shaking
+    private float startingIntensity; //intensity of shake
 
     private void Awake()
     {
@@ -24,8 +24,8 @@ public class CinemachineShake : MonoBehaviour
         CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin =
             cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
+        //sets shake intensity and duration when method is called
         cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intensity;
-
         startingIntensity = intensity;
         shakeTimerTotal = time;
         shakeTimer = time;
@@ -33,6 +33,7 @@ public class CinemachineShake : MonoBehaviour
 
     private void Update()
     {
+        //decreases shake intensity over time
         if (shakeTimer > 0)
         {
             shakeTimer -= Time.deltaTime;

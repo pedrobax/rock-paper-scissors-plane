@@ -5,32 +5,37 @@ using UnityEngine;
 
 public class AntagonistHealth : MonoBehaviour
 {
-    [SerializeField] public string unitName;
+    //despite being called AntagonistHealth, this class is used to store all the
+    //antagonist's properties besides actions and bullets
+
+    [SerializeField] public string unitName; //antagonist's name for debugging
     [SerializeField] float maxHealth;
     [SerializeField] float health;
-    [SerializeField] float scoreValue;
-    [SerializeField] float damageFlashDuration = 0.025f;
-    [SerializeField] EnemyType enemyType;
+    [SerializeField] float scoreValue; //how much is added to the score when the antagonist is destroyed BY THE PLAYER
+    [SerializeField] float damageFlashDuration = 0.025f; //how long the antagonist flashes when hit
+    [SerializeField] EnemyType enemyType; //the antagonist's type: rock, paper or scissors
     [SerializeField] Rigidbody rb;
     [SerializeField] MeshRenderer meshRenderer;
     [SerializeField] SkinnedMeshRenderer skinnedMeshRenderer;
     [SerializeField] public AudioSource soundSource;
-    [SerializeField] public AudioClip hitClip;
-    [SerializeField] public GameObject shieldVFX;
-    [SerializeField] public GameObject deathVFX;
-    [SerializeField] public float deathShakeTime = 0.2f;
-    [SerializeField] public float deathShakeIntensity = 0.5f;
-    [SerializeField] public GameObject loot;
-    public bool hasLoot = false;
-    Bullet _bullet;
-    public bool isColliding;
-    bool destroyedByPlayer;
-    bool canTakeScissorsDamage = true;
+    [SerializeField] public AudioClip hitClip; //sound played when the antagonist is hit by a player bullet
+    [SerializeField] public GameObject shieldVFX; //vfx played when the antagonist is hit by an innefective player bullet
+    [SerializeField] public GameObject deathVFX; //vfx played when the antagonist is destroyed
+    [SerializeField] public float deathShakeTime = 0.2f; //duration the screen shakes when the antagonist is destroyed
+    [SerializeField] public float deathShakeIntensity = 0.5f; //intensity of the screen shake when the antagonist is destroyed
+    [SerializeField] public GameObject loot; //what the enemy drops when he dies, if anything
+    public bool hasLoot = false; //is automatically set to true if the enemy has loot (see above)
+    Bullet _bullet; //is used to read bullets that hit the antagonist
+    public bool isColliding; //is the antagonist colliding with something?
+    bool destroyedByPlayer; //was the antagonist destroyed by the player?
+    bool canTakeScissorsDamage = true; //can the antagonist take damage from scissors? TODO rework and remove this
 
-    Color[] originalColors;
+    Color[] originalColors; //stores the antagonist's original colors for the damage flash,
+                            //should be removed and replaced with a shader for non skinned mesh enemies
 
     private void Start()
     {
+        //stores the antagonist's original colors for the damage flash
         if ( meshRenderer != null)
         {
             originalColors = new Color[meshRenderer.materials.Length];
@@ -40,6 +45,7 @@ public class AntagonistHealth : MonoBehaviour
             }
         }       
 
+        //registers if the antagonist has loot
         if (loot != null)
         {
             hasLoot = true;
@@ -48,11 +54,13 @@ public class AntagonistHealth : MonoBehaviour
 
     private void Update()
     {
+        //prevents the antagonist from spiralling out of control because of physics
         ResetVelocity();
     }
 
     void OnTriggerEnter(Collider other)
     {
+        //checks if the antagonist has been hit by a player bullet and applies damage accordingly to the antagonist and bullet type
         if (enemyType == EnemyType.Rock && other.CompareTag("BulletPlayerRock"))
         {
             _bullet = other.GetComponent<Bullet>();
@@ -89,12 +97,15 @@ public class AntagonistHealth : MonoBehaviour
         {
             IgnoreDamage();
         }
+
+        //destroys the antagonist if it collides with the death zone
         if (other.CompareTag("Enemy Death Zone"))
         {
             Destroy(gameObject);
             Debug.Log(unitName + " destroyed by DZ");
         }
 
+        //takes damage from the player if the antagonist collides with the player and the player is scissors
         if (other.CompareTag("Player"))
         {
             PlayerHealth _playerHealth = other.gameObject.GetComponent<PlayerHealth>();
@@ -105,14 +116,13 @@ public class AntagonistHealth : MonoBehaviour
             }
             if (_playerHealth.currentType == PlayerHealth.PlayerType.Scissors && enemyType == EnemyType.Paper && canTakeScissorsDamage)
             {
-                Debug.Log(unitName + " has taken " + 2 + " damage!");
-                TakeDamage(2);
+                Debug.Log(unitName + " has taken " + 50000 + " damage! PAPER HIT BY SCISSORS: INSTANT DEATH");
+                TakeDamage(50000);
                 StartCoroutine(GetDamagedByScissorsCooldown());
             }
             if (_playerHealth.currentType == PlayerHealth.PlayerType.Scissors && enemyType == EnemyType.Scissors && canTakeScissorsDamage)
             {
-                Debug.Log(unitName + " has taken " + 1 + " damage!");
-                TakeDamage(1);
+                IgnoreDamage();
                 StartCoroutine(GetDamagedByScissorsCooldown());
             }
         }   
@@ -120,14 +130,19 @@ public class AntagonistHealth : MonoBehaviour
 
     void OnDestroy()
     {
+        //updates score if the antagonist is destroyed by the player
         if (destroyedByPlayer)
         {
             GameManager.UpdateScore(scoreValue);
             GameManager.ShakeScreen(deathShakeIntensity, deathShakeTime);
         }
+        //destroys the parent along with the antagonist
+        //this is needed because antagonists are always children of a parent object
+        //along with its action's target transforms for organizational purposes
         Destroy(gameObject.transform.parent.gameObject);
     }
 
+    //lowers antagonist health,flashes white for feedback, and destroys it if health reaches 0
     void TakeDamage(float damage)
     {
         health -= damage;
@@ -139,6 +154,7 @@ public class AntagonistHealth : MonoBehaviour
         }
     }
 
+    //ignores damage and plays a shield vfx for feedback
     void IgnoreDamage()
     {
         Debug.Log("Enemy ignored damage by type!");
@@ -146,11 +162,13 @@ public class AntagonistHealth : MonoBehaviour
         shieldVfx.transform.parent = this.transform;
     }
 
+    //changes sound clip to be played on sound source
     public void ChangeSound(AudioClip sound)
     {
         soundSource.clip = sound;
     }
 
+    //resets rigidbody velocity
     void ResetVelocity()
     {
         if (rb.velocity.magnitude > 0)
@@ -159,6 +177,9 @@ public class AntagonistHealth : MonoBehaviour
         }
     }
 
+    //antagonist flashes white for damage feedback
+    //uses material colors for non skinned mesh enemies
+    //uses shader for skinned mesh enemies
     IEnumerator DamageFlash()
     {
         if (meshRenderer != null)
@@ -190,6 +211,7 @@ public class AntagonistHealth : MonoBehaviour
         }
     }
 
+    //counts cooldown for taking damage from scissors player
     IEnumerator GetDamagedByScissorsCooldown()
     {
         canTakeScissorsDamage = false;
@@ -197,6 +219,8 @@ public class AntagonistHealth : MonoBehaviour
         canTakeScissorsDamage = true;
     }
 
+    //is only called when KILLED BY THE PLAYER
+    //drops loot if has any, plays death vfx, and destroys the antagonist
     public void Die()
     {
         destroyedByPlayer = true;  
@@ -206,6 +230,7 @@ public class AntagonistHealth : MonoBehaviour
         Debug.Log(unitName + " has been destroyed!");
     }
 
+    //used for referencing the antagonist's type for damage calculations
     enum EnemyType
     {
         Rock,
