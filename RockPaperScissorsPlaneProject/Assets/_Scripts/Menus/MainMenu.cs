@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    //Functions for the buttons on the Main Menu UI
     public void PlayGame()
     {
         if (FindObjectOfType<GameManager>() != null) Destroy(FindObjectOfType<GameManager>().gameObject);

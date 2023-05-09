@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EndMenu : MonoBehaviour
 {
+    //functions for the buttons on the End Menu UI
     public void RestartGame()
     {
         Time.timeScale = 1f;

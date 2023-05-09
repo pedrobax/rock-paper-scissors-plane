@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         SetMoveVelocity();
         MovePlayer();
         MovePlayerBackToArea();
+        if (playerHealth.currentType == PlayerHealth.PlayerType.Scissors) TurnTowardsMovement();
     }
 
     void SetMaxPositions()
@@ -51,6 +52,21 @@ public class PlayerMovement : MonoBehaviour
     {
         //rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
         transform.Translate(moveVelocity * Time.deltaTime);
+    }
+
+    //rotates the player towards the direction of movement if the player is scissors
+    public GameObject scissorsVisual;
+    public float turnSpeed = 10;
+    void TurnTowardsMovement()
+    {
+        float zAxis = Input.GetAxis("Vertical");
+        float xAxis = Input.GetAxis("Horizontal");
+        Vector3 movementDirection = new Vector3(xAxis, 0.0f, zAxis);
+        if (movementDirection != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(movementDirection);
+            scissorsVisual.transform.rotation = Quaternion.Slerp(scissorsVisual.transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
+        }
     }
 
     void SetSpeedBasedOnCurrentType()

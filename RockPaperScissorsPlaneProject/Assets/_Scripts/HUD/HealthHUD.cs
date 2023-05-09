@@ -5,8 +5,13 @@ using UnityEngine.UI;
 
 public class HealthHUD : MonoBehaviour
 {
-    public Image[] hearts;
+    //This class is used to display the player's health state on the HUD
+    //The max amount of hearts that can be displayed is determined by the array size in the inspector
 
+    public Image[] hearts; //array of "heart" images to display
+
+    //Start, OnEnable and Update are used to update the display of the hearts based on the player's health
+    //these three are needed to prevent visual bugs when starting the level of closing menus
     private void Start()
     {
         for (int i = 0; i < hearts.Length; i++)

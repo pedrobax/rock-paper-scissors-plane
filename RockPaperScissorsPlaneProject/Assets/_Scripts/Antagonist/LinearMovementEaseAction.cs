@@ -5,6 +5,12 @@ using UnityEngine;
 [System.Serializable]
 public class LinearMovementEaseAction : Action
 {
+    /* this action is used to make the antagonist move towards a target transform in a straight line, but with an
+     * ease in and ease out animation speed
+     * the movement speed is based on the duration of the action, so the longer the duration, the slower the movement
+     * the movement will always complete at the end of the duration, and the target should always be reached
+     */
+
     private Vector3 startPosition;
     private Vector3 targetPosition;
     private float startTime;
@@ -21,6 +27,7 @@ public class LinearMovementEaseAction : Action
         MoveTowardsTarget();
     }
 
+    //moves toward the target transform at a speed based on the duration and easing functions
     void MoveTowardsTarget()
     {
         if (!isActing && !hasActed)
@@ -38,6 +45,7 @@ public class LinearMovementEaseAction : Action
         }
     }
 
+    //waits for time to be over and ends in the next fixed update
     IEnumerator CountMovementDuration(float duration)
     {
         while (Time.time - startTime < duration)
@@ -48,6 +56,7 @@ public class LinearMovementEaseAction : Action
         hasActed = true;
     }
 
+    //easing function
     private float EaseInOutQuad(float t)
     {
         t = Mathf.Clamp01(t);

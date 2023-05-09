@@ -88,7 +88,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7043786513063837086}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.14}
+  m_LocalPosition: {x: 0, y: 0, z: 3.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -104,6 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7043786513319837419}
+  - component: {fileID: 7043786513003983396}
   m_Layer: 0
   m_Name: PlayerScissors
   m_TagString: Untagged
@@ -128,6 +129,18 @@ Transform:
   m_Father: {fileID: 7043786513488450955}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7043786513003983396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7043786513319837418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52cb7645bfa9972498290ed4fd8b2d32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7043786513488450949
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +194,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 1
@@ -196,8 +209,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 2.28, y: 0.5, z: 2.8746514}
-  m_Center: {x: 0, y: 0, z: 0.2}
+  m_Size: {x: 1.63, y: 0.5, z: 2.62}
+  m_Center: {x: 0, y: 0, z: -0}
 --- !u!65 &7043786513488450953
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -209,8 +222,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.16, y: 1, z: 1.71}
-  m_Center: {x: 0, y: -0.02, z: 0.65}
+  m_Size: {x: 0.51, y: 1, z: 1.44}
+  m_Center: {x: 0, y: -0.02, z: 0.02}
 --- !u!65 &7043786513488450956
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -237,12 +250,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelArea: {fileID: 0}
-  rb: {fileID: 7043786513488450954}
   playerHealth: {fileID: 0}
   rockMaxSpeed: 10
   paperMaxSpeed: 14
   scissorsMaxSpeed: 20
   currentMaxSpeed: 0
+  scissorsVisual: {fileID: 7043786512808783123}
+  turnSpeed: 10
 --- !u!114 &7043786513488450950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4bcb070f9ef5e2449316c922df2af94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 3
+  lives: 2
   isAlive: 1
   respawnPosition: {x: 0, y: 0, z: -13}
   respawnTime: 2
@@ -267,11 +281,11 @@ MonoBehaviour:
   currentMeshRenderer: {fileID: 0}
   rockMeshRenderer: {fileID: 9107989635406772436}
   paperMeshRenderer: {fileID: 3403696637082602468}
-  scissorsMeshRenderer: {fileID: 0}
+  scissorsMeshRenderer: {fileID: 6157215856613037353}
   currentType: 1
   canSwitchType: 1
-  canBecomeRock: 1
-  canBecomeScissors: 1
+  canBecomeRock: 0
+  canBecomeScissors: 0
   playerRockObject: {fileID: 7043786513897475846}
   playerPaperObject: {fileID: 7043786514479697484}
   playerScissorsObject: {fileID: 7043786513319837418}
@@ -422,6 +436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7043786513897475847}
   - component: {fileID: 7043786513897475848}
+  - component: {fileID: 7043786513003983398}
   m_Layer: 0
   m_Name: PlayerRock
   m_TagString: Untagged
@@ -461,9 +476,21 @@ MonoBehaviour:
   firePoint: {fileID: 7043786513953412569}
   bulletPrefabBasic: {fileID: 5402232347600444085, guid: 8f70f7e7ef01192469a01e7f2d8fc27c, type: 3}
   bulletPrefabSuper: {fileID: 5402232347600444085, guid: 8f70f7e7ef01192469a01e7f2d8fc27c, type: 3}
-  muzzleFlashVFX: {fileID: 0}
+  muzzleFlashVFX: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
   cooldown: 0.1
   playerHealth: {fileID: 7043786513488450950}
+--- !u!114 &7043786513003983398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7043786513897475846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52cb7645bfa9972498290ed4fd8b2d32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7043786513953412568
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7043786514479697485}
   - component: {fileID: 7043786514479697486}
+  - component: {fileID: 7043786513003983397}
   m_Layer: 0
   m_Name: PlayerPaper
   m_TagString: Untagged
@@ -521,8 +549,8 @@ Transform:
   m_GameObject: {fileID: 7043786514479697484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7043786514644508162}
   - {fileID: 7043786513063837087}
@@ -544,9 +572,21 @@ MonoBehaviour:
   firePoint: {fileID: 7043786513063837087}
   bulletPrefabBasic: {fileID: 3318897880865024618, guid: d2d8e94797c2ca442a5e13344708d9b8, type: 3}
   bulletPrefabSuper: {fileID: 3318897880865024618, guid: d2d8e94797c2ca442a5e13344708d9b8, type: 3}
-  muzzleFlashVFX: {fileID: 0}
+  muzzleFlashVFX: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
   cooldown: 0.05
   playerHealth: {fileID: 7043786513488450950}
+--- !u!114 &7043786513003983397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7043786514479697484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52cb7645bfa9972498290ed4fd8b2d32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7043786514644508161
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,6 +711,11 @@ PrefabInstance:
 --- !u!4 &3897740674712432048 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 38434394c8a87e24990b0a34142f1348, type: 3}
+  m_PrefabInstance: {fileID: 3575074166978513499}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6157215856613037353 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7273282819826950002, guid: 38434394c8a87e24990b0a34142f1348, type: 3}
   m_PrefabInstance: {fileID: 3575074166978513499}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4106660188724041568

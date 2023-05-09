@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HealthHUDType : MonoBehaviour
 {
+    //TODO this class is unused, delete it after checking if its ok
+
     public GameObject HPHUDRock;
     public GameObject HPHUDPaper;
     public GameObject HPHUDScissors;

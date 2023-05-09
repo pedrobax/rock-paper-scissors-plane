@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class HPText : MonoBehaviour
 {
+    //TODO this class isn't used anymore, check if its ok and delete it
+
     public Text hpTextNumber;
     public PlayerHealth playerHealth;
 

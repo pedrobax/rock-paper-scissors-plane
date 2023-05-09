@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class SpawnAction : Action
 {
+    //class shouldn't be used anymore, but is kept here because some enemies in the first level still use it
+
     Vector3 movementVelocity;
     public float waitTime = 1;
     private float movementTime;

@@ -112,6 +112,7 @@ public class PlayerHealth : MonoBehaviour
         //changeVfx.transform.parent = this.transform;
         currentMeshRenderer.enabled = false;
         yield return new WaitForSeconds(0.15f);
+        gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         currentMeshRenderer.enabled = true;
         currentType = PlayerType.Rock;
         playerRockObject.SetActive(true);
@@ -132,6 +133,7 @@ public class PlayerHealth : MonoBehaviour
         //changeVfx.transform.parent = this.transform;
         currentMeshRenderer.enabled = false;
         yield return new WaitForSeconds(0.15f);
+        gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         currentMeshRenderer.enabled = true;
         currentType = PlayerType.Paper;
         playerPaperObject.SetActive(true);
@@ -153,6 +155,7 @@ public class PlayerHealth : MonoBehaviour
         //changeVfx.transform.parent = this.transform;
         currentMeshRenderer.enabled = false;
         yield return new WaitForSeconds(0.15f);
+        gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         currentMeshRenderer.enabled = true;
         currentType = PlayerType.Scissors;
         playerScissorsObject.SetActive(true);

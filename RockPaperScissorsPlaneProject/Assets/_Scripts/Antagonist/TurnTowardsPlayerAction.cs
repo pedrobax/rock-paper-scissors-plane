@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class TurnTowardsPlayerAction : Action
 {
+    /* This action makes the antagonist turn towards the player, it turns based on turn speed and moves
+     * to next action when duration is over
+     */
+
     [SerializeField] float turnSpeed = 5f;
     Vector3 targetPosition;
 

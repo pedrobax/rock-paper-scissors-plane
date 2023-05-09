@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletHolder : MonoBehaviour
 {
+    //this class is used to store bullet prefabs to be used by the antagonist's shooting actions
     [SerializeField] public GameObject bullet1Prefab;
     [SerializeField] public GameObject bullet2Prefab;
     [SerializeField] public GameObject bullet3Prefab;

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    //Functions for pause menu UI and pause functioning
+
     public GameObject HUD;
     public GameObject pauseMenuObject;
     public GameObject optionsMenuObject;
@@ -12,6 +14,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {    
+        //pauses game when escape is pressed or unpauses if already paused
         if (optionsMenuObject.activeSelf == true && Input.GetKeyDown(KeyCode.Escape)) GoToPauseMenu();
         else if (pauseMenuObject.activeSelf == true && Input.GetKeyDown(KeyCode.Escape)) ResumeGame();
     }
@@ -29,14 +32,14 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         Destroy(FindObjectOfType<GameManager>().gameObject);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(1);
     }
 
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
         Destroy(FindObjectOfType<GameManager>().gameObject);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene(0);
     }
 
     public void GoToOptionsMenu()

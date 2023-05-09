@@ -7,12 +7,14 @@ using UnityEngine.UI;
 
 public class ScoreNumber : MonoBehaviour
 {
+    // This class updates the score in the HUD and changes the color of the score text depending on the player type
+    // for visual feedback
+
     public TMP_Text text;
-    public Score score;
 
     private void Start()
     {
-        text.text = GameManager.overallScore.ToString();
+        text.text = GameManager.overallScore.ToString(); // Set the score to the current score and write on HUD
         if (GameManager.currentPlayerType == GameManager.PlayerType.Rock) ChangeToRockColor();
         if (GameManager.currentPlayerType == GameManager.PlayerType.Paper) ChangeToPaperColor();
         if (GameManager.currentPlayerType == GameManager.PlayerType.Scissors) ChangeToScissorsColor();
@@ -21,6 +23,7 @@ public class ScoreNumber : MonoBehaviour
     void Update()
     {
         text.text = GameManager.overallScore.ToString();
+        //Change the color of the score depending on the player type
         if (GameManager.currentPlayerType == GameManager.PlayerType.Rock) ChangeToRockColor();
         if (GameManager.currentPlayerType == GameManager.PlayerType.Paper) ChangeToPaperColor();
         if (GameManager.currentPlayerType == GameManager.PlayerType.Scissors) ChangeToScissorsColor();

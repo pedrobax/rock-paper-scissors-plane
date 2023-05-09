@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class OrbitateAroundTargetXClockwiseFixedDistanceAction : Action
 {
+    //this class has fallen in disuse. It will probably get deleted, but for now it's kept for reference and future proofing
+
     [SerializeField] private float rotationSpeed = 20f;
     [SerializeField] private float fixedDistance = 2f;
     private Vector3 desiredPosition;
