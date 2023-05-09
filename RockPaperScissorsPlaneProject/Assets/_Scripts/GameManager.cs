@@ -36,13 +36,14 @@ public class GameManager : MonoBehaviour
     public static int currentExam = 0;
     public static int currentLevel = 0;
 
+    public LevelType levelType = LevelType.First;
+
     public static ExamListReader examList; //will be used to read below
     public ExamList examListScriptableObject;
 
     private void Awake()
     {
         Instance = this;
-        DontDestroyOnLoad(gameObject); //TODO check if this is needed, try to make it work someway else
         examList = GetComponent<ExamListReader>();
         SetSavedVolume(); //sets saved volume from player prefs to the audio mixer
     }
@@ -59,13 +60,13 @@ public class GameManager : MonoBehaviour
         playerHealth = player.GetComponent<PlayerHealth>(); //stores player health
         Time.timeScale = 1f; //sets timescale to prevent slow mo bugs
         examScore = 0; //resets exam score
-        overallScore = 0; //resets overall score TODO this shouldn't be reset if we're destroying the game manager
-        currentExam = 0;  //resets current exam TODO maybe this shouldn't be reset also
+        if (levelType == LevelType.First) overallScore = 0; //resets overall score if starting the first level
+        if (levelType == LevelType.First) currentExam = 0;  //resets current exam if starting the first level
         currentLevel = 1; //TODO rework this
         highscore = PlayerPrefs.GetInt("highscore", 0); //gets highscore from player prefs
         PlayerPrefs.SetInt("examScore", 0); //resets exam score in player prefs
         PlayerPrefs.SetInt("enemiesDefeated", 0); //resets enemies defeated in player prefs
-        Instantiate(examList.exams[0], transform.position, transform.rotation);  //TODO change this to a modifiable number, so we can work with multiple GameManagers in multiple scenes
+        Instantiate(examList.exams[currentExam], transform.position, transform.rotation);  //TODO change this to a modifiable number, so we can work with multiple GameManagers in multiple scenes
     }
 
     private void OnDrawGizmos()
@@ -213,4 +214,6 @@ public class GameManager : MonoBehaviour
     }
 
     public enum PlayerType { Rock, Paper, Scissors}
+
+    public enum LevelType { First, Other }
 } 
