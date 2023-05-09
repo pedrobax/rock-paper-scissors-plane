@@ -50,6 +50,6 @@ MonoBehaviour:
   - {fileID: 8073343247904217099, guid: 4cef30f83df2be84c8f0621873065fe3, type: 3}
   - {fileID: 7231326547292748817, guid: 93c8c58c2e77ca54091347fc962f74fd, type: 3}
   - {fileID: 7076695582799673897, guid: e1758ba43b0903c43b66ff6032e9441b, type: 3}
-  timeBetweenEncounters: 00000000000000000000000000000000
+  timeBetweenEncounters: 0000000000000000000000000000000000000000
   currentEncounter: -1
   overText: {fileID: 0}

@@ -55,7 +55,7 @@ public class AntagonistAnimationAction : MonoBehaviour
         //this is illegal
         if (startAnimationDuration + middleAnimationDuration + endAnimationDuration > animationSystem.actionList[actionIndex].duration)
         {
-            Debug.Log("ANIMATION" + actionIndex +"'s DURATION IS LONGER THAN ACTION DURATION");
+           // Debug.Log("ANIMATION" + actionIndex +"'s DURATION IS LONGER THAN ACTION DURATION");
         }
     }
 
@@ -71,20 +71,20 @@ public class AntagonistAnimationAction : MonoBehaviour
             //starts the start animation timer
             if (animationSystem.currentAction == actionIndex && stage == ActionStage.None)
             {
-                Debug.Log("Animation " + actionIndex + " has set start start time");
+                //Debug.Log("Animation " + actionIndex + " has set start start time");
                 startTime = Time.time;
                 stage = ActionStage.Start;
             }
             //runs the animation if the timer is less than the duration of the animation stage
             if (stage == ActionStage.Start && Time.time - startAnimationDuration < startTime)
             {
-                Debug.Log("Animation " + actionIndex + "'s start animation(" + startAnimationName + ") is running");
+                //Debug.Log("Animation " + actionIndex + "'s start animation(" + startAnimationName + ") is running");
                 startAnimationBool = true;
             }
             //ends start animation and starts middle animation
             else if (stage == ActionStage.Start && Time.time - startAnimationDuration > startTime)
             {
-                Debug.Log("Animation " + actionIndex + " has set middle start time");
+                //Debug.Log("Animation " + actionIndex + " has set middle start time");
                 startAnimationBool = false;
                 startTime = Time.time;
                 stage = ActionStage.Middle;
@@ -92,13 +92,13 @@ public class AntagonistAnimationAction : MonoBehaviour
             //runs the middle animation if the timer is less than the duration of the animation stage
             if (stage == ActionStage.Middle && Time.time - middleAnimationDuration < startTime)
             {
-                Debug.Log("Animation " + actionIndex + "'s middle animation(" + middleAnimationName + ") is running");
+                //Debug.Log("Animation " + actionIndex + "'s middle animation(" + middleAnimationName + ") is running");
                 middleAnimationBool = true;
             }
             //ends middle animation and starts end animation
             else if (stage == ActionStage.Middle && Time.time - middleAnimationDuration > startTime)
             {
-                Debug.Log("Animation " + actionIndex + " has set end start time");
+                //Debug.Log("Animation " + actionIndex + " has set end start time");
                 middleAnimationBool = false;
                 startTime = Time.time;
                 stage = ActionStage.End;
@@ -106,13 +106,13 @@ public class AntagonistAnimationAction : MonoBehaviour
             //runs end animation if the timer is less than the duration of the animation stage
             if (stage == ActionStage.End && Time.time - endAnimationDuration < startTime)
             {
-                Debug.Log("Animation " + actionIndex + "'s end animation(" + endAnimationName + ") is running");
+                //Debug.Log("Animation " + actionIndex + "'s end animation(" + endAnimationName + ") is running");
                 endAnimationBool = true;
             }
             //ends end animation and sets the stage to finished, so the next animation can start
             else if (stage == ActionStage.End && Time.time - endAnimationDuration > startTime)
             {
-                Debug.Log("Animation " + actionIndex + " has finished.");
+                //Debug.Log("Animation " + actionIndex + " has finished.");
                 endAnimationBool = false;
                 stage = ActionStage.Finished;
             }
