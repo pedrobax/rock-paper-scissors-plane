@@ -18,6 +18,23 @@ public class Encounter : MonoBehaviour
     public float setWaitTime = 3;  //this is the time the enemy will spend moving in the spawn action, not the actual waitTime,
                                    //the naming is a bit confusing
 
+    public bool hasTutorial = false;
+    GameObject tutorialPopup; //references the tutorial popup object
+    public string tutorialText; //will be displayed on the tutorial popup
+    public float tutorialTimeToAppear; //how long it takes from the begginning of the encounter to display the tutorial popup
+
+    private void Start()
+    {
+        if (hasTutorial)
+        {
+            //if the encounter has a tutorial he will wait for the set time and display it on the screen,
+            //then the player needs to press OK to continue
+            tutorialPopup = GameManager.GetTutorialPopup();
+            tutorialPopup.GetComponent<TutorialPopup>().popupText.text = tutorialText;
+            StartCoroutine(CountTutorialStartTime());
+        }
+    }
+
     private void Update()
     {
         CountDuration(); //counts the current duration of the encounter
@@ -83,5 +100,16 @@ public class Encounter : MonoBehaviour
             else enemyList[i].GetComponentInChildren<SpawnEaseAction>().waitTime = 0;
 
         }
+    }
+
+    //waits for set time and displays tutorial if the player is still alive
+    IEnumerator CountTutorialStartTime()
+    {
+        yield return new WaitForSeconds(tutorialTimeToAppear);
+        if (GameManager.GetPlayerHealth() > 0)
+        {
+            tutorialPopup.SetActive(true);
+            Time.timeScale = 0;
+        }      
     }
 }

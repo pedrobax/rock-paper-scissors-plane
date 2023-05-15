@@ -41,6 +41,9 @@ public class GameManager : MonoBehaviour
     public static ExamListReader examList; //will be used to read below
     public ExamList examListScriptableObject;
 
+    public GameObject tutorialPopup; //is used for referencing in other scripts
+    public static GameObject _tutorialPopup; //is used for referencing in other scripts
+
     private void Awake()
     {
         Instance = this;
@@ -50,6 +53,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        _tutorialPopup = tutorialPopup;
         //gathers info from exam list scriptable object
         examList.exams = examListScriptableObject.exams;
         examList.maxScore = examListScriptableObject.maxScore;
@@ -207,6 +211,11 @@ public class GameManager : MonoBehaviour
     public static float GetPlayerHealth()
     {
         return currentPlayerHealth;
+    }
+
+    public static GameObject GetTutorialPopup()
+    {
+        return _tutorialPopup;
     }
 
     public enum PlayerType { Rock, Paper, Scissors}

@@ -23,6 +23,7 @@ TagManager:
   - BulletPlayerRock
   - BulletPlayerPaper
   - BulletPlayerScissors
+  - TutorialPopup
   layers:
   - Default
   - TransparentFX
