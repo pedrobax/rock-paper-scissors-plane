@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
+using DG.Tweening;
 
 public class EnemyBullet : Bullet
 {
     public AimType aimType = AimType.Straight;
     public float turnSpeed = 5;
+    bool isTweening = false;
+    public float arcDuration;
+    public float arcSize;
 
     private void Start()
     {
@@ -37,6 +41,12 @@ public class EnemyBullet : Bullet
         {
             FollowPlayer();
         }
+        else if (aimType == AimType.Arc && isTweening == false)
+        {
+            transform.DOScaleX(arcSize, arcDuration);
+            transform.DOScaleZ(arcSize, arcDuration);
+            isTweening = true;
+        }
         
 
         if (transform.position.z > startingBulletPosition.z + maxRange ||
@@ -59,5 +69,6 @@ public class EnemyBullet : Bullet
     {
         Straight,
         Player,
+        Arc,
     }
 }
