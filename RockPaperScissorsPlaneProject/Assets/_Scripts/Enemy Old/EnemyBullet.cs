@@ -12,10 +12,12 @@ public class EnemyBullet : Bullet
     bool isTweening = false;
     public float arcDuration;
     public float arcSize;
+    public float selfDestructTime = 0;
 
     private void Start()
     {
         startingBulletPosition = transform.position;
+        if (selfDestructTime > 0) Destroy(gameObject, selfDestructTime);
     }
 
     private void OnTriggerEnter(Collider other)
