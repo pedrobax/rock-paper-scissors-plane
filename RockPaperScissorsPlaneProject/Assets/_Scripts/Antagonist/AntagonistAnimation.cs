@@ -12,6 +12,14 @@ public class AntagonistAnimation : MonoBehaviour
     public Animator animator;
     public int currentAction; //current animation being played
 
+    private void Start()
+    {
+        if (animator == null)
+        {
+            animator = GetComponent<Animator>();
+        }
+    }
+
     private void Update()
     {
         currentAction = actionListScript.currentAction; //makes the current animation action the same
