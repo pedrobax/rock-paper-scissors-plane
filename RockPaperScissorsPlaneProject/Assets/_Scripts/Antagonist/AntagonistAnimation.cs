@@ -14,9 +14,19 @@ public class AntagonistAnimation : MonoBehaviour
 
     private void Start()
     {
+        //all of these are just backups in case something has not been set correctly in editor
         if (animator == null)
         {
             animator = GetComponent<Animator>();
+        }
+        if (actionListScript == null)
+        {
+            actionListScript = GetComponent<ActionList>();
+            if (actionListScript == null)
+            {
+                GetComponentInParent<ActionList>();
+            }
+                GetActionList();
         }
     }
 
