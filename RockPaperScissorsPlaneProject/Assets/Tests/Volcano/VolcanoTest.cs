@@ -13,6 +13,7 @@ public class VolcanoTest : MonoBehaviour
     public float gravity = 100;
     public GameObject volcanoPrefab;
     public GameObject phase2;
+    public GameObject bullet01Prefab;
 
     void Update()
     {
@@ -25,6 +26,10 @@ public class VolcanoTest : MonoBehaviour
         {
             Instantiate(volcanoPrefab, transform.position, transform.rotation);
         }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Instantiate(bullet01Prefab, transform.position, transform.rotation);
+        }
     }
 
     void FixedUpdate()
@@ -35,6 +40,14 @@ public class VolcanoTest : MonoBehaviour
             {
                 cell.AddForce(Vector3.down * gravity);
                 cell.MovePosition(new Vector3(cell.position.x, cell.position.y, cell.position.z - 6 * Time.fixedDeltaTime));
+            }
+        }
+
+        foreach (Rigidbody cell in cellsParent.GetComponentsInChildren<Rigidbody>())
+        {
+            if (cell.position.z < -20)
+            {
+                Destroy(cell.gameObject);
             }
         }
     }
