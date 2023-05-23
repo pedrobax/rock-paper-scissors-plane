@@ -8,7 +8,7 @@ public class ChemBondFire : MonoBehaviour
     public GameObject firePoint;
     public GameObject fireVfx;
 
-    [SerializeField] public float bulletAmount = 3; //how many bullets will be shot
+    [SerializeField] public float bulletAmount = 3; //how many bullets will be shota
     private float angleBetweenBullets; //internely calculates the angle between each bullet
     public float shootingAngle; //the complete angle the bullets will be shot in
 
