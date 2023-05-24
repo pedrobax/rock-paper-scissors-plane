@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public float typeChangeCooldown = 0.1f;
     [SerializeField] public AudioSource soundSource;
 
-    [SerializeField] public GameObject deathMenu; //pelo amor de deus remova essa gambiarra depois e faça um evento de morte direito no gamemanager
+    [SerializeField] public GameObject deathMenu; //pelo amor de deus remova essa gambiarra depois e faï¿½a um evento de morte direito no gamemanager
 
     [SerializeField] public MeshRenderer currentMeshRenderer;
     [SerializeField] public MeshRenderer rockMeshRenderer;
@@ -184,7 +184,7 @@ public class PlayerHealth : MonoBehaviour
             Debug.Log("Player lost a life! Remaining lives: " + lives);
 
             soundSource.Play();
-            CinemachineShake.Instance.ShakeCamera(5f, 0.5f);
+            CinemachineShake.Instance.ShakeCamera(5f, 1f, CinemachineShake.ShakeType.FADING_OUT);
 
             if (currentType == PlayerType.Rock) Instantiate(rockDeathVFX, transform.position, transform.rotation);
             if (currentType == PlayerType.Paper) Instantiate(paperDeathVFX, transform.position, transform.rotation);

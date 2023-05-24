@@ -120,10 +120,10 @@ public class Volcano : MonoBehaviour
 
     public IEnumerator ExplosionSequence()
     {
-        CinemachineShake.Instance.ShakeCamera(1f, 3f);
+        CinemachineShake.Instance.ShakeCamera(1f, 3f, CinemachineShake.ShakeType.FADING_IN);
         yield return new WaitForSeconds(3f);
         Explode();
-        CinemachineShake.Instance.ShakeCamera(10f, 1f);
+        CinemachineShake.Instance.ShakeCamera(10f, 1f, CinemachineShake.ShakeType.FADING_OUT);
 
         switch (currentPhase)
         {

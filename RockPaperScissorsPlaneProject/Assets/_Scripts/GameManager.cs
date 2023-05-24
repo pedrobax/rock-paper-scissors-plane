@@ -157,9 +157,9 @@ public class GameManager : MonoBehaviour
     }
 
     //shakes screen by the intensity for the duration
-    public static void ShakeScreen(float intensity, float duration)
+    public static void ShakeScreen(float intensity, float duration, CinemachineShake.ShakeType shakeType)
     {
-        CinemachineShake.Instance.ShakeCamera(intensity, duration);
+        CinemachineShake.Instance.ShakeCamera(intensity, duration, shakeType);
     }
 
     //TODO check where this is used

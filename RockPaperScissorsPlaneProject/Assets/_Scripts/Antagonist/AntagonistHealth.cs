@@ -129,7 +129,7 @@ public class AntagonistHealth : MonoBehaviour
         if (destroyedByPlayer)
         {
             GameManager.UpdateScore(scoreValue);
-            GameManager.ShakeScreen(deathShakeIntensity, deathShakeTime);
+            GameManager.ShakeScreen(deathShakeIntensity, deathShakeTime, CinemachineShake.ShakeType.FADING_OUT);
         }
         //destroys the parent along with the antagonist
         //this is needed because antagonists are always children of a parent object
