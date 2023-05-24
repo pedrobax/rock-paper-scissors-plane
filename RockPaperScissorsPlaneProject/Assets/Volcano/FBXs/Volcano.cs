@@ -19,8 +19,7 @@ public class Volcano : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Explode();
-            StartNextPhase();
+            StartCoroutine(ExplosionSequence());
         }
     }
 
@@ -116,6 +115,29 @@ public class Volcano : MonoBehaviour
         {
             scissorsVolcano.SetActive(true);
             currentPhase = CurrentPhase.SCISSORS;
+        }
+    }
+
+    public IEnumerator ExplosionSequence()
+    {
+        CinemachineShake.Instance.ShakeCamera(1f, 3f);
+        yield return new WaitForSeconds(3f);
+        Explode();
+        CinemachineShake.Instance.ShakeCamera(10f, 1f);
+
+        switch (currentPhase)
+        {
+            case CurrentPhase.PAPER:
+                currentPhase = CurrentPhase.ROCK;
+                rockVolcano.SetActive(true);
+                break;
+            case CurrentPhase.ROCK:
+                currentPhase = CurrentPhase.SCISSORS;
+                scissorsVolcano.SetActive(true);
+                break;
+            case CurrentPhase.SCISSORS:
+                currentPhase = CurrentPhase.PAPER;
+                break;
         }
     }
 }
