@@ -13,10 +13,22 @@ public class Volcano : MonoBehaviour
     public GameObject paperBullet, rockBullet;                     //store the bullets for each phase
     public enum CurrentPhase { PAPER, ROCK, SCISSORS };            
     public CurrentPhase currentPhase;                              //store the current phase
+    public GameObject cart;
+    public bool isSpawning = false;
 
 
     void Update()
     {
+        if (isSpawning && transform.position.z > 16.5f)
+        {
+            transform.Translate(Vector3.forward * 400 * Time.deltaTime);
+            cart.transform.Translate(Vector3.forward * 400 * Time.deltaTime);
+        }
+        if (isSpawning && transform.position.z <= 16.5f)
+        {
+            isSpawning = false;
+            transform.position = new Vector3(transform.position.x, transform.position.y, 16.5f);
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(ExplosionSequence());
@@ -120,10 +132,10 @@ public class Volcano : MonoBehaviour
 
     public IEnumerator ExplosionSequence()
     {
-        CinemachineShake.Instance.ShakeCamera(1f, 3f, CinemachineShake.ShakeType.FADING_IN);
-        yield return new WaitForSeconds(3f);
+        CinemachineShake.Instance.ShakeCamera(1f, 6f, CinemachineShake.ShakeType.FADING_IN);
+        yield return new WaitForSeconds(6f);
         Explode();
-        CinemachineShake.Instance.ShakeCamera(10f, 1f, CinemachineShake.ShakeType.FADING_OUT);
+        CinemachineShake.Instance.ShakeCamera(15f, 1f, CinemachineShake.ShakeType.FADING_OUT);
 
         switch (currentPhase)
         {
