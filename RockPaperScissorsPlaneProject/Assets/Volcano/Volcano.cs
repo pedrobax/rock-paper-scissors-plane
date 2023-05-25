@@ -33,11 +33,28 @@ public class Volcano : MonoBehaviour
         {
             StartCoroutine(ExplosionSequence());
         }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            CannonFire();
+        }
     }
 
     void FixedUpdate()
     {
         DoCellMovement();
+    }
+
+    public GameObject firePointL, firePointML, firePointM, firePointMR, firePointR;
+    void CannonFire()
+    {
+        if (currentPhase == CurrentPhase.PAPER)
+        {
+            Instantiate(paperBullet, firePointL.transform.position, firePointL.transform.rotation);
+            Instantiate(paperBullet, firePointML.transform.position, firePointML.transform.rotation);
+            Instantiate(paperBullet, firePointM.transform.position, firePointM.transform.rotation);
+            Instantiate(paperBullet, firePointMR.transform.position, firePointMR.transform.rotation);
+            Instantiate(paperBullet, firePointR.transform.position, firePointR.transform.rotation);
+        }
     }
 
 
