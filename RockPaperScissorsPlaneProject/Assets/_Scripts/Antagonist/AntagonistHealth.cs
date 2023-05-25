@@ -13,7 +13,7 @@ public class AntagonistHealth : MonoBehaviour
     [SerializeField] public float health;
     [SerializeField] float scoreValue; //how much is added to the score when the antagonist is destroyed BY THE PLAYER
     [SerializeField] float damageFlashDuration = 0.025f; //how long the antagonist flashes when hit
-    [SerializeField] EnemyType enemyType; //the antagonist's type: rock, paper or scissors
+    [SerializeField] public EnemyType enemyType; //the antagonist's type: rock, paper or scissors
     [SerializeField] Rigidbody rb;
     [SerializeField] MeshRenderer meshRenderer;
     [SerializeField] public SkinnedMeshRenderer skinnedMeshRenderer;
@@ -134,7 +134,7 @@ public class AntagonistHealth : MonoBehaviour
         //destroys the parent along with the antagonist
         //this is needed because antagonists are always children of a parent object
         //along with its action's target transforms for organizational purposes
-        Destroy(gameObject.transform.parent.gameObject);
+        if (gameObject.transform.parent != null) Destroy(gameObject.transform.parent.gameObject);   
     }
 
     //lowers antagonist health,flashes white for feedback, and destroys it if health reaches 0
@@ -223,7 +223,7 @@ public class AntagonistHealth : MonoBehaviour
     }
 
     //used for referencing the antagonist's type for damage calculations
-    enum EnemyType
+    public enum EnemyType
     {
         Rock,
         Paper,

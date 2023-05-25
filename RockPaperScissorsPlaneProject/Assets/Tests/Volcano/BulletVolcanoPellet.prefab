@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1837823638316898444}
   m_Layer: 0
   m_Name: BulletVolcanoPellet
-  m_TagString: BulletEnemyPaper
+  m_TagString: BulletEnemyRock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 79e0e14fd3dc024448d7206e9bdca255, type: 2}
+  - {fileID: 2100000, guid: 7cebf70abc436534c951ca8947bdc7cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

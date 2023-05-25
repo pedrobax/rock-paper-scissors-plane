@@ -7,6 +7,7 @@ public class Volcano : MonoBehaviour
     public GameObject paperVolcano, rockVolcano, scissorsVolcano;   //store the volcanos for each phase
     public GameObject paperCells, rockCells, scissorsCells;        //store the cells for each phase
     AntagonistHealth antagonistHealth;                      //store the antagonist health script
+    public GameObject summonPointPaper, summonPointRock, summonPointScissors; //store the summon points for each phase
     public GameObject summonPhase01;                               //store the summons in different phases
     public List<GameObject> summonsPhase03 = new List<GameObject>();
     public Animator paperAnimator, rockAnimator, scissorsAnimator; //store the animators for each phase
@@ -18,7 +19,6 @@ public class Volcano : MonoBehaviour
     public bool isSpawning = false;
     public Mesh paperMesh, rockMesh, scissorsMesh;
     public MeshCollider meshCollider;
-    public GameObject laser;
 
     void Start()
     {
@@ -287,6 +287,11 @@ public class Volcano : MonoBehaviour
         }
     }
 
+    void SummonPaper()
+    {
+        Instantiate(summonPhase01, summonPointPaper.transform.position, summonPointPaper.transform.rotation);
+    }
+
     public IEnumerator ExplosionSequence()
     {
         CinemachineShake.Instance.ShakeCamera(1f, 6f, CinemachineShake.ShakeType.FADING_IN);
@@ -299,12 +304,14 @@ public class Volcano : MonoBehaviour
             case CurrentPhase.PAPER:
                 meshCollider.sharedMesh = rockMesh;
                 antagonistHealth.skinnedMeshRenderer = rockRenderer;
+                antagonistHealth.enemyType = AntagonistHealth.EnemyType.Rock;
                 currentPhase = CurrentPhase.ROCK;
                 rockVolcano.SetActive(true);
                 break;
             case CurrentPhase.ROCK:
                 meshCollider.sharedMesh = scissorsMesh;
                 antagonistHealth.skinnedMeshRenderer = scissorsVolcano.GetComponentInChildren<SkinnedMeshRenderer>();
+                antagonistHealth.enemyType = AntagonistHealth.EnemyType.Scissors;
                 currentPhase = CurrentPhase.SCISSORS;
                 scissorsVolcano.SetActive(true);
                 break;
