@@ -18,6 +18,7 @@ public class Volcano : MonoBehaviour
     public bool isSpawning = false;
     public Mesh paperMesh, rockMesh, scissorsMesh;
     public MeshCollider meshCollider;
+    public GameObject laser;
 
     void Start()
     {
