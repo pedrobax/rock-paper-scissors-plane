@@ -3,7 +3,12 @@ guid: ede2a20b261969f4d93110cedefc604b
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_volcano_metal
+    second: {fileID: 2100000, guid: 6578f2f70a0c8614c8dc37d4b449f1cd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

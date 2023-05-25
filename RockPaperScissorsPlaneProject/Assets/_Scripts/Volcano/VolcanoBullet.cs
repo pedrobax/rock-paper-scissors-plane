@@ -31,7 +31,7 @@ public class VolcanoBullet : MonoBehaviour
         {
             Explode();
         }
-        if ((transform.position - startPosition).magnitude > 20)
+        if ((transform.position - startPosition).magnitude > 40)
         {
             Destroy(gameObject);
         }

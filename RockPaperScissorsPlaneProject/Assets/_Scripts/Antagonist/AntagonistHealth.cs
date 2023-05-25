@@ -10,13 +10,13 @@ public class AntagonistHealth : MonoBehaviour
 
     [SerializeField] public string unitName; //antagonist's name for debugging
     [SerializeField] float maxHealth;
-    [SerializeField] float health;
+    [SerializeField] public float health;
     [SerializeField] float scoreValue; //how much is added to the score when the antagonist is destroyed BY THE PLAYER
     [SerializeField] float damageFlashDuration = 0.025f; //how long the antagonist flashes when hit
     [SerializeField] EnemyType enemyType; //the antagonist's type: rock, paper or scissors
     [SerializeField] Rigidbody rb;
     [SerializeField] MeshRenderer meshRenderer;
-    [SerializeField] SkinnedMeshRenderer skinnedMeshRenderer;
+    [SerializeField] public SkinnedMeshRenderer skinnedMeshRenderer;
     [SerializeField] public AudioSource soundSource;
     [SerializeField] public AudioClip hitClip; //sound played when the antagonist is hit by a player bullet
     [SerializeField] public GameObject shieldVFX; //vfx played when the antagonist is hit by an innefective player bullet
@@ -195,7 +195,6 @@ public class AntagonistHealth : MonoBehaviour
             foreach (var mat in skinnedMeshRenderer.materials)
             {
                 mat.SetFloat("_isDamageFlashing", 1);
-                Debug.Log("Material flashing");
             }
             yield return new WaitForSeconds(damageFlashDuration);
             foreach (var mat in skinnedMeshRenderer.materials)

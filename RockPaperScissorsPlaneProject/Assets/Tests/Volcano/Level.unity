@@ -6167,9 +6167,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1177810974}
   - component: {fileID: 1177810973}
+  - component: {fileID: 1177810976}
+  - component: {fileID: 1177810975}
+  - component: {fileID: 1177810977}
+  - component: {fileID: 1177810978}
   m_Layer: 0
   m_Name: Volcano
-  m_TagString: Untagged
+  m_TagString: EnemyPaper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6192,17 +6196,35 @@ MonoBehaviour:
   paperCells: {fileID: 5146553072144512963}
   rockCells: {fileID: 8110904158366420722}
   scissorsCells: {fileID: 4085631431061615991}
-  antagonistHealth: {fileID: 0}
   summonPhase01: {fileID: 0}
   summonsPhase03: []
-  paperAnimator: {fileID: 0}
-  rockAnimator: {fileID: 0}
+  paperAnimator: {fileID: 3096523019342663459}
+  rockAnimator: {fileID: 4515274486208677422}
   scissorsAnimator: {fileID: 0}
+  rockRenderer: {fileID: 4071398660466979600}
   paperBullet: {fileID: 7818664103063930849, guid: ba16bc803938a204fab09768ecf69ff6, type: 3}
   rockBullet: {fileID: 0}
   currentPhase: 0
   cart: {fileID: 1191390514}
   isSpawning: 0
+  paperMesh: {fileID: -7362986516221600359, guid: 31d6c44daccb8e04890a355b0f46a489, type: 3}
+  rockMesh: {fileID: -9016197566462234978, guid: 80930f8d49b04c5479ce32ffeba23d85, type: 3}
+  scissorsMesh: {fileID: 2089929679098975997, guid: ede2a20b261969f4d93110cedefc604b, type: 3}
+  meshCollider: {fileID: 0}
+  paperState: 0
+  paperIdleDuration: 3
+  paperAttackDuration: 15
+  paperSummonDuration: 1
+  paperDeathDuration: 5
+  paperCurrentDuration: 0
+  paperHealthThreshold: 2500
+  rockState: 0
+  rockIdleDuration: 3
+  rockEruptDuration: 1
+  rockPauseDuration: 3
+  rockLaserDuration: 11.1
+  rockCurrentDuration: 0
+  rockHealthThreshold: 1500
   firePointL: {fileID: 1561845162}
   firePointML: {fileID: 2040800933}
   firePointM: {fileID: 1047710314}
@@ -6220,7 +6242,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177810972}
   m_LocalRotation: {x: 0, y: 0.9990483, z: -0, w: -0.043619405}
-  m_LocalPosition: {x: 0, y: 0.79, z: 16.5}
+  m_LocalPosition: {x: 0, y: 0.73, z: 16.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6233,6 +6255,162 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 185, z: 0}
+--- !u!54 &1177810975
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177810972}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!114 &1177810976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177810972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03a9452797f07942b5fccab00e3beea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: Volcano
+  maxHealth: 3500
+  health: 3500
+  scoreValue: 5000
+  damageFlashDuration: 0.025
+  enemyType: 1
+  rb: {fileID: 1177810975}
+  meshRenderer: {fileID: 0}
+  skinnedMeshRenderer: {fileID: 2299082731557863328}
+  soundSource: {fileID: 1177810978}
+  hitClip: {fileID: 8300000, guid: f21e684d14c524142842efa12f970fa7, type: 3}
+  shieldVFX: {fileID: 3268028251387979328, guid: ffc74ad4b975bd044a798d18695c4595, type: 3}
+  deathVFX: {fileID: 3710254010715789815, guid: 56ab1f600c0a3f64b868eb80902e56b6, type: 3}
+  deathShakeTime: 0.2
+  deathShakeIntensity: 0.5
+  loot: {fileID: 0}
+  hasLoot: 0
+  isColliding: 0
+--- !u!64 &1177810977
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177810972}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7362986516221600359, guid: 31d6c44daccb8e04890a355b0f46a489, type: 3}
+--- !u!82 &1177810978
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177810972}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 3311544943875607383, guid: 6a95e35e2c0c4684a95b76755113e3de, type: 2}
+  m_audioClip: {fileID: 8300000, guid: f21e684d14c524142842efa12f970fa7, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.501
+  m_Pitch: 2.07
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1183874285
 GameObject:
   m_ObjectHideFlags: 0
@@ -22732,7 +22910,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2969779929213486242, guid: 31d6c44daccb8e04890a355b0f46a489, type: 3}
+  - {fileID: 2100000, guid: 09e4afcb15aa5c54bad15798c2136c5c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23054,7 +23232,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3103256203073789899}
-  - component: {fileID: 3103256203073789900}
   m_Layer: 0
   m_Name: volcano_scissors
   m_TagString: Untagged
@@ -23441,8 +23618,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3096523019342663457}
-  - component: {fileID: 3096523019342663458}
   - component: {fileID: 3096523019342663459}
+  - component: {fileID: 3096523019342663460}
   m_Layer: 0
   m_Name: volcano_paper
   m_TagString: Untagged
@@ -26190,20 +26367,6 @@ Transform:
   m_Father: {fileID: 1177810974}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &3096523019342663458
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2428249350389699995}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7362986516221600359, guid: 39276cdcb6e65c44a90a6c8efc95ab4c, type: 3}
 --- !u!95 &3096523019342663459
 Animator:
   serializedVersion: 5
@@ -26224,6 +26387,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &3096523019342663460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2428249350389699995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90c4df644326ad04aac9dee672fb51bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volcano: {fileID: 1177810973}
 --- !u!4 &3098226117097919142
 Transform:
   m_ObjectHideFlags: 0
@@ -26293,20 +26469,6 @@ Transform:
   m_Father: {fileID: 1177810974}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &3103256203073789900
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2331505334479078769}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2089929679098975997, guid: 05e675c757353fa40b73212c085e5f73, type: 3}
 --- !u!23 &3111600359321772287
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30768,8 +30930,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9045032373860115194, guid: 80930f8d49b04c5479ce32ffeba23d85, type: 3}
-  - {fileID: 1894367783929336398, guid: 80930f8d49b04c5479ce32ffeba23d85, type: 3}
+  - {fileID: 2100000, guid: 812f6866e38ec1047bfa2a151d1ebaf3, type: 2}
+  - {fileID: 2100000, guid: c016fcdcd850d224da7d1b3095238928, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -32508,20 +32670,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!64 &4515274486208677422
-MeshCollider:
+--- !u!95 &4515274486208677422
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4515274486208677421}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -9016197566462234978, guid: 57d6cc98916d26844a37b82160ebf494, type: 3}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a0f91766dd56ba94780cadd884158887, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &4521234747790029478
 GameObject:
   m_ObjectHideFlags: 0
@@ -56405,7 +56573,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5821163766035200398, guid: ede2a20b261969f4d93110cedefc604b, type: 3}
+  - {fileID: 2100000, guid: 9bdc28747d989774fa48cc3a0ab0d277, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -59089,7 +59257,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5821163766035200398, guid: 80930f8d49b04c5479ce32ffeba23d85, type: 3}
+  - {fileID: 2100000, guid: 9bdc28747d989774fa48cc3a0ab0d277, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

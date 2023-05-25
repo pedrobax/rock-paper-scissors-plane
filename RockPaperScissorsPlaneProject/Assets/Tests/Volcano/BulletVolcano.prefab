@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pelletPrefab: {fileID: 7818664103063930849, guid: 5223132e68a3b574fa42328f12598b77, type: 3}
-  explosionTime: 1.5
+  explosionTime: 1
   startTime: 0
   bulletAmount: 8
   angleBetweenBullets: 45

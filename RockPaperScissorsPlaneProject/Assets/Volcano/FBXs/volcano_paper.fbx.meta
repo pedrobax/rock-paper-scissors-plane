@@ -3,7 +3,12 @@ guid: 31d6c44daccb8e04890a355b0f46a489
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_volcano_paper
+    second: {fileID: 2100000, guid: 09e4afcb15aa5c54bad15798c2136c5c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

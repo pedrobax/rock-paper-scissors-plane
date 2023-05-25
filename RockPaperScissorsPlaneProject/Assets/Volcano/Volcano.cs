@@ -6,19 +6,30 @@ public class Volcano : MonoBehaviour
 {
     public GameObject paperVolcano, rockVolcano, scissorsVolcano;   //store the volcanos for each phase
     public GameObject paperCells, rockCells, scissorsCells;        //store the cells for each phase
-    public AntagonistHealth antagonistHealth;                      //store the antagonist health script
+    AntagonistHealth antagonistHealth;                      //store the antagonist health script
     public GameObject summonPhase01;                               //store the summons in different phases
     public List<GameObject> summonsPhase03 = new List<GameObject>();
     public Animator paperAnimator, rockAnimator, scissorsAnimator; //store the animators for each phase
+    public SkinnedMeshRenderer rockRenderer;
     public GameObject paperBullet, rockBullet;                     //store the bullets for each phase
     public enum CurrentPhase { PAPER, ROCK, SCISSORS };            
     public CurrentPhase currentPhase;                              //store the current phase
     public GameObject cart;
     public bool isSpawning = false;
+    public Mesh paperMesh, rockMesh, scissorsMesh;
+    public MeshCollider meshCollider;
 
+    void Start()
+    {
+        antagonistHealth = GetComponent<AntagonistHealth>();
+        meshCollider = GetComponent<MeshCollider>();
+        meshCollider.sharedMesh = paperMesh;
+    }
 
     void Update()
     {
+        if (!isSpawning) DoActionLoop();
+        
         if (isSpawning && transform.position.z > 16.5f)
         {
             transform.Translate(Vector3.forward * 400 * Time.deltaTime);
@@ -44,8 +55,151 @@ public class Volcano : MonoBehaviour
         DoCellMovement();
     }
 
+    public enum PaperState { NONE, IDLE, ATTACK, SUMMON, DEATH, EXPLODE };
+    public PaperState paperState = PaperState.NONE;
+    public float paperIdleDuration, paperAttackDuration, paperSummonDuration, paperDeathDuration;
+    public float paperCurrentDuration;
+    public float paperHealthThreshold = 2500;
+
+    public enum RockState { NONE, IDLE, ERUPT, PAUSE, LASER, DEATH, EXPLODE };
+    public RockState rockState = RockState.NONE;
+    public float rockIdleDuration, rockEruptDuration, rockPauseDuration, rockLaserDuration;
+    public float rockCurrentDuration;
+    public float rockHealthThreshold = 1500;
+    void DoActionLoop()
+    {
+        if (currentPhase == CurrentPhase.PAPER)
+        {
+            if (paperState == PaperState.NONE)
+            {
+                paperState = PaperState.IDLE;
+                paperCurrentDuration = Time.time;
+            }
+            else if (paperState == PaperState.IDLE)
+            {
+                paperAnimator.SetBool("isIdle", true);
+                if (paperCurrentDuration + paperIdleDuration <= Time.time)
+                {
+                    paperState = PaperState.ATTACK;
+                    paperCurrentDuration = Time.time;
+                    paperAnimator.SetBool("isIdle", false);
+                }
+            }
+            else if (paperState == PaperState.ATTACK)
+            {
+                paperAnimator.SetBool("isAttacking", true);
+                if (antagonistHealth.health <= paperHealthThreshold && paperState != PaperState.DEATH)
+                {
+                    paperState = PaperState.DEATH;
+                    paperCurrentDuration = Time.time;
+                    paperAnimator.SetBool("isAttacking", false);
+                }
+                else if (paperCurrentDuration + paperAttackDuration <= Time.time)
+                {
+                    paperState = PaperState.SUMMON;
+                    paperCurrentDuration = Time.time;
+                    paperAnimator.SetBool("isAttacking", false);
+                }
+            }
+            else if (paperState == PaperState.SUMMON)
+            {
+                paperAnimator.SetBool("isSummoning", true);
+                if (antagonistHealth.health <= paperHealthThreshold && paperState != PaperState.DEATH)
+                {
+                    paperState = PaperState.DEATH;
+                    paperCurrentDuration = Time.time;
+                    paperAnimator.SetBool("isAttacking", false);
+                }
+                else if (paperCurrentDuration + paperSummonDuration <= Time.time)
+                {
+                    paperState = PaperState.ATTACK;
+                    paperCurrentDuration = Time.time;
+                    paperAnimator.SetBool("isSummoning", false);
+                }
+            }
+            if (paperState == PaperState.DEATH)
+            {
+                paperAnimator.SetBool("isDead", true);
+                StartCoroutine(ExplosionSequence());
+                paperState = PaperState.EXPLODE;
+            }
+        }
+        if (currentPhase == CurrentPhase.ROCK)
+        {
+            if (rockState == RockState.NONE)
+            {
+                rockState = RockState.IDLE;
+                rockCurrentDuration = Time.time;
+            }
+            else if (rockState == RockState.IDLE)
+            {
+                rockAnimator.SetBool("isIdle", true);
+                if (rockCurrentDuration + rockIdleDuration <= Time.time)
+                {
+                    rockState = RockState.ERUPT;
+                    rockCurrentDuration = Time.time;
+                    rockAnimator.SetBool("isIdle", false);
+                }
+            }
+            else if (rockState == RockState.ERUPT)
+            {
+                rockAnimator.SetBool("isErupting", true);
+                if (antagonistHealth.health <= rockHealthThreshold && rockState != RockState.DEATH)
+                {
+                    rockState = RockState.DEATH;
+                    rockCurrentDuration = Time.time;
+                    rockAnimator.SetBool("isErupting", false);
+                }
+                else if (rockCurrentDuration + rockEruptDuration <= Time.time)
+                {
+                    rockState = RockState.PAUSE;
+                    rockCurrentDuration = Time.time;
+                    rockAnimator.SetBool("isErupting", false);
+                }
+            }
+            else if (rockState == RockState.PAUSE)
+            {
+                rockAnimator.SetBool("isPausing", true);
+                if (antagonistHealth.health <= rockHealthThreshold && rockState != RockState.DEATH)
+                {
+                    rockState = RockState.DEATH;
+                    rockCurrentDuration = Time.time;
+                    rockAnimator.SetBool("isPausing", false);
+                }
+                else if (rockCurrentDuration + rockPauseDuration <= Time.time)
+                {
+                    rockState = RockState.LASER;
+                    rockCurrentDuration = Time.time;
+                    rockAnimator.SetBool("isPausing", false);
+                }
+            }
+            else if (rockState == RockState.LASER)
+            {
+                rockAnimator.SetBool("isLaser", true);
+                if (antagonistHealth.health <= rockHealthThreshold && rockState != RockState.DEATH)
+                {
+                    rockState = RockState.DEATH;
+                    rockCurrentDuration = Time.time;
+                    rockAnimator.SetBool("isLaser", false);
+                }
+                else if (rockCurrentDuration + rockLaserDuration <= Time.time)
+                {
+                    rockState = RockState.IDLE;
+                    rockCurrentDuration = Time.time;
+                    rockAnimator.SetBool("isLaser", false);
+                }
+            }
+            else if (rockState == RockState.DEATH)
+            {
+                rockAnimator.SetBool("isDead", true);
+                StartCoroutine(ExplosionSequence());
+                rockState = RockState.EXPLODE;
+            }
+        }
+    }
+
     public GameObject firePointL, firePointML, firePointM, firePointMR, firePointR;
-    void CannonFire()
+    public void CannonFire()
     {
         if (currentPhase == CurrentPhase.PAPER)
         {
@@ -132,21 +286,6 @@ public class Volcano : MonoBehaviour
         }
     }
 
-
-    void StartNextPhase()
-    {
-        if (currentPhase == CurrentPhase.PAPER)
-        {
-            rockVolcano.SetActive(true);
-            currentPhase = CurrentPhase.ROCK;
-        }
-        else if (currentPhase == CurrentPhase.ROCK)
-        {
-            scissorsVolcano.SetActive(true);
-            currentPhase = CurrentPhase.SCISSORS;
-        }
-    }
-
     public IEnumerator ExplosionSequence()
     {
         CinemachineShake.Instance.ShakeCamera(1f, 6f, CinemachineShake.ShakeType.FADING_IN);
@@ -157,10 +296,14 @@ public class Volcano : MonoBehaviour
         switch (currentPhase)
         {
             case CurrentPhase.PAPER:
+                meshCollider.sharedMesh = rockMesh;
+                antagonistHealth.skinnedMeshRenderer = rockRenderer;
                 currentPhase = CurrentPhase.ROCK;
                 rockVolcano.SetActive(true);
                 break;
             case CurrentPhase.ROCK:
+                meshCollider.sharedMesh = scissorsMesh;
+                antagonistHealth.skinnedMeshRenderer = scissorsVolcano.GetComponentInChildren<SkinnedMeshRenderer>();
                 currentPhase = CurrentPhase.SCISSORS;
                 scissorsVolcano.SetActive(true);
                 break;
