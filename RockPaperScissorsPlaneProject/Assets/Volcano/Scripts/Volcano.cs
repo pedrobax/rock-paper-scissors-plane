@@ -9,6 +9,7 @@ public class Volcano : MonoBehaviour
     AntagonistHealth antagonistHealth;                      //store the antagonist health script
     public GameObject summonPointPaper, summonPointRock, summonPointScissors; //store the summon points for each phase
     public GameObject summonPhase01;                               //store the summons in different phases
+    public List<GameObject> summonsPhase02 = new List<GameObject>();
     public List<GameObject> summonsPhase03 = new List<GameObject>();
     public Animator paperAnimator, rockAnimator, scissorsAnimator; //store the animators for each phase
     public SkinnedMeshRenderer rockRenderer;
@@ -47,7 +48,15 @@ public class Volcano : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
-            CannonFire();
+            Erupt(0);
+        }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            Erupt(1);
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            Erupt(2);
         }
     }
 
@@ -60,13 +69,13 @@ public class Volcano : MonoBehaviour
     public PaperState paperState = PaperState.NONE;
     public float paperIdleDuration, paperAttackDuration, paperSummonDuration, paperDeathDuration;
     public float paperCurrentDuration;
-    public float paperHealthThreshold = 2500;
+    public float paperHealthThreshold = 2000;
 
     public enum RockState { NONE, IDLE, ERUPT, PAUSE, LASER, DEATH, EXPLODE };
     public RockState rockState = RockState.NONE;
     public float rockIdleDuration, rockEruptDuration, rockPauseDuration, rockLaserDuration;
     public float rockCurrentDuration;
-    public float rockHealthThreshold = 1500;
+    public float rockHealthThreshold = 1000;
     void DoActionLoop()
     {
         if (currentPhase == CurrentPhase.PAPER)
@@ -289,6 +298,11 @@ public class Volcano : MonoBehaviour
     public void SummonPaper()
     {
         Instantiate(summonPhase01, new Vector3(0,0,0), Quaternion.Euler(0, 0, 0));
+    }
+
+    public void Erupt(int index)
+    {
+        Instantiate(summonsPhase02[index], summonPointRock.transform.position, summonPointRock.transform.rotation);
     }
 
     public IEnumerator ExplosionSequence()

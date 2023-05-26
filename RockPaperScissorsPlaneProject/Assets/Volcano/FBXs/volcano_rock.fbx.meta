@@ -59,8 +59,8 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -71,7 +71,28 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.10075823
+        functionName: Erupt
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 90c4df644326ad04aac9dee672fb51bc, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.39335084
+        functionName: Erupt
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 90c4df644326ad04aac9dee672fb51bc, type: 3}
+        floatParameter: 0
+        intParameter: 1
+        messageOptions: 0
+      - time: 0.64520264
+        functionName: Erupt
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 90c4df644326ad04aac9dee672fb51bc, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -129,7 +150,21 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.13703704
+        functionName: StartLaser
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: ea9746068d4a32c449786b9d35b499d9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.86475676
+        functionName: EndLaser
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: ea9746068d4a32c449786b9d35b499d9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

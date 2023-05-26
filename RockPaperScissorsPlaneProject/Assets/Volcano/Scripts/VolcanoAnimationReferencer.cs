@@ -15,4 +15,9 @@ public class VolcanoAnimationReferencer : MonoBehaviour
     {
         volcano.SummonPaper();
     }
+
+    void Erupt(int index)
+    {
+        volcano.Erupt(index);
+    }
 }
