@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance; //to make this a Singleton
 
     public GameObject player; //stores reference to the player object for all to access
-    private PlayerHealth playerHealth; //^
+    public PlayerHealth playerHealth; //^
     public LevelArea _levelArea; //stores reference to player area
     public Transform _playerTransform; //stores reference to the player transform for all to access
     static float activationArea; //TODO possibily remove this, it is not used with the new Antagonist System

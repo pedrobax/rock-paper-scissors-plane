@@ -176,6 +176,11 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("You got an extra life! You have " + lives + " remaining lives!");
     }
 
+    public void DieOrRespawnFunc()
+    {
+        StartCoroutine(DieOrRespawn());
+    }
+
     public IEnumerator DieOrRespawn()
     {
         if (lives > 0)
@@ -235,7 +240,7 @@ public class PlayerHealth : MonoBehaviour
         currentMeshRenderer.material.color = originalColor;
     }
 
-    void IgnoreDamage()
+    public void IgnoreDamage()
     {
         Debug.Log("Damage ignored by type!");
         if(currentType == PlayerType.Rock)

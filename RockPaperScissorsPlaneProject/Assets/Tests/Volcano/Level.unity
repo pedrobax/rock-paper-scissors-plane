@@ -1197,6 +1197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1415518366}
+  playerHealth: {fileID: 0}
   _levelArea: {fileID: 1108846450}
   _playerTransform: {fileID: 660645803}
   pauseMenu: {fileID: 1256076881}
@@ -13151,7 +13152,7 @@ GameObject:
   - component: {fileID: 2080986390}
   m_Layer: 0
   m_Name: LaserTarget
-  m_TagString: Untagged
+  m_TagString: BulletEnemyRock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13195,7 +13196,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2080986387}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -13208,7 +13209,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 7cebf70abc436534c951ca8947bdc7cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13229,7 +13230,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 5
+  m_Time: 7
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -13238,7 +13239,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.5157242
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -13285,7 +13286,7 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
-  m_Emitting: 1
+  m_Emitting: 0
 --- !u!1 &2093001594
 GameObject:
   m_ObjectHideFlags: 0
@@ -13567,7 +13568,7 @@ GameObject:
   - component: {fileID: 2100616321}
   m_Layer: 0
   m_Name: LaserFirePoint
-  m_TagString: Untagged
+  m_TagString: BulletPlayerRock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13607,7 +13608,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 7cebf70abc436534c951ca8947bdc7cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13639,7 +13640,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.5220127
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -33201,6 +33202,7 @@ MonoBehaviour:
   firePoint: {fileID: 2100616318}
   fireTarget: {fileID: 2080986387}
   trailSpeed: 5
+  currentType: 0
 --- !u!1 &4521234747790029478
 GameObject:
   m_ObjectHideFlags: 0
