@@ -10,4 +10,9 @@ public class VolcanoAnimationReferencer : MonoBehaviour
     {
         volcano.CannonFire();
     }
+
+    void SummonPaper()
+    {
+        volcano.SummonPaper();
+    }
 }

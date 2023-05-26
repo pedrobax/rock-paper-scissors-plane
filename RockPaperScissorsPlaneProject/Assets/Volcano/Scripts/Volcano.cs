@@ -251,7 +251,6 @@ public class Volcano : MonoBehaviour
         }
     }
 
-
     public float explosionForce = 1;
     public Vector3 explosionPosition;
     private float explosionRadius = 0;
@@ -287,9 +286,9 @@ public class Volcano : MonoBehaviour
         }
     }
 
-    void SummonPaper()
+    public void SummonPaper()
     {
-        Instantiate(summonPhase01, summonPointPaper.transform.position, summonPointPaper.transform.rotation);
+        Instantiate(summonPhase01, new Vector3(0,0,0), Quaternion.Euler(0, 0, 0));
     }
 
     public IEnumerator ExplosionSequence()
