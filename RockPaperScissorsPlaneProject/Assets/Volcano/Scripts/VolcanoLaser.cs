@@ -32,7 +32,6 @@ public class VolcanoLaser : MonoBehaviour
     void FixedUpdate()
     {   
         Physics.Raycast(firePoint.transform.position, firePoint.transform.forward, out hit, Mathf.Infinity);
-        Debug.Log(hit.point);
         if (hit.point.y > -0.2 || hit.point.y < 0.2)
         {
          
@@ -44,105 +43,110 @@ public class VolcanoLaser : MonoBehaviour
 
         if (trailRenderer.enabled == true)
         {
-            for (int i = 0; i < trailRenderer.positionCount; i++)
+            for (int i = 0; i < rockTrail.positionCount; i++)
             {
-                Vector3 position = trailRenderer.GetPosition(i);
+                Vector3 position = rockTrail.GetPosition(i);
                 position += new Vector3(0,0,-trailSpeed) * Time.deltaTime;
-                trailRenderer.SetPosition(i, position);
+                rockTrail.SetPosition(i, position);
 
-                Vector3 lineSegmentStart = trailRenderer.GetPosition(i - 1);
-                Vector3 lineSegmentEnd = trailRenderer.GetPosition(i);
+                Vector3 lineSegmentStart = rockTrail.GetPosition(i - 1);
+                Vector3 lineSegmentEnd = rockTrail.GetPosition(i);
 
                 float distance = (lineSegmentStart - lineSegmentEnd).magnitude;
                 RaycastHit[] trailHit = Physics.RaycastAll(lineSegmentStart, lineSegmentEnd - lineSegmentStart, distance);
 
                 foreach(RaycastHit trailHitObject in trailHit)
                 {
-                    if (trailHitObject.collider.gameObject.tag == "Player")
+                    if (trailHitObject.collider.gameObject.tag == "Player" && canDamagePlayer && isLaserActive)
                     {    
-                        Debug.Log("Player hit by laser");
+                        Debug.Log("player hit by ROCK laser");
                         PlayerHealth ph = trailHitObject.collider.gameObject.GetComponent<PlayerHealth>();  
-
-                        if (canDamagePlayer && isLaserActive)
+                        switch (ph.currentType)
                         {
-                            switch (currentType)
-                        {
-                            case LaserType.Rock:
-                                switch (ph.currentType)
-                                    {
-                                        case PlayerHealth.PlayerType.Rock:
-                                            ph.DieOrRespawnFunc();
-                                            StartCoroutine(DamageCooldown(5));
-                                            break;
-                                        case PlayerHealth.PlayerType.Paper:
-                                            ph.IgnoreDamage();
-                                            StartCoroutine(DamageCooldown(1));
-                                            break;
-                                        case PlayerHealth.PlayerType.Scissors:
-                                            ph.DieOrRespawnFunc();
-                                            StartCoroutine(DamageCooldown(5));
-                                            break;
-                                    }
-                                    break;
-
-                            case LaserType.Paper:
-                                switch (ph.currentType)
-                                    {
-                                        case PlayerHealth.PlayerType.Rock:
-                                            ph.DieOrRespawnFunc();
-                                            StartCoroutine(DamageCooldown(5));
-                                            break;
-                                        case PlayerHealth.PlayerType.Paper:
-                                            ph.DieOrRespawnFunc();
-                                            StartCoroutine(DamageCooldown(5));
-                                            break;
-                                        case PlayerHealth.PlayerType.Scissors:
-                                            ph.IgnoreDamage();
-                                            StartCoroutine(DamageCooldown(1));
-                                            break;
-                                    }
-                                    break;
-
-                            case LaserType.Scissors:
-                                switch (ph.currentType)
-                                    {
-                                        case PlayerHealth.PlayerType.Rock:
-                                            ph.IgnoreDamage();
-                                            StartCoroutine(DamageCooldown(1));
-                                            break;
-                                        case PlayerHealth.PlayerType.Paper:
-                                            ph.DieOrRespawnFunc();
-                                            StartCoroutine(DamageCooldown(5));
-                                            break;
-                                        case PlayerHealth.PlayerType.Scissors:
-                                            ph.DieOrRespawnFunc();
-                                            StartCoroutine(DamageCooldown(5));
-                                            break;
-                                    }
-                                    break;
-                        }
+                            case PlayerHealth.PlayerType.Rock:
+                                ph.DieOrRespawnFunc();
+                                StartCoroutine(DamageCooldown(3));
+                                break;
+                            case PlayerHealth.PlayerType.Paper:
+                                ph.IgnoreDamage();
+                                break;
+                            case PlayerHealth.PlayerType.Scissors:
+                                ph.DieOrRespawnFunc();
+                                StartCoroutine(DamageCooldown(3));
+                                break;
                         }
                     }
-                }
-            }
-
-            for (int i = 0; i < rockTrail.positionCount; i++)
-            {
-                Vector3 position = rockTrail.GetPosition(i);
-                position += new Vector3(0,0,-trailSpeed) * Time.deltaTime;
-                rockTrail.SetPosition(i, position);
+                }       
             }
             for (int i = 0; i < paperTrail.positionCount; i++)
             {
                 Vector3 position = paperTrail.GetPosition(i);
                 position += new Vector3(0,0,-trailSpeed) * Time.deltaTime;
                 paperTrail.SetPosition(i, position);
+
+                Vector3 lineSegmentStart = paperTrail.GetPosition(i - 1);
+                Vector3 lineSegmentEnd = paperTrail.GetPosition(i);
+
+                float distance = (lineSegmentStart - lineSegmentEnd).magnitude;
+                RaycastHit[] trailHit = Physics.RaycastAll(lineSegmentStart, lineSegmentEnd - lineSegmentStart, distance);
+
+                foreach(RaycastHit trailHitObject in trailHit)
+                {
+                    if (trailHitObject.collider.gameObject.tag == "Player" && canDamagePlayer && isLaserActive)
+                    {    
+                        Debug.Log("player hit by PAPER laser");
+                        PlayerHealth ph = trailHitObject.collider.gameObject.GetComponent<PlayerHealth>();  
+                        switch (ph.currentType)
+                        {
+                            case PlayerHealth.PlayerType.Rock:
+                                ph.DieOrRespawnFunc();
+                                StartCoroutine(DamageCooldown(3));
+                                break;
+                            case PlayerHealth.PlayerType.Paper:
+                                ph.DieOrRespawnFunc();
+                                StartCoroutine(DamageCooldown(3));
+                                break;
+                            case PlayerHealth.PlayerType.Scissors:
+                                ph.IgnoreDamage();
+                                break;
+                        }
+                    }
+                }    
             }
             for (int i = 0; i < scissorsTrail.positionCount; i++)
             {
                 Vector3 position = scissorsTrail.GetPosition(i);
                 position += new Vector3(0,0,-trailSpeed) * Time.deltaTime;
                 scissorsTrail.SetPosition(i, position);
+
+                Vector3 lineSegmentStart = scissorsTrail.GetPosition(i - 1);
+                Vector3 lineSegmentEnd = scissorsTrail.GetPosition(i);
+
+                float distance = (lineSegmentStart - lineSegmentEnd).magnitude;
+                RaycastHit[] trailHit = Physics.RaycastAll(lineSegmentStart, lineSegmentEnd - lineSegmentStart, distance);
+
+                foreach(RaycastHit trailHitObject in trailHit)
+                {
+                    if (trailHitObject.collider.gameObject.tag == "Player" && canDamagePlayer && isLaserActive)
+                    {    
+                        Debug.Log("player hit by SCISSORS laser");
+                        PlayerHealth ph = trailHitObject.collider.gameObject.GetComponent<PlayerHealth>();  
+                        switch (ph.currentType)
+                        {
+                            case PlayerHealth.PlayerType.Rock:
+                                ph.IgnoreDamage();
+                                break;
+                            case PlayerHealth.PlayerType.Paper:
+                                ph.DieOrRespawnFunc();
+                                StartCoroutine(DamageCooldown(3));
+                                break;
+                            case PlayerHealth.PlayerType.Scissors:
+                                ph.DieOrRespawnFunc();
+                                StartCoroutine(DamageCooldown(3));
+                                break;
+                        }
+                    }
+                }   
             }
         }      
     }
@@ -151,30 +155,41 @@ public class VolcanoLaser : MonoBehaviour
     {
         isLaserActive = true;
         lineRenderer.enabled = true;
-        trailRenderer.emitting = true;
+        rockTrail.emitting = true;
     }
 
     void EndLaser()
     {
         isLaserActive = false;
         lineRenderer.enabled = false;
-        trailRenderer.emitting= false;
+        rockTrail.emitting = false;
+        paperTrail.emitting = false;
+        scissorsTrail.emitting = false;
     }
 
     void ChangeLaserType(int type)
     {
-        switch (type)
+        /*switch (type)
         {
             case 0:
                 currentType = LaserType.Rock;
+                rockTrail.emitting = true;
+                paperTrail.emitting = false;
+                scissorsTrail.emitting = false;
                 break;
             case 1:
                 currentType = LaserType.Paper;
+                rockTrail.emitting = false;
+                paperTrail.emitting = true;
+                scissorsTrail.emitting = false;
                 break;
             case 2:
                 currentType = LaserType.Scissors;
+                rockTrail.emitting = false;
+                paperTrail.emitting = false;
+                scissorsTrail.emitting = true;
                 break;
-        }
+        }*/
     }
 
     IEnumerator DamageCooldown(int time)
