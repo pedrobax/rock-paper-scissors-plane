@@ -16,10 +16,10 @@ public class Volcano : MonoBehaviour
     public GameObject paperBullet, rockBullet;                     //store the bullets for each phase
     public enum CurrentPhase { PAPER, ROCK, SCISSORS };            
     public CurrentPhase currentPhase;                              //store the current phase
-    public GameObject cart;
     public bool isSpawning = false;
     public Mesh paperMesh, rockMesh, scissorsMesh;
     public MeshCollider meshCollider;
+    public GameObject volcanoHolder;
     bool isDefeated = false;
 
     void Start()
@@ -33,15 +33,14 @@ public class Volcano : MonoBehaviour
     {
         if (!isSpawning) DoActionLoop();
         
-        if (isSpawning && transform.position.z > 16.5f)
+        if (isSpawning && volcanoHolder.transform.position.z > 0)
         {
-            transform.Translate(Vector3.forward * 400 * Time.deltaTime);
-            cart.transform.Translate(Vector3.forward * 400 * Time.deltaTime);
+            volcanoHolder.transform.Translate(Vector3.back * 200 * Time.deltaTime);
         }
-        if (isSpawning && transform.position.z <= 16.5f)
+        if (isSpawning && volcanoHolder.transform.position.z <= 0)
         {
             isSpawning = false;
-            transform.position = new Vector3(transform.position.x, transform.position.y, 16.5f);
+            volcanoHolder.transform.position = new Vector3(volcanoHolder.transform.position.x, volcanoHolder.transform.position.y, 0);
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
