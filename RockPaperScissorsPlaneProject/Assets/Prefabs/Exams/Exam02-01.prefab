@@ -48,6 +48,8 @@ MonoBehaviour:
   - {fileID: 7957388940629784559, guid: b5adf25c7fa49af4ba10580fda62daa5, type: 3}
   - {fileID: 4160000600947457860, guid: 151d4bfe44cbe664d85f9394c0729082, type: 3}
   - {fileID: 1003800729604673258, guid: ffc4ebc20ba9e2c4bb51fae3856c6618, type: 3}
-  timeBetweenEncounters: 000000000000000000000000
+  - {fileID: 1540502053013640527, guid: a7dcc43e86079f64faa4ae41ad206f3a, type: 3}
+  - {fileID: 7496075008413961652, guid: 7950445abe65b9b4db12eadc52dc82df, type: 3}
+  timeBetweenEncounters: 0000000000000000000000000000000000000000
   currentEncounter: -1
   overText: {fileID: 0}

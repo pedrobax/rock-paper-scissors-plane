@@ -30,7 +30,7 @@ public class Volcano : MonoBehaviour
 
     void Update()
     {
-        if (!isSpawning) DoActionLoop();
+        //if (!isSpawning) DoActionLoop();
         
         if (isSpawning && transform.position.z > 16.5f)
         {

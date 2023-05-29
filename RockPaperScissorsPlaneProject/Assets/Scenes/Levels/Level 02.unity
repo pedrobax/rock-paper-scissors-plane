@@ -1135,6 +1135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1415518366}
+  playerHealth: {fileID: 0}
   _levelArea: {fileID: 1108846450}
   _playerTransform: {fileID: 660645803}
   pauseMenu: {fileID: 1256076881}
@@ -5759,7 +5760,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108846448}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -7729,6 +7730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c350397a980b4514bb8a914565189fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shakeType: 0
 --- !u!114 &1457643260
 MonoBehaviour:
   m_ObjectHideFlags: 0
