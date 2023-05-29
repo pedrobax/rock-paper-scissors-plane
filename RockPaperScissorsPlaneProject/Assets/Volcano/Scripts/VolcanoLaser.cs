@@ -10,7 +10,7 @@ public class VolcanoLaser : MonoBehaviour
     LayerMask layerMask = 1 << 5;
     RaycastHit hit;
     LineRenderer lineRenderer;
-    TrailRenderer trailRenderer;
+    public TrailRenderer trailRenderer, rockTrail, paperTrail, scissorsTrail;
     public float trailSpeed = 5;
     public enum LaserType {Rock, Paper, Scissors};
     public LaserType currentType = LaserType.Rock;
@@ -21,7 +21,6 @@ public class VolcanoLaser : MonoBehaviour
     {
         fireTargetRb = fireTarget.GetComponent<Rigidbody>();
         lineRenderer = firePoint.GetComponent<LineRenderer>();
-        trailRenderer = fireTarget.GetComponent<TrailRenderer>();
     }
 
     void OnDrawGizmos()
@@ -60,7 +59,7 @@ public class VolcanoLaser : MonoBehaviour
                 foreach(RaycastHit trailHitObject in trailHit)
                 {
                     if (trailHitObject.collider.gameObject.tag == "Player")
-                    {
+                    {    
                         Debug.Log("Player hit by laser");
                         PlayerHealth ph = trailHitObject.collider.gameObject.GetComponent<PlayerHealth>();  
 
@@ -126,6 +125,25 @@ public class VolcanoLaser : MonoBehaviour
                     }
                 }
             }
+
+            for (int i = 0; i < rockTrail.positionCount; i++)
+            {
+                Vector3 position = rockTrail.GetPosition(i);
+                position += new Vector3(0,0,-trailSpeed) * Time.deltaTime;
+                rockTrail.SetPosition(i, position);
+            }
+            for (int i = 0; i < paperTrail.positionCount; i++)
+            {
+                Vector3 position = paperTrail.GetPosition(i);
+                position += new Vector3(0,0,-trailSpeed) * Time.deltaTime;
+                paperTrail.SetPosition(i, position);
+            }
+            for (int i = 0; i < scissorsTrail.positionCount; i++)
+            {
+                Vector3 position = scissorsTrail.GetPosition(i);
+                position += new Vector3(0,0,-trailSpeed) * Time.deltaTime;
+                scissorsTrail.SetPosition(i, position);
+            }
         }      
     }
 
@@ -141,6 +159,22 @@ public class VolcanoLaser : MonoBehaviour
         isLaserActive = false;
         lineRenderer.enabled = false;
         trailRenderer.emitting= false;
+    }
+
+    void ChangeLaserType(int type)
+    {
+        switch (type)
+        {
+            case 0:
+                currentType = LaserType.Rock;
+                break;
+            case 1:
+                currentType = LaserType.Paper;
+                break;
+            case 2:
+                currentType = LaserType.Scissors;
+                break;
+        }
     }
 
     IEnumerator DamageCooldown(int time)

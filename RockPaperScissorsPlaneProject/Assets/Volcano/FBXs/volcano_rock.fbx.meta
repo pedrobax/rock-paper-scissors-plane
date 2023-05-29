@@ -158,6 +158,27 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.34074074
+        functionName: ChangeLaserType
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: ea9746068d4a32c449786b9d35b499d9, type: 3}
+        floatParameter: 0
+        intParameter: 1
+        messageOptions: 0
+      - time: 0.52962965
+        functionName: ChangeLaserType
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: ea9746068d4a32c449786b9d35b499d9, type: 3}
+        floatParameter: 0
+        intParameter: 2
+        messageOptions: 0
+      - time: 0.7074074
+        functionName: ChangeLaserType
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: ea9746068d4a32c449786b9d35b499d9, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.86475676
         functionName: EndLaser
         data: 
