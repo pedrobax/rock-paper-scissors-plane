@@ -20,6 +20,7 @@ public class Volcano : MonoBehaviour
     public bool isSpawning = false;
     public Mesh paperMesh, rockMesh, scissorsMesh;
     public MeshCollider meshCollider;
+    bool isDefeated = false;
 
     void Start()
     {
@@ -30,7 +31,7 @@ public class Volcano : MonoBehaviour
 
     void Update()
     {
-        //if (!isSpawning) DoActionLoop();
+        if (!isSpawning) DoActionLoop();
         
         if (isSpawning && transform.position.z > 16.5f)
         {
@@ -206,6 +207,14 @@ public class Volcano : MonoBehaviour
                 rockState = RockState.EXPLODE;
             }
         }
+        else if (currentPhase == CurrentPhase.SCISSORS && !isDefeated)
+        {
+            if(antagonistHealth.health <= 200)
+            {
+                StartCoroutine(ExplosionSequence());
+                isDefeated = true;
+            }
+        }
     }
 
     public GameObject firePointL, firePointML, firePointM, firePointMR, firePointR;
@@ -310,6 +319,12 @@ public class Volcano : MonoBehaviour
         CinemachineShake.Instance.ShakeCamera(1f, 6f, CinemachineShake.ShakeType.FADING_IN);
         yield return new WaitForSeconds(6f);
         Explode();
+        if (isDefeated)
+        {
+            GameManager.FinishExam();
+            Time.timeScale = 0.25f;
+        }
+         
         CinemachineShake.Instance.ShakeCamera(15f, 1f, CinemachineShake.ShakeType.FADING_OUT);
 
         switch (currentPhase)
