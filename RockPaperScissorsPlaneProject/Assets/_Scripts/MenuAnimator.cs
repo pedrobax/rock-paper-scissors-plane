@@ -14,6 +14,8 @@ public class MenuAnimator : MonoBehaviour
     public TMP_Text playText;
     public TMP_Text optionsText;
     public TMP_Text quitText;
+    public TMP_Text helpText;
+    public TMP_Text creditsText;
 
     private void Start()
     {
@@ -35,6 +37,8 @@ public class MenuAnimator : MonoBehaviour
         logoStart.Insert(4.5f, playText.DOFade(1, 0.5f));
         logoStart.Insert(4.5f, optionsText.DOFade(1, 0.5f));
         logoStart.Insert(4.5f, quitText.DOFade(1, 0.5f));
+        logoStart.Insert(4.5f, helpText.DOFade(1, 0.5f));
+        logoStart.Insert(4.5f, creditsText.DOFade(1, 0.5f));
         //logoStart.Insert(0, logo.transform.DOPunchScale(new Vector3(-0.8f, 0.8f, 1), 0.25f, 1, 1));
         //logoStart.Insert(0.25f, logo.transform.DOPunchScale(new Vector3(0, -0.5f, 1), 0.25f, 1, 1));
     }
