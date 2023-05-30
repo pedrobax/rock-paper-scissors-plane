@@ -17,8 +17,8 @@ public class EncounterManager : MonoBehaviour
     private void Update()
     {
         if (currentEncounter == -1) StartCoroutine(MoveToNextEncounter()); //starts the first encounter, which is 0
-        if (currentEncounter >= encounterList.Count || Input.GetKeyDown(KeyCode.F7)) //if there are no more encounters this will end the exam,
-                                                                                     //F7 keycode used for testing cheats and skipping exam
+        if (currentEncounter >= encounterList.Count || Input.GetKeyDown(KeyCode.F2)) //if there are no more encounters this will end the exam,
+                                                                                     //F2 keycode used for testing cheats and skipping exam
         {
             GameManager.FinishExam();
             Destroy(gameObject);

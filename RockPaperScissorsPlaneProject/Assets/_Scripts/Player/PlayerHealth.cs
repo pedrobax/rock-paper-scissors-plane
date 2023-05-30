@@ -103,8 +103,8 @@ public class PlayerHealth : MonoBehaviour
         if (Input.GetButtonDown("PreviousType") && currentType == PlayerType.Scissors && canSwitchType) StartCoroutine(SwitchTypeToPaper());
 
         if (Input.GetKeyDown(KeyCode.F3)) lives = 999;
-        if (Input.GetKeyDown(KeyCode.F4)) lives = 2;
-        if (Input.GetKeyDown(KeyCode.F6)){ canBecomeRock = true; canBecomeScissors = true; }
+        if (Input.GetKeyDown(KeyCode.F5)) lives = 2;
+        if (Input.GetKeyDown(KeyCode.F4)){ canBecomeRock = true; canBecomeScissors = true; }
     }
     IEnumerator SwitchTypeToRock()
     {
