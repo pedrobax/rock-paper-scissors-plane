@@ -10,6 +10,11 @@ public class TesouritoAnimation : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        if(accelerate == null)
+        {
+            transform.parent.transform.parent.GetComponent<AccelerateTowardsPlayerAction>();
+        }
+            
     }
 
     void Update()
