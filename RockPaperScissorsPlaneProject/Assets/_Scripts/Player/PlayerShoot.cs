@@ -43,7 +43,7 @@ public class PlayerShoot : MonoBehaviour
     void ShootBasicBullet()
     {
         Instantiate(bulletPrefabBasic, firePoint.position, firePoint.rotation);
-        GameObject vfx = Instantiate(muzzleFlashVFX, firePoint.position, firePoint.rotation);
+        GameObject vfx = Instantiate(muzzleFlashVFX, new Vector3(firePoint.position.x, firePoint.position.y, firePoint.position.z - 1.5f), firePoint.rotation);
         vfx.transform.parent = this.transform;
     }
     void ShootSuperBullet()

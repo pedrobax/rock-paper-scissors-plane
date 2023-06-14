@@ -476,7 +476,7 @@ MonoBehaviour:
   firePoint: {fileID: 7043786513953412569}
   bulletPrefabBasic: {fileID: 5402232347600444085, guid: 8f70f7e7ef01192469a01e7f2d8fc27c, type: 3}
   bulletPrefabSuper: {fileID: 5402232347600444085, guid: 8f70f7e7ef01192469a01e7f2d8fc27c, type: 3}
-  muzzleFlashVFX: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
+  muzzleFlashVFX: {fileID: 6877776639754932821, guid: 267c24c6d2a2041479f0087fe73a5e49, type: 3}
   cooldown: 0.1
   playerHealth: {fileID: 7043786513488450950}
 --- !u!114 &7043786513003983398
@@ -572,7 +572,7 @@ MonoBehaviour:
   firePoint: {fileID: 7043786513063837087}
   bulletPrefabBasic: {fileID: 3318897880865024618, guid: d2d8e94797c2ca442a5e13344708d9b8, type: 3}
   bulletPrefabSuper: {fileID: 3318897880865024618, guid: d2d8e94797c2ca442a5e13344708d9b8, type: 3}
-  muzzleFlashVFX: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
+  muzzleFlashVFX: {fileID: 6877776639754932821, guid: e3677fecc928f2345b2ee178a872836e, type: 3}
   cooldown: 0.05
   playerHealth: {fileID: 7043786513488450950}
 --- !u!114 &7043786513003983397

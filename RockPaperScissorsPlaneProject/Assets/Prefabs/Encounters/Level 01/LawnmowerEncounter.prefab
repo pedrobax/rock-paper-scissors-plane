@@ -1558,6 +1558,7 @@ MonoBehaviour:
   loot: {fileID: 8647987648394905962, guid: 47f2c791ad2e2ff47a2aa171beed0631, type: 3}
   hasLoot: 1
   isColliding: 0
+  muzzleFlashVFX: {fileID: 6877776639754932821, guid: e8b8cd70ceb27ef47bca961c90172c37, type: 3}
 --- !u!114 &4634929406016916760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2393,6 +2394,9 @@ MonoBehaviour:
   clearAtEnd: 1
   spawnTimes: []
   setWaitTime: 3
+  hasTutorial: 0
+  tutorialText: 
+  tutorialTimeToAppear: 0
 --- !u!1 &7105131355831864094
 GameObject:
   m_ObjectHideFlags: 0

@@ -1604,6 +1604,7 @@ MonoBehaviour:
   loot: {fileID: 0}
   hasLoot: 0
   isColliding: 0
+  muzzleFlashVFX: {fileID: 6877776639754932821, guid: fdefcbb9a280135488a91073eb5a97f5, type: 3}
 --- !u!114 &4847338812953453996
 MonoBehaviour:
   m_ObjectHideFlags: 0

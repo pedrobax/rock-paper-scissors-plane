@@ -5428,6 +5428,7 @@ MonoBehaviour:
   loot: {fileID: 0}
   hasLoot: 0
   isColliding: 0
+  muzzleFlashVFX: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
 --- !u!114 &8543558260488549689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5901,6 +5902,7 @@ MonoBehaviour:
   loot: {fileID: 0}
   hasLoot: 0
   isColliding: 0
+  muzzleFlashVFX: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
 --- !u!114 &8543558260498123908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6374,6 +6376,7 @@ MonoBehaviour:
   loot: {fileID: 0}
   hasLoot: 0
   isColliding: 0
+  muzzleFlashVFX: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
 --- !u!114 &8543558260746364488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6847,6 +6850,7 @@ MonoBehaviour:
   loot: {fileID: 0}
   hasLoot: 0
   isColliding: 0
+  muzzleFlashVFX: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
 --- !u!114 &8543558260012719707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7320,6 +7324,7 @@ MonoBehaviour:
   loot: {fileID: 0}
   hasLoot: 0
   isColliding: 0
+  muzzleFlashVFX: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
 --- !u!114 &8543558259967924582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7793,6 +7798,7 @@ MonoBehaviour:
   loot: {fileID: 0}
   hasLoot: 0
   isColliding: 0
+  muzzleFlashVFX: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
 --- !u!114 &8543558260086538571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8266,6 +8272,7 @@ MonoBehaviour:
   loot: {fileID: 0}
   hasLoot: 0
   isColliding: 0
+  muzzleFlashVFX: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
 --- !u!114 &8543558260271707115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8739,6 +8746,7 @@ MonoBehaviour:
   loot: {fileID: 0}
   hasLoot: 0
   isColliding: 0
+  muzzleFlashVFX: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
 --- !u!114 &8543558260184943115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9212,6 +9220,7 @@ MonoBehaviour:
   loot: {fileID: 0}
   hasLoot: 0
   isColliding: 0
+  muzzleFlashVFX: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
 --- !u!114 &8543558259461804742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9685,6 +9694,7 @@ MonoBehaviour:
   loot: {fileID: 0}
   hasLoot: 0
   isColliding: 0
+  muzzleFlashVFX: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
 --- !u!114 &8543558259872104846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10158,6 +10168,7 @@ MonoBehaviour:
   loot: {fileID: 0}
   hasLoot: 0
   isColliding: 0
+  muzzleFlashVFX: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
 --- !u!114 &8543558259815040403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10631,6 +10642,7 @@ MonoBehaviour:
   loot: {fileID: 0}
   hasLoot: 0
   isColliding: 0
+  muzzleFlashVFX: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
 --- !u!114 &8543558259112390911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11104,6 +11116,7 @@ MonoBehaviour:
   loot: {fileID: 0}
   hasLoot: 0
   isColliding: 0
+  muzzleFlashVFX: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
 --- !u!114 &8543558259311092302
 MonoBehaviour:
   m_ObjectHideFlags: 0

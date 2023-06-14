@@ -56,6 +56,11 @@ MonoBehaviour:
   maxDuration: 60
   currentDuration: 0
   clearAtEnd: 0
+  spawnTimes: []
+  setWaitTime: 3
+  hasTutorial: 0
+  tutorialText: 
+  tutorialTimeToAppear: 0
 --- !u!1 &2268703400585257680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,6 +1041,10 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1232679465222208997, guid: 7aa4a0eedebd7b7428cb68ea2ed6cfa2, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
+    - target: {fileID: 1232679465222208997, guid: 7aa4a0eedebd7b7428cb68ea2ed6cfa2, type: 3}
       propertyPath: damageFlashDuration
       value: 0.025
       objectReference: {fileID: 0}
@@ -1373,6 +1382,10 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1232679465222208997, guid: 7aa4a0eedebd7b7428cb68ea2ed6cfa2, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
+    - target: {fileID: 1232679465222208997, guid: 7aa4a0eedebd7b7428cb68ea2ed6cfa2, type: 3}
       propertyPath: damageFlashDuration
       value: 0.025
       objectReference: {fileID: 0}
@@ -1705,6 +1718,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 1232679465222208997, guid: 7aa4a0eedebd7b7428cb68ea2ed6cfa2, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     - target: {fileID: 1232679465222208997, guid: 7aa4a0eedebd7b7428cb68ea2ed6cfa2, type: 3}
       propertyPath: damageFlashDuration
       value: 0.025

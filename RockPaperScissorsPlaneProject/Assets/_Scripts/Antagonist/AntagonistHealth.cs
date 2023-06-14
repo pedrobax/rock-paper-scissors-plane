@@ -29,6 +29,7 @@ public class AntagonistHealth : MonoBehaviour
     public bool isColliding; //is the antagonist colliding with something?
     bool destroyedByPlayer; //was the antagonist destroyed by the player?
     bool canTakeScissorsDamage = true; //can the antagonist take damage from scissors? TODO rework and remove this
+    public GameObject muzzleFlashVFX;
 
     Color[] originalColors; //stores the antagonist's original colors for the damage flash,
                             //should be removed and replaced with a shader for non skinned mesh enemies

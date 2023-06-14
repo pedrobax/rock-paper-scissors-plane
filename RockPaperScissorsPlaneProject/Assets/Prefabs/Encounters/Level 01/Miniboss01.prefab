@@ -259,16 +259,17 @@ MonoBehaviour:
   enemyType: 1
   rb: {fileID: 2924083780066130816}
   meshRenderer: {fileID: 5058544660625496451}
+  skinnedMeshRenderer: {fileID: 0}
   soundSource: {fileID: 8835437894449973336}
   hitClip: {fileID: 8300000, guid: f21e684d14c524142842efa12f970fa7, type: 3}
   shieldVFX: {fileID: 6378513018660134801, guid: c4fd5189c0e5c944eac3887ae5c08a24, type: 3}
-  deathClip: {fileID: 8300000, guid: fb13f4f6237add64d95f4b95690c8770, type: 3}
   deathVFX: {fileID: 6260299754975489240, guid: b574a6d1abdd6b042927c982a3f997a3, type: 3}
   deathShakeTime: 0.5
   deathShakeIntensity: 1
   loot: {fileID: 8647987648394905962, guid: 1aaed50c148279148942304675f210f9, type: 3}
   hasLoot: 0
   isColliding: 0
+  muzzleFlashVFX: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
 --- !u!114 &1694137347146668943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,6 +410,7 @@ MonoBehaviour:
   waitTime: 0
   randomSpawnPosition: 0
   spawnPosition: {x: 0, y: 80, z: 80}
+  spawnType: 0
 --- !u!114 &2924083780066130842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3131,6 +3133,11 @@ MonoBehaviour:
   maxDuration: 3000
   currentDuration: 0
   clearAtEnd: 1
+  spawnTimes: []
+  setWaitTime: 3
+  hasTutorial: 0
+  tutorialText: 
+  tutorialTimeToAppear: 0
 --- !u!1 &5904810857989061241
 GameObject:
   m_ObjectHideFlags: 0
@@ -5756,6 +5763,7 @@ MonoBehaviour:
   waitTime: 15
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!4 &3288059300006971314 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
@@ -5960,6 +5968,7 @@ MonoBehaviour:
   waitTime: 24
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &5904810857369946063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6144,6 +6153,7 @@ MonoBehaviour:
   waitTime: 26
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &5904810857374331164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6400,6 +6410,7 @@ MonoBehaviour:
   waitTime: 19
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &5904810857447082543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6579,6 +6590,7 @@ MonoBehaviour:
   waitTime: 18
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &5904810857488552669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6863,6 +6875,7 @@ MonoBehaviour:
   waitTime: 23
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &5904810858077307241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7159,6 +7172,7 @@ MonoBehaviour:
   waitTime: 21
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!4 &3288059299428756614 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
@@ -7342,6 +7356,7 @@ MonoBehaviour:
   waitTime: 22
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &5904810858152159479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7523,6 +7538,7 @@ MonoBehaviour:
   waitTime: 16
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &5904810858253583049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7711,6 +7727,10 @@ PrefabInstance:
       propertyPath: scoreValue
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!4 &7522648356216837437 stripped
@@ -7782,6 +7802,7 @@ MonoBehaviour:
   waitTime: 39
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!1001 &5904810858355883629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8002,6 +8023,7 @@ MonoBehaviour:
   waitTime: 17
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!1001 &5904810858493968209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8222,6 +8244,7 @@ MonoBehaviour:
   waitTime: 25
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!1001 &5904810858561456945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8329,6 +8352,10 @@ PrefabInstance:
       propertyPath: scoreValue
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!4 &7522648356508410573 stripped
@@ -8362,6 +8389,7 @@ MonoBehaviour:
   waitTime: 39
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &5904810858561456949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8620,6 +8648,7 @@ MonoBehaviour:
   waitTime: 20
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!1001 &5904810858811730192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8727,6 +8756,10 @@ PrefabInstance:
       propertyPath: scoreValue
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!4 &7522648356727242988 stripped
@@ -8798,6 +8831,7 @@ MonoBehaviour:
   waitTime: 39
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!1001 &5904810859088442609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8905,6 +8939,10 @@ PrefabInstance:
       propertyPath: scoreValue
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!4 &7522648356987149581 stripped
@@ -8938,6 +8976,7 @@ MonoBehaviour:
   waitTime: 39
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &5904810859088442613
 MonoBehaviour:
   m_ObjectHideFlags: 0

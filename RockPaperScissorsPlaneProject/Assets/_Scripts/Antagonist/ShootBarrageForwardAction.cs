@@ -13,6 +13,8 @@ public class ShootBarrageForwardAction : Action
      * to create situations where he is at shot directly and must change his position accordingly
      */
 
+    AntagonistHealth antagonistHealth;
+    GameObject muzzleFlashVFX;
     [SerializeField] Transform firePoint;
     [SerializeField] public float bulletAmount = 3; //how many bullets will be shot
     private float angleBetweenBullets; //internely calculates the angle between each bullet
@@ -25,12 +27,16 @@ public class ShootBarrageForwardAction : Action
         bulletHolder = GetComponent<BulletHolder>();
         angleBetweenBullets = shootingAngle / bulletAmount; //calculates the angle between bullets based on
                                                             //the bullet amount divided by the set angle
+        antagonistHealth = GetComponent<AntagonistHealth>();
+        muzzleFlashVFX = antagonistHealth.muzzleFlashVFX;
     }
 
     public override void Act()
     {
         if (!isActing && !hasActed)
         {
+            GameObject vfx = Instantiate(muzzleFlashVFX, firePoint.position, firePoint.rotation);
+            vfx.transform.parent = this.transform;
             //spawns each bullet at the same time. The direction of each is based on the current loop and the angle between bullets
             for (int i = 0; i < bulletAmount; i++)
             {

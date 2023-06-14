@@ -4249,6 +4249,11 @@ MonoBehaviour:
   maxDuration: 180
   currentDuration: 0
   clearAtEnd: 0
+  spawnTimes: []
+  setWaitTime: 3
+  hasTutorial: 0
+  tutorialText: 
+  tutorialTimeToAppear: 0
 --- !u!1 &6153073725206085328
 GameObject:
   m_ObjectHideFlags: 0
@@ -5277,6 +5282,10 @@ PrefabInstance:
       propertyPath: secondaryTargetList.Array.data[1]
       value: 
       objectReference: {fileID: 6153073724687532970}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!4 &7850848448693769997 stripped
@@ -5545,6 +5554,10 @@ PrefabInstance:
       propertyPath: secondaryTargetList.Array.data[1]
       value: 
       objectReference: {fileID: 6153073724008335740}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!1 &7850848448549100756 stripped
@@ -5813,6 +5826,10 @@ PrefabInstance:
       propertyPath: secondaryTargetList.Array.data[1]
       value: 
       objectReference: {fileID: 6153073725087262906}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!4 &7850848448532740053 stripped
@@ -6081,6 +6098,10 @@ PrefabInstance:
       propertyPath: secondaryTargetList.Array.data[1]
       value: 
       objectReference: {fileID: 6153073724688787464}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!4 &7850848448592848965 stripped
@@ -6349,6 +6370,10 @@ PrefabInstance:
       propertyPath: secondaryTargetList.Array.data[1]
       value: 
       objectReference: {fileID: 6153073725322366813}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!1 &7850848448613888824 stripped
@@ -6617,6 +6642,10 @@ PrefabInstance:
       propertyPath: secondaryTargetList.Array.data[1]
       value: 
       objectReference: {fileID: 6153073723896542400}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!1 &7850848448661591876 stripped
@@ -6885,6 +6914,10 @@ PrefabInstance:
       propertyPath: secondaryTargetList.Array.data[1]
       value: 
       objectReference: {fileID: 6153073724875960267}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!1 &7850848448954907821 stripped
@@ -7153,6 +7186,10 @@ PrefabInstance:
       propertyPath: secondaryTargetList.Array.data[1]
       value: 
       objectReference: {fileID: 6153073724639782685}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!1 &7850848448946981724 stripped
@@ -7421,6 +7458,10 @@ PrefabInstance:
       propertyPath: secondaryTargetList.Array.data[1]
       value: 
       objectReference: {fileID: 6153073723548727264}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!4 &7850848449006804297 stripped
@@ -7689,6 +7730,10 @@ PrefabInstance:
       propertyPath: secondaryTargetList.Array.data[1]
       value: 
       objectReference: {fileID: 6153073723702980090}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!1 &7850848449298934053 stripped
@@ -7957,6 +8002,10 @@ PrefabInstance:
       propertyPath: secondaryTargetList.Array.data[1]
       value: 
       objectReference: {fileID: 6153073723909244026}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!1 &7850848449282718061 stripped
@@ -8225,6 +8274,10 @@ PrefabInstance:
       propertyPath: secondaryTargetList.Array.data[1]
       value: 
       objectReference: {fileID: 6153073724554608051}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!4 &7850848449684709636 stripped
@@ -8493,6 +8546,10 @@ PrefabInstance:
       propertyPath: secondaryTargetList.Array.data[1]
       value: 
       objectReference: {fileID: 6153073725179985860}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!4 &7850848449731291045 stripped
@@ -8761,6 +8818,10 @@ PrefabInstance:
       propertyPath: secondaryTargetList.Array.data[1]
       value: 
       objectReference: {fileID: 6153073725429219829}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!1 &7850848449995908513 stripped
@@ -9029,6 +9090,10 @@ PrefabInstance:
       propertyPath: secondaryTargetList.Array.data[1]
       value: 
       objectReference: {fileID: 6153073723843807323}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!1 &7850848450280020465 stripped
@@ -9297,6 +9362,10 @@ PrefabInstance:
       propertyPath: secondaryTargetList.Array.data[1]
       value: 
       objectReference: {fileID: 6153073724245691639}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!1 &7850848450194922268 stripped
@@ -9565,6 +9634,10 @@ PrefabInstance:
       propertyPath: secondaryTargetList.Array.data[1]
       value: 
       objectReference: {fileID: 6153073725495112141}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!1 &7850848450643049872 stripped
@@ -9833,6 +9906,10 @@ PrefabInstance:
       propertyPath: secondaryTargetList.Array.data[1]
       value: 
       objectReference: {fileID: 6153073723564230241}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!4 &7850848450414210437 stripped
@@ -10065,6 +10142,10 @@ PrefabInstance:
       propertyPath: scoreValue
       value: 250
       objectReference: {fileID: 0}
+    - target: {fileID: 3325353930794036194, guid: c1406f065f08fbb468d5364f67d1ae7d, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     - target: {fileID: 7440874106264965247, guid: c1406f065f08fbb468d5364f67d1ae7d, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0

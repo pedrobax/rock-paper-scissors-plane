@@ -319,6 +319,9 @@ MonoBehaviour:
   - 8
   - 8
   setWaitTime: 5
+  hasTutorial: 0
+  tutorialText: 
+  tutorialTimeToAppear: 0
 --- !u!1 &8878866544505464377
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +391,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8878866544441678999}
     m_Modifications:
+    - target: {fileID: 1315538786826333993, guid: d46e6693148d4154085ee7f2bd0e16e2, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     - target: {fileID: 8674409523454824554, guid: d46e6693148d4154085ee7f2bd0e16e2, type: 3}
       propertyPath: duration
       value: 5
@@ -551,6 +558,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[2]
       value: 
       objectReference: {fileID: 8878866544174420784}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!4 &4805297879523402264 stripped
@@ -760,6 +771,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[2]
       value: 
       objectReference: {fileID: 8878866543046277241}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: muzzleFlashVFX
+      value: 
+      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
 --- !u!1 &4805297879434142889 stripped
