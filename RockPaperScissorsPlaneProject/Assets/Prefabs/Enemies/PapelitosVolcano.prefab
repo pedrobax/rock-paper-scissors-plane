@@ -519,6 +519,7 @@ MonoBehaviour:
   loot: {fileID: 0}
   hasLoot: 0
   isColliding: 0
+  muzzleFlashVFX: {fileID: 0}
 --- !u!114 &6695822836214732123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1413,7 +1414,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2113850505071641814, guid: 28615ede04e089449a1b13d08d3ff578, type: 3}
+  - {fileID: 2100000, guid: e0674820104c66846b0761016aac3a4e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1784,6 +1785,7 @@ MonoBehaviour:
   loot: {fileID: 0}
   hasLoot: 0
   isColliding: 0
+  muzzleFlashVFX: {fileID: 0}
 --- !u!114 &7853995548386355445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2263,7 +2265,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2113850505071641814, guid: 28615ede04e089449a1b13d08d3ff578, type: 3}
+  - {fileID: 2100000, guid: e0674820104c66846b0761016aac3a4e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

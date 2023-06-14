@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce51831e63438df4c827102b12c2e57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitVFX: {fileID: 5912171667578520412, guid: 89d76a3e3c0190e45a49a79afb825829, type: 3}
+  hitVFX: {fileID: 5912171667578520412, guid: fca112a752864d740b889746cec74ea3, type: 3}
   speed: 15
   maxRange: 150
   damage: 1

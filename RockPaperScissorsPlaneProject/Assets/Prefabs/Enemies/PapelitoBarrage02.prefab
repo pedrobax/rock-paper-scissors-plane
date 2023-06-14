@@ -247,14 +247,17 @@ MonoBehaviour:
   enemyType: 1
   rb: {fileID: 9048232087154326871}
   meshRenderer: {fileID: 4036147195813935197}
+  skinnedMeshRenderer: {fileID: 0}
   soundSource: {fileID: 3429612490843623055}
   hitClip: {fileID: 8300000, guid: f21e684d14c524142842efa12f970fa7, type: 3}
-  shieldVFX: {fileID: 3268028251387979328, guid: ffc74ad4b975bd044a798d18695c4595, type: 3}
-  deathClip: {fileID: 8300000, guid: fb13f4f6237add64d95f4b95690c8770, type: 3}
+  shieldVFX: {fileID: 3268028251387979328, guid: d0eafeee08220e44bb2fd77fce296d5a, type: 3}
   deathVFX: {fileID: 3710254010715789815, guid: 56ab1f600c0a3f64b868eb80902e56b6, type: 3}
   deathShakeTime: 0.2
   deathShakeIntensity: 0.6
+  loot: {fileID: 0}
+  hasLoot: 0
   isColliding: 0
+  muzzleFlashVFX: {fileID: 0}
 --- !u!114 &4793907396209220952
 MonoBehaviour:
   m_ObjectHideFlags: 0

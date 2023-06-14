@@ -1363,7 +1363,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 1, b: 0.9328859, a: 1}
+        key0: {r: 1, g: 0, b: 0.045223236, a: 1}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -1392,7 +1392,7 @@ ParticleSystem:
         m_NumAlphaKeys: 3
       minGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 1, b: 0.7550447, a: 1}
+        key0: {r: 1, g: 0, b: 0.054955482, a: 1}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 1, g: 1, b: 1, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -6233,7 +6233,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 1, b: 0.9328859, a: 0}
+        key0: {r: 1, g: 0, b: 0.04318142, a: 0}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -6262,7 +6262,7 @@ ParticleSystem:
         m_NumAlphaKeys: 5
       minGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 1, b: 0.9328859, a: 0}
+        key0: {r: 1, g: 0.02615793, b: 0, a: 0}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -6280,7 +6280,7 @@ ParticleSystem:
         ctime7: 0
         atime0: 0
         atime1: 7710
-        atime2: 33924
+        atime2: 37008
         atime3: 40670
         atime4: 65535
         atime5: 0
@@ -9751,7 +9751,7 @@ GameObject:
   - component: {fileID: 808985265565255388}
   - component: {fileID: 65766974747969187}
   m_Layer: 0
-  m_Name: VfxBulletPlayerHit
+  m_Name: VfxBulletEnemyHitRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

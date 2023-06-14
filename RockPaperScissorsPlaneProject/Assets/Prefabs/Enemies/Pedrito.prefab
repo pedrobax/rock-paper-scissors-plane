@@ -1594,7 +1594,7 @@ MonoBehaviour:
   enemyType: 0
   rb: {fileID: 8958665384240154019}
   meshRenderer: {fileID: 0}
-  skinnedMeshRenderer: {fileID: 0}
+  skinnedMeshRenderer: {fileID: 3971204182684584827}
   soundSource: {fileID: 3340047996042409595}
   hitClip: {fileID: 8300000, guid: f21e684d14c524142842efa12f970fa7, type: 3}
   shieldVFX: {fileID: 6378513018660134801, guid: c4fd5189c0e5c944eac3887ae5c08a24, type: 3}

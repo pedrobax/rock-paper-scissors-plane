@@ -488,7 +488,7 @@ PrefabInstance:
     - target: {fileID: 556786880714957405, guid: a6d4fff9cdacf2f4081d11c566bdec95, type: 3}
       propertyPath: shieldVFX
       value: 
-      objectReference: {fileID: 6378513018660134801, guid: c4fd5189c0e5c944eac3887ae5c08a24, type: 3}
+      objectReference: {fileID: 6378513018660134801, guid: c742696585e3ce343ae365905fbea011, type: 3}
     - target: {fileID: 556786880714957405, guid: a6d4fff9cdacf2f4081d11c566bdec95, type: 3}
       propertyPath: scoreValue
       value: 500
