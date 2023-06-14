@@ -386,9 +386,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1540502053576789486}
     - target: {fileID: 556786880312539616, guid: a6d4fff9cdacf2f4081d11c566bdec95, type: 3}
+      propertyPath: bulletAmount
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 556786880312539616, guid: a6d4fff9cdacf2f4081d11c566bdec95, type: 3}
       propertyPath: bulletPrefab
       value: 
-      objectReference: {fileID: 1185525187436876783, guid: b0ce5b8cd8345d84fbcb4b86ac37da2b, type: 3}
+      objectReference: {fileID: 7818664103063930849, guid: aa951a9515cf8ac4182c23b2f6c3039b, type: 3}
+    - target: {fileID: 556786880312539616, guid: a6d4fff9cdacf2f4081d11c566bdec95, type: 3}
+      propertyPath: shootingAngle
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 556786880714957345, guid: a6d4fff9cdacf2f4081d11c566bdec95, type: 3}
       propertyPath: m_Name
       value: ChemBond

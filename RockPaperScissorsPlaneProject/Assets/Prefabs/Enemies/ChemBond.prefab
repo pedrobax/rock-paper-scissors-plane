@@ -112,6 +112,7 @@ MonoBehaviour:
   loot: {fileID: 0}
   hasLoot: 0
   isColliding: 0
+  muzzleFlashVFX: {fileID: 0}
 --- !u!114 &556786880714957404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,21 +313,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &556786880312539616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827381839865766281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0d8a1ad2df323a4babfae81b41a50f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 7818664103063930849, guid: c72932528c3e91f4a98e6ec09691d9b1, type: 3}
-  firePoint: {fileID: 556786880173814703}
-  fireVfx: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
 --- !u!114 &556786880312539166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +330,23 @@ MonoBehaviour:
   animationActions: []
   animator: {fileID: 0}
   currentAction: 0
+--- !u!114 &556786880312539616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827381839865766281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0d8a1ad2df323a4babfae81b41a50f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 7818664103063930849, guid: c72932528c3e91f4a98e6ec09691d9b1, type: 3}
+  firePoint: {fileID: 556786880173814703}
+  fireVfx: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
+  bulletAmount: 25
+  shootingAngle: 30
 --- !u!1 &1440125534190749485 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1460925758383528949, guid: b38ea9573cc934a41bded3d499e48f57, type: 3}
