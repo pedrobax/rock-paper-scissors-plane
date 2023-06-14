@@ -3,7 +3,17 @@ guid: 38434394c8a87e24990b0a34142f1348
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GreenScissorsBlade
+    second: {fileID: 2100000, guid: 8d4c9626484b50c44a1cfc4e28e5d02a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GreenScissorsBody
+    second: {fileID: 2100000, guid: 864997d19026d824cbf734c7f4e84954, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

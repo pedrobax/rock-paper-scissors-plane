@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] public MeshRenderer rockMeshRenderer;
     [SerializeField] public MeshRenderer paperMeshRenderer;
     [SerializeField] public SkinnedMeshRenderer scissorsMeshRenderer;
-    Color originalColor;
+    Color paperOriginalColor, rockOriginalColor, scissorsOriginalColor;
 
     [SerializeField] public PlayerType currentType = PlayerType.Paper;
     public bool canSwitchType = true;
@@ -45,7 +45,9 @@ public class PlayerHealth : MonoBehaviour
         if (currentType == PlayerType.Paper) currentMeshRenderer = paperMeshRenderer;
         if (currentType == PlayerType.Scissors) currentSkinnedMeshRenderer = scissorsMeshRenderer;
         if (currentType == PlayerType.Rock) currentMeshRenderer = rockMeshRenderer;
-        originalColor = currentMeshRenderer.material.color;
+        paperOriginalColor = paperMeshRenderer.material.color;
+        rockOriginalColor = rockMeshRenderer.material.color;
+        scissorsOriginalColor = scissorsMeshRenderer.material.color;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -124,7 +126,7 @@ public class PlayerHealth : MonoBehaviour
         paperCollider.enabled = false;
         scissorsCollider.enabled = false;
         currentMeshRenderer = rockMeshRenderer;
-        originalColor = rockMeshRenderer.material.color;
+        if (rockMeshRenderer.material.color != rockOriginalColor) rockMeshRenderer.material.color = rockOriginalColor;
         StartCoroutine(CountTransformCooldown());
         Debug.Log("You are now a Rock!");
     }
@@ -146,7 +148,7 @@ public class PlayerHealth : MonoBehaviour
         paperCollider.enabled = true;
         scissorsCollider.enabled = false;
         currentMeshRenderer = paperMeshRenderer;
-        originalColor = paperMeshRenderer.material.color;
+        if (paperMeshRenderer.material.color != paperOriginalColor) paperMeshRenderer.material.color = paperOriginalColor;
         StartCoroutine(CountTransformCooldown());
         Debug.Log("You are now a Paper!");
     }
@@ -167,7 +169,6 @@ public class PlayerHealth : MonoBehaviour
         rockCollider.enabled = false;
         paperCollider.enabled = false;
         scissorsCollider.enabled = true;
-        originalColor = scissorsMeshRenderer.material.color;
         StartCoroutine(CountTransformCooldown());
         Debug.Log("You are now Scissors!");
     }
@@ -198,9 +199,11 @@ public class PlayerHealth : MonoBehaviour
             if (currentType == PlayerType.Scissors) Instantiate(scissorsDeathVFX, transform.position, transform.rotation);
 
             currentMeshRenderer.enabled = false;
+            currentSkinnedMeshRenderer.enabled = false;
             canTakeDamage = false;
             yield return new WaitForSeconds(respawnTime);
             transform.position = respawnPosition;
+            if (currentType == PlayerType.Scissors) currentSkinnedMeshRenderer.enabled = true;
             currentMeshRenderer.enabled = true;
             StartCoroutine(DamageFlash(respawnInvulnerabilityTime / 10));
             yield return new WaitForSeconds(respawnInvulnerabilityTime / 5);
@@ -238,8 +241,23 @@ public class PlayerHealth : MonoBehaviour
     IEnumerator DamageFlash(float duration)
     {
         currentMeshRenderer.material.color = Color.white;
+        foreach (var mat in currentSkinnedMeshRenderer.materials)
+        {
+            mat.SetFloat("_isDamageFlashing", 1);
+        }
         yield return new WaitForSeconds(duration);
-        currentMeshRenderer.material.color = originalColor;
+        foreach (var mat in currentSkinnedMeshRenderer.materials)
+        {
+            mat.SetFloat("_isDamageFlashing", 0);
+        }
+        if(currentType == PlayerType.Rock)
+        {
+            currentMeshRenderer.material.color = rockOriginalColor;
+        }
+        else if(currentType == PlayerType.Paper)
+        {
+            currentMeshRenderer.material.color = paperOriginalColor;
+        }
     }
 
     public void IgnoreDamage()
