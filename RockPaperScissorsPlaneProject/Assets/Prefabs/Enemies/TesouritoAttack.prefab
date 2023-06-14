@@ -255,6 +255,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[4]
       value: 
       objectReference: {fileID: 5764413589783892747}
+    - target: {fileID: 7453044155810133825, guid: b53447f1a5d350142a827183e752d69d, type: 3}
+      propertyPath: accelerate
+      value: 
+      objectReference: {fileID: 5764413589087135045}
     - target: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -407,6 +411,7 @@ MonoBehaviour:
   waitTime: 0
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!4 &3723594179599671546 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}

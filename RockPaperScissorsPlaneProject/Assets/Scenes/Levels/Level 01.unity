@@ -3153,6 +3153,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484510539}
   m_CullTransparentMesh: 1
+--- !u!137 &496380797 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5773260159421406646, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
+  m_PrefabInstance: {fileID: 7043786513003983392}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &534528740
 GameObject:
   m_ObjectHideFlags: 0
@@ -9287,6 +9292,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823508452}
   m_CullTransparentMesh: 1
+--- !u!1 &1823621816 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4421513192562439946, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
+  m_PrefabInstance: {fileID: 7043786513003983392}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1823621818
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823621816}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9b2c15a3fdc141b4e99c497f5b3c6cc5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1834773740
 GameObject:
   m_ObjectHideFlags: 0
@@ -11442,10 +11472,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7043786513319837418, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7043786513488450949, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
       propertyPath: m_Name
       value: Player
@@ -11454,6 +11480,14 @@ PrefabInstance:
       propertyPath: deathMenu
       value: 
       objectReference: {fileID: 973577147}
+    - target: {fileID: 7043786513488450950, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
+      propertyPath: scissorsMeshRenderer
+      value: 
+      objectReference: {fileID: 496380797}
+    - target: {fileID: 7043786513488450950, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
+      propertyPath: currentSkinnedMeshRenderer
+      value: 
+      objectReference: {fileID: 496380797}
     - target: {fileID: 7043786513488450952, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
       propertyPath: levelArea
       value: 
@@ -11501,6 +11535,10 @@ PrefabInstance:
     - target: {fileID: 7043786513488450955, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043786514479697484, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}

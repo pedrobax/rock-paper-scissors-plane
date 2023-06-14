@@ -16,9 +16,10 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] public GameObject deathMenu; //pelo amor de deus remova essa gambiarra depois e fa�a um evento de morte direito no gamemanager
 
     [SerializeField] public MeshRenderer currentMeshRenderer;
+    [SerializeField] public SkinnedMeshRenderer currentSkinnedMeshRenderer; 
     [SerializeField] public MeshRenderer rockMeshRenderer;
     [SerializeField] public MeshRenderer paperMeshRenderer;
-    [SerializeField] public MeshRenderer scissorsMeshRenderer;
+    [SerializeField] public SkinnedMeshRenderer scissorsMeshRenderer;
     Color originalColor;
 
     [SerializeField] public PlayerType currentType = PlayerType.Paper;
@@ -42,7 +43,7 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         if (currentType == PlayerType.Paper) currentMeshRenderer = paperMeshRenderer;
-        if (currentType == PlayerType.Scissors) currentMeshRenderer = scissorsMeshRenderer;
+        if (currentType == PlayerType.Scissors) currentSkinnedMeshRenderer = scissorsMeshRenderer;
         if (currentType == PlayerType.Rock) currentMeshRenderer = rockMeshRenderer;
         originalColor = currentMeshRenderer.material.color;
     }
@@ -111,6 +112,7 @@ public class PlayerHealth : MonoBehaviour
         //GameObject changeVfx = Instantiate(typeChangeVFX, transform.position, transform.rotation);
         //changeVfx.transform.parent = this.transform;
         currentMeshRenderer.enabled = false;
+        currentSkinnedMeshRenderer.enabled = false;
         yield return new WaitForSeconds(0.15f);
         gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         currentMeshRenderer.enabled = true;
@@ -132,6 +134,7 @@ public class PlayerHealth : MonoBehaviour
         //GameObject changeVfx = Instantiate(typeChangeVFX, transform.position, transform.rotation);
         //changeVfx.transform.parent = this.transform;
         currentMeshRenderer.enabled = false;
+        currentSkinnedMeshRenderer.enabled = false;
         yield return new WaitForSeconds(0.15f);
         gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         currentMeshRenderer.enabled = true;
@@ -156,7 +159,7 @@ public class PlayerHealth : MonoBehaviour
         currentMeshRenderer.enabled = false;
         yield return new WaitForSeconds(0.15f);
         gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-        currentMeshRenderer.enabled = true;
+        currentSkinnedMeshRenderer.enabled = true;
         currentType = PlayerType.Scissors;
         playerScissorsObject.SetActive(true);
         playerRockObject.SetActive(false);
@@ -164,7 +167,6 @@ public class PlayerHealth : MonoBehaviour
         rockCollider.enabled = false;
         paperCollider.enabled = false;
         scissorsCollider.enabled = true;
-        currentMeshRenderer = scissorsMeshRenderer;
         originalColor = scissorsMeshRenderer.material.color;
         StartCoroutine(CountTransformCooldown());
         Debug.Log("You are now Scissors!");

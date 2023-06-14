@@ -122,7 +122,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7043786512808783124}
   - {fileID: 7043786513729967335}
@@ -279,9 +279,10 @@ MonoBehaviour:
   soundSource: {fileID: 7043786513488450958}
   deathMenu: {fileID: 0}
   currentMeshRenderer: {fileID: 0}
+  currentSkinnedMeshRenderer: {fileID: 0}
   rockMeshRenderer: {fileID: 9107989635406772436}
   paperMeshRenderer: {fileID: 3403696637082602468}
-  scissorsMeshRenderer: {fileID: 6157215856613037353}
+  scissorsMeshRenderer: {fileID: 0}
   currentType: 1
   canSwitchType: 1
   canBecomeRock: 0
@@ -711,11 +712,6 @@ PrefabInstance:
 --- !u!4 &3897740674712432048 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 38434394c8a87e24990b0a34142f1348, type: 3}
-  m_PrefabInstance: {fileID: 3575074166978513499}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &6157215856613037353 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 7273282819826950002, guid: 38434394c8a87e24990b0a34142f1348, type: 3}
   m_PrefabInstance: {fileID: 3575074166978513499}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4106660188724041568

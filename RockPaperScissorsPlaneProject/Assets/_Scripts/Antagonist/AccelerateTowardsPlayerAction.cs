@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 public class AccelerateTowardsPlayerAction : Action
 {
-    [SerializeField] float acceleration = 30;
+    [SerializeField] public float acceleration = 30;
     [SerializeField] float maxSpeed = 150;
     [SerializeField] float turnSpeed = 1;
     Vector3 relativePosition;
