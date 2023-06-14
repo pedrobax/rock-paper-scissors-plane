@@ -26214,6 +26214,7 @@ MonoBehaviour:
   shootingAngle: 90
   fireCooldown: 1.5
   startTime: 0
+  volcano: {fileID: 7496075008480396585}
 --- !u!1 &5215074058490108407
 GameObject:
   m_ObjectHideFlags: 0
@@ -40601,20 +40602,21 @@ MonoBehaviour:
   scissorsMesh: {fileID: 2089929679098975997, guid: ede2a20b261969f4d93110cedefc604b, type: 3}
   meshCollider: {fileID: 0}
   volcanoHolder: {fileID: 3933844429799315870}
+  isDefeated: 0
   paperState: 0
   paperIdleDuration: 3
   paperAttackDuration: 10
   paperSummonDuration: 1
   paperDeathDuration: 5
   paperCurrentDuration: 0
-  paperHealthThreshold: 2000
+  paperHealthThreshold: 2200
   rockState: 0
   rockIdleDuration: 3
   rockEruptDuration: 5
   rockPauseDuration: 3
   rockLaserDuration: 11.5
   rockCurrentDuration: 0
-  rockHealthThreshold: 1000
+  rockHealthThreshold: 900
   firePointL: {fileID: 7496075008059138206}
   firePointML: {fileID: 7496075008674864017}
   firePointM: {fileID: 7496075009692628830}
@@ -40637,8 +40639,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Volcano
-  maxHealth: 2500
-  health: 2500
+  maxHealth: 3000
+  health: 3000
   scoreValue: 5000
   damageFlashDuration: 0.025
   enemyType: 1
@@ -40654,6 +40656,7 @@ MonoBehaviour:
   loot: {fileID: 0}
   hasLoot: 0
   isColliding: 0
+  muzzleFlashVFX: {fileID: 0}
 --- !u!54 &7496075008480396587
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class VolcanoShockwave : MonoBehaviour
     public float fireCooldown;
     float currentCooldown;
     public float startTime;
+    public Volcano volcano;
 
     void Start()
     {
@@ -24,12 +25,15 @@ public class VolcanoShockwave : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Time.time - currentCooldown >= fireCooldown)
+        if(!volcano.isDefeated)
         {
-            bulletType = (BulletType)Random.Range(0, 3);
-            Debug.Log(bulletType);
-            Shoot();
-            currentCooldown = Time.time;
+            if (Time.time - currentCooldown >= fireCooldown)
+            {
+                bulletType = (BulletType)Random.Range(0, 3);
+                Debug.Log(bulletType);
+                Shoot();
+                currentCooldown = Time.time;
+            }
         }
     }
 

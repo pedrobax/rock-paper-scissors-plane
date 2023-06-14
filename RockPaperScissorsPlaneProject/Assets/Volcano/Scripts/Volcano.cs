@@ -20,7 +20,7 @@ public class Volcano : MonoBehaviour
     public Mesh paperMesh, rockMesh, scissorsMesh;
     public MeshCollider meshCollider;
     public GameObject volcanoHolder;
-    bool isDefeated = false;
+    public bool isDefeated = false;
 
     void Start()
     {
@@ -57,6 +57,11 @@ public class Volcano : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H))
         {
             Erupt(2);
+        }
+
+        if(isDefeated)
+        {
+            FindObjectOfType<GameManager>().DisablePlayerTakeDamage();
         }
     }
 

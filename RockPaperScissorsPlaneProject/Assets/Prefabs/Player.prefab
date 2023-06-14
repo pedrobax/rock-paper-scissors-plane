@@ -279,10 +279,10 @@ MonoBehaviour:
   soundSource: {fileID: 7043786513488450958}
   deathMenu: {fileID: 0}
   currentMeshRenderer: {fileID: 0}
-  currentSkinnedMeshRenderer: {fileID: 0}
+  currentSkinnedMeshRenderer: {fileID: 5773260159421406646}
   rockMeshRenderer: {fileID: 9107989635406772436}
   paperMeshRenderer: {fileID: 3403696637082602468}
-  scissorsMeshRenderer: {fileID: 0}
+  scissorsMeshRenderer: {fileID: 5773260159421406646}
   currentType: 1
   canSwitchType: 1
   canBecomeRock: 0
@@ -712,6 +712,36 @@ PrefabInstance:
 --- !u!4 &3897740674712432048 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 38434394c8a87e24990b0a34142f1348, type: 3}
+  m_PrefabInstance: {fileID: 3575074166978513499}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4421513192562439946 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 38434394c8a87e24990b0a34142f1348, type: 3}
+  m_PrefabInstance: {fileID: 3575074166978513499}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4401271149878747371
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421513192562439946}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9b2c15a3fdc141b4e99c497f5b3c6cc5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!137 &5773260159421406646 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -2196759887003494419, guid: 38434394c8a87e24990b0a34142f1348, type: 3}
   m_PrefabInstance: {fileID: 3575074166978513499}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4106660188724041568

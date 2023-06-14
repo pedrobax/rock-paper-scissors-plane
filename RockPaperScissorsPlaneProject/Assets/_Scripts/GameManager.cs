@@ -218,6 +218,11 @@ public class GameManager : MonoBehaviour
         return _tutorialPopup;
     }
 
+    public void DisablePlayerTakeDamage()
+    {
+        playerHealth.canTakeDamage = false;
+    }
+
     public enum PlayerType { Rock, Paper, Scissors}
 
     public enum LevelType { First, Other }
