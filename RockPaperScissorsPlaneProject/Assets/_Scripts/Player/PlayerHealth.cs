@@ -39,11 +39,17 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] GameObject rockShieldVFX;
     [SerializeField] GameObject paperShieldVFX;
     [SerializeField] GameObject scissorsShieldVFX;
+    public GameObject morphShape;
+    public Animator morphAnimator;
+    public Transform scissorVisual;
 
     private void Start()
     {
         if (currentType == PlayerType.Paper) currentMeshRenderer = paperMeshRenderer;
-        if (currentType == PlayerType.Scissors) currentSkinnedMeshRenderer = scissorsMeshRenderer;
+        if (currentType == PlayerType.Scissors) {
+            currentSkinnedMeshRenderer = scissorsMeshRenderer;
+            currentMeshRenderer = paperMeshRenderer;
+        } 
         if (currentType == PlayerType.Rock) currentMeshRenderer = rockMeshRenderer;
         paperOriginalColor = paperMeshRenderer.material.color;
         rockOriginalColor = rockMeshRenderer.material.color;
@@ -115,7 +121,14 @@ public class PlayerHealth : MonoBehaviour
         //changeVfx.transform.parent = this.transform;
         currentMeshRenderer.enabled = false;
         currentSkinnedMeshRenderer.enabled = false;
+
+        morphShape.SetActive(true);
+        if(currentType == PlayerType.Paper) morphAnimator.SetTrigger("PaperToRock");
+        if (currentType == PlayerType.Scissors) morphAnimator.SetTrigger("ScissorsToRock");
+
         yield return new WaitForSeconds(0.15f);
+
+        morphShape.SetActive(false);
         gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         currentMeshRenderer.enabled = true;
         currentType = PlayerType.Rock;
@@ -137,7 +150,14 @@ public class PlayerHealth : MonoBehaviour
         //changeVfx.transform.parent = this.transform;
         currentMeshRenderer.enabled = false;
         currentSkinnedMeshRenderer.enabled = false;
+
+        morphShape.SetActive(true);
+        if(currentType == PlayerType.Rock) morphAnimator.SetTrigger("RockToPaper");
+        if (currentType == PlayerType.Scissors) morphAnimator.SetTrigger("ScissorsToPaper");
+
         yield return new WaitForSeconds(0.15f);
+
+        morphShape.SetActive(false);
         gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         currentMeshRenderer.enabled = true;
         currentType = PlayerType.Paper;
@@ -159,7 +179,16 @@ public class PlayerHealth : MonoBehaviour
         //GameObject changeVfx = Instantiate(typeChangeVFX, transform.position, transform.rotation);
         //changeVfx.transform.parent = this.transform;
         currentMeshRenderer.enabled = false;
+
+        morphShape.SetActive(true);
+        if(currentType == PlayerType.Rock) morphAnimator.SetTrigger("RockToScissors");
+        if (currentType == PlayerType.Paper) morphAnimator.SetTrigger("PaperToScissors");
+
         yield return new WaitForSeconds(0.15f);
+
+        morphShape.SetActive(false);
+
+        scissorVisual.rotation = Quaternion.Euler(0, 0, 0);
         gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         currentSkinnedMeshRenderer.enabled = true;
         currentType = PlayerType.Scissors;

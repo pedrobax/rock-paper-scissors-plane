@@ -2652,11 +2652,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421260274}
   m_CullTransparentMesh: 1
---- !u!23 &446463018 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 6157215856613037353, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
-  m_PrefabInstance: {fileID: 7043786513003983392}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &471052638
 GameObject:
   m_ObjectHideFlags: 0
@@ -8986,6 +8981,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713129826}
   m_CullTransparentMesh: 1
+--- !u!137 &1718485896 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5773260159421406646, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
+  m_PrefabInstance: {fileID: 7043786513003983392}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1741089305
 GameObject:
   m_ObjectHideFlags: 0
@@ -11642,7 +11642,7 @@ PrefabInstance:
     - target: {fileID: 7043786513488450950, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
       propertyPath: scissorsMeshRenderer
       value: 
-      objectReference: {fileID: 446463018}
+      objectReference: {fileID: 1718485896}
     - target: {fileID: 7043786513488450952, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
       propertyPath: levelArea
       value: 
@@ -11775,6 +11775,10 @@ PrefabInstance:
       propertyPath: muzzleFlashVFX
       value: 
       objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
+    - target: {fileID: 7939063898920174523, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
 --- !u!1 &7043786513003983393 stripped
