@@ -40,11 +40,16 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] GameObject paperShieldVFX;
     [SerializeField] GameObject scissorsShieldVFX;
     public GameObject morphShape;
+    public Material morphMaterial;
     public Animator morphAnimator;
     public Transform scissorVisual;
+    float morphTime = 0;
+    float morphRate = 0;
+    bool isMorphing = false;
 
     private void Start()
     {
+        morphMaterial = morphShape.GetComponentInChildren<Renderer>().material;
         if (currentType == PlayerType.Paper) currentMeshRenderer = paperMeshRenderer;
         if (currentType == PlayerType.Scissors) {
             currentSkinnedMeshRenderer = scissorsMeshRenderer;
@@ -114,6 +119,13 @@ public class PlayerHealth : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F3)) lives = 999;
         if (Input.GetKeyDown(KeyCode.F5)) lives = 2;
         if (Input.GetKeyDown(KeyCode.F4)){ canBecomeRock = true; canBecomeScissors = true; }
+
+        if (isMorphing)
+        {
+            morphTime += Time.deltaTime;
+            morphRate = morphTime * 6.6666666f;
+            morphMaterial.SetFloat("_changeRate", morphRate);
+        }
     }
     IEnumerator SwitchTypeToRock()
     {
@@ -124,8 +136,16 @@ public class PlayerHealth : MonoBehaviour
         canSwitchType = false;
 
         morphShape.SetActive(true);
-        if(currentType == PlayerType.Paper) morphAnimator.SetTrigger("PaperToRock");
-        if (currentType == PlayerType.Scissors) morphAnimator.SetTrigger("ScissorsToRock");
+        if(currentType == PlayerType.Paper)
+        {
+            morphAnimator.SetTrigger("PaperToRock");
+            StartCoroutine(CountMorphTime(0));
+        } 
+        if (currentType == PlayerType.Scissors)
+        {
+            morphAnimator.SetTrigger("ScissorsToRock");
+            StartCoroutine(CountMorphTime(4));
+        } 
 
         yield return new WaitForSeconds(0.15f);
 
@@ -154,8 +174,16 @@ public class PlayerHealth : MonoBehaviour
         canSwitchType = false;
 
         morphShape.SetActive(true);
-        if(currentType == PlayerType.Rock) morphAnimator.SetTrigger("RockToPaper");
-        if (currentType == PlayerType.Scissors) morphAnimator.SetTrigger("ScissorsToPaper");
+        if(currentType == PlayerType.Rock)
+        {
+            morphAnimator.SetTrigger("RockToPaper");
+            StartCoroutine(CountMorphTime(2));
+        } 
+        if (currentType == PlayerType.Scissors)
+        {
+            morphAnimator.SetTrigger("ScissorsToPaper");
+            StartCoroutine(CountMorphTime(5));
+        }
 
         yield return new WaitForSeconds(0.15f);
 
@@ -184,8 +212,16 @@ public class PlayerHealth : MonoBehaviour
         canSwitchType = false;
 
         morphShape.SetActive(true);
-        if(currentType == PlayerType.Rock) morphAnimator.SetTrigger("RockToScissors");
-        if (currentType == PlayerType.Paper) morphAnimator.SetTrigger("PaperToScissors");
+        if(currentType == PlayerType.Rock)
+        {
+            morphAnimator.SetTrigger("RockToScissors");
+            StartCoroutine(CountMorphTime(3));
+        } 
+        if (currentType == PlayerType.Paper)
+        {
+            morphAnimator.SetTrigger("PaperToScissors");
+            StartCoroutine(CountMorphTime(1));
+        }
 
         yield return new WaitForSeconds(0.15f);
 
@@ -310,6 +346,17 @@ public class PlayerHealth : MonoBehaviour
             GameObject shieldVfx = Instantiate(scissorsShieldVFX, transform.position, transform.rotation);
             shieldVfx.transform.parent = this.transform;
         }
+    }
+
+    public IEnumerator CountMorphTime(int morphType)
+    {
+        morphMaterial.SetInt("_switchType", morphType);
+        morphRate = 0;
+        morphTime = 0;
+        isMorphing = true;
+
+        yield return new WaitForSeconds(0.15f);
+        isMorphing = false;    
     }
 
     public IEnumerator CountTransformCooldown()
