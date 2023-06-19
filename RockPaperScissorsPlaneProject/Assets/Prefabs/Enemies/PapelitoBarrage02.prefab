@@ -248,7 +248,7 @@ MonoBehaviour:
   enemyType: 1
   rb: {fileID: 9048232087154326871}
   meshRenderer: {fileID: 4036147195813935197}
-  skinnedMeshRenderer: {fileID: 0}
+  skinnedMeshRenderer: {fileID: 2952639785001388988}
   soundSource: {fileID: 3429612490843623055}
   hitClip: {fileID: 8300000, guid: f21e684d14c524142842efa12f970fa7, type: 3}
   shieldVFX: {fileID: 3268028251387979328, guid: d0eafeee08220e44bb2fd77fce296d5a, type: 3}
@@ -367,6 +367,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -5007313889608122388, guid: d6228eb74513fda41ab5d1832e01abb1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 508498089cd829f47bc5332dc083fb80, type: 2}
     - target: {fileID: 919132149155446097, guid: d6228eb74513fda41ab5d1832e01abb1, type: 3}
       propertyPath: m_Name
       value: flower
@@ -376,6 +380,36 @@ PrefabInstance:
 --- !u!4 &1581090904545678267 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d6228eb74513fda41ab5d1832e01abb1, type: 3}
+  m_PrefabInstance: {fileID: 1331817206945068112}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2214356359157876993 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d6228eb74513fda41ab5d1832e01abb1, type: 3}
+  m_PrefabInstance: {fileID: 1331817206945068112}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5927623719414068071
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2214356359157876993}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 70adbe17256f0f9488c4f9737e98a76a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!137 &2952639785001388988 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -5007313889608122388, guid: d6228eb74513fda41ab5d1832e01abb1, type: 3}
   m_PrefabInstance: {fileID: 1331817206945068112}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3441546009947088089
