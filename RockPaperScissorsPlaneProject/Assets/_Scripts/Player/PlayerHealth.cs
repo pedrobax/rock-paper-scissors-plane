@@ -10,7 +10,7 @@ public class PlayerHealth : MonoBehaviour
     public float respawnTime = 1;
     public float respawnInvulnerabilityTime = 3;
     public bool canTakeDamage = true;
-    public float typeChangeCooldown = 0.1f;
+    public float typeChangeCooldown = 0.10f;
     [SerializeField] public AudioSource soundSource;
 
     [SerializeField] public GameObject deathMenu; //pelo amor de deus remova essa gambiarra depois e fa�a um evento de morte direito no gamemanager
@@ -121,6 +121,7 @@ public class PlayerHealth : MonoBehaviour
         //changeVfx.transform.parent = this.transform;
         currentMeshRenderer.enabled = false;
         currentSkinnedMeshRenderer.enabled = false;
+        canSwitchType = false;
 
         morphShape.SetActive(true);
         if(currentType == PlayerType.Paper) morphAnimator.SetTrigger("PaperToRock");
@@ -150,6 +151,7 @@ public class PlayerHealth : MonoBehaviour
         //changeVfx.transform.parent = this.transform;
         currentMeshRenderer.enabled = false;
         currentSkinnedMeshRenderer.enabled = false;
+        canSwitchType = false;
 
         morphShape.SetActive(true);
         if(currentType == PlayerType.Rock) morphAnimator.SetTrigger("RockToPaper");
@@ -179,6 +181,7 @@ public class PlayerHealth : MonoBehaviour
         //GameObject changeVfx = Instantiate(typeChangeVFX, transform.position, transform.rotation);
         //changeVfx.transform.parent = this.transform;
         currentMeshRenderer.enabled = false;
+        canSwitchType = false;
 
         morphShape.SetActive(true);
         if(currentType == PlayerType.Rock) morphAnimator.SetTrigger("RockToScissors");
