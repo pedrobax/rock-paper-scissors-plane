@@ -1864,11 +1864,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 342370722}
   m_CullTransparentMesh: 1
---- !u!4 &348268763 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7043786512808783124, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
-  m_PrefabInstance: {fileID: 7043786513003983392}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &355761256
 GameObject:
   m_ObjectHideFlags: 0
@@ -8719,16 +8714,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713129826}
   m_CullTransparentMesh: 1
---- !u!1 &1736704754 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6767682182017647664, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
-  m_PrefabInstance: {fileID: 7043786513003983392}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1736704756 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9096956117630237258, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
-  m_PrefabInstance: {fileID: 7043786513003983392}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1741089305
 GameObject:
   m_ObjectHideFlags: 0
@@ -11457,14 +11442,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6242116330017218186, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7043786513319837418, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7043786513488450949, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
       propertyPath: m_Name
       value: Player
@@ -11473,18 +11450,6 @@ PrefabInstance:
       propertyPath: deathMenu
       value: 
       objectReference: {fileID: 973577147}
-    - target: {fileID: 7043786513488450950, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
-      propertyPath: morphShape
-      value: 
-      objectReference: {fileID: 1736704754}
-    - target: {fileID: 7043786513488450950, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
-      propertyPath: morphAnimator
-      value: 
-      objectReference: {fileID: 1736704756}
-    - target: {fileID: 7043786513488450950, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
-      propertyPath: scissorVisual
-      value: 
-      objectReference: {fileID: 348268763}
     - target: {fileID: 7043786513488450952, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
       propertyPath: levelArea
       value: 
@@ -11531,26 +11496,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7043786513488450955, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7043786513488450956, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7043786513488450957, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7043786513897475846, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7043786514479697484, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7939063898920174523, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
-      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

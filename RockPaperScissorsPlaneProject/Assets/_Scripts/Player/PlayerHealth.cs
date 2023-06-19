@@ -103,6 +103,15 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            Time.timeScale += 0.10f;
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            Time.timeScale -= 0.10f;
+        }
+
         if (Input.GetButtonDown("NextType") && currentType == PlayerType.Rock && canSwitchType) StartCoroutine(SwitchTypeToPaper());
         if (Input.GetButtonDown("PreviousType") && currentType == PlayerType.Rock && canSwitchType && canBecomeScissors) StartCoroutine(SwitchTypeToScissors());
         else if (Input.GetButtonDown("PreviousType") && currentType == PlayerType.Rock && canSwitchType && !canBecomeScissors) StartCoroutine(SwitchTypeToPaper());
