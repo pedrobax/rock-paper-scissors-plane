@@ -218,6 +218,12 @@ public class GameManager : MonoBehaviour
         return _tutorialPopup;
     }
 
+    public static void ChangeMusic(AudioClip music)
+    {
+        FindObjectOfType<LevelArea>().GetComponent<AudioSource>().clip = music;
+        FindObjectOfType<LevelArea>().GetComponent<AudioSource>().Play();
+    }
+
     public void DisablePlayerTakeDamage()
     {
         playerHealth.canTakeDamage = false;

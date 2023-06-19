@@ -2348,6 +2348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7076695582799673896}
   - component: {fileID: 7092574214485684054}
+  - component: {fileID: 4456019373810876547}
   m_Layer: 0
   m_Name: LawnmowerEncounter
   m_TagString: Untagged
@@ -2397,6 +2398,19 @@ MonoBehaviour:
   hasTutorial: 0
   tutorialText: 
   tutorialTimeToAppear: 0
+--- !u!114 &4456019373810876547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7076695582799673897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff880f45d572e347b6d2e6a887494bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: db9af37e261232b42a87c556a98b8415, type: 3}
 --- !u!1 &7105131355831864094
 GameObject:
   m_ObjectHideFlags: 0

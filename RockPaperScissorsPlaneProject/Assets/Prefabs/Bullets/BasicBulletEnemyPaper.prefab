@@ -118,6 +118,9 @@ MonoBehaviour:
   startingBulletPosition: {x: 0, y: 0, z: 0}
   aimType: 0
   turnSpeed: 0.1
+  arcDuration: 0
+  arcSize: 0
+  selfDestructTime: 0
 --- !u!82 &-439559027228974764
 AudioSource:
   m_ObjectHideFlags: 0
@@ -136,7 +139,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 100
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

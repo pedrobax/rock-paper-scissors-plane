@@ -44,6 +44,7 @@ public class VolcanoLaser : MonoBehaviour
 
     void StartLaser()
     {
+        firePoint.GetComponent<AudioSource>().Play();
         lineRenderer.enabled = true;
         currentTrail = Instantiate(rockTrailObj, fireTarget.transform.position, Quaternion.identity);
         currentTrail.transform.parent = fireTarget.transform;

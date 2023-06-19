@@ -3076,6 +3076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5904810857963336305}
   - component: {fileID: 5904810857963336304}
+  - component: {fileID: 4677244975494220307}
   m_Layer: 0
   m_Name: Miniboss01
   m_TagString: Untagged
@@ -3139,6 +3140,19 @@ MonoBehaviour:
   hasTutorial: 0
   tutorialText: 
   tutorialTimeToAppear: 0
+--- !u!114 &4677244975494220307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5904810857963336306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff880f45d572e347b6d2e6a887494bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: f56e1fb1db909954fb450b8975a9d7f7, type: 3}
 --- !u!1 &5904810857989061241
 GameObject:
   m_ObjectHideFlags: 0

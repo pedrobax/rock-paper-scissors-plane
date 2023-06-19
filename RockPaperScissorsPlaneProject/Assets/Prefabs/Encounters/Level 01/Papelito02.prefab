@@ -3730,6 +3730,12 @@ MonoBehaviour:
   currentEnemyNumber: 0
   maxDuration: 60
   currentDuration: 0
+  clearAtEnd: 0
+  spawnTimes: []
+  setWaitTime: 3
+  hasTutorial: 0
+  tutorialText: 
+  tutorialTimeToAppear: 0
 --- !u!1 &5264062194850217807
 GameObject:
   m_ObjectHideFlags: 0

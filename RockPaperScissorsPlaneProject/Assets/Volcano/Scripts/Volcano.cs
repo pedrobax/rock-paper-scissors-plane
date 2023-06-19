@@ -21,6 +21,7 @@ public class Volcano : MonoBehaviour
     public MeshCollider meshCollider;
     public GameObject volcanoHolder;
     public bool isDefeated = false;
+    public AudioSource rockEruptionSource, tremorExplosionSource;
 
     void Start()
     {
@@ -316,11 +317,14 @@ public class Volcano : MonoBehaviour
     public void Erupt(int index)
     {
         Instantiate(summonsPhase02[index], summonPointRock.transform.position, summonPointRock.transform.rotation);
+        rockEruptionSource.Play();
+        
     }
 
     public IEnumerator ExplosionSequence()
     {
         CinemachineShake.Instance.ShakeCamera(1f, 6f, CinemachineShake.ShakeType.FADING_IN);
+        tremorExplosionSource.Play();
         yield return new WaitForSeconds(6f);
         Explode();
         if (isDefeated)
