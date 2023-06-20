@@ -311,6 +311,7 @@ public class PlayerHealth : MonoBehaviour
             DisableVisuals();
             soundSource.Play();
             canTakeDamage = false;
+            canSwitchType = false;
             if (currentType == PlayerType.Rock) Instantiate(rockDeathVFX, transform.position, transform.rotation);
             if (currentType == PlayerType.Paper) Instantiate(paperDeathVFX, transform.position, transform.rotation);
             if (currentType == PlayerType.Scissors) Instantiate(scissorsDeathVFX, transform.position, transform.rotation);
