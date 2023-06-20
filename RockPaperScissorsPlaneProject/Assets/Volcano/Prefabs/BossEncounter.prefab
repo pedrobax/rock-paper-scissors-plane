@@ -32545,8 +32545,8 @@ MonoBehaviour:
   firePoint: {fileID: 7496075008598303050}
   fireTarget: {fileID: 875544966}
   rockLaserMat: {fileID: 2100000, guid: 7cebf70abc436534c951ca8947bdc7cc, type: 2}
-  paperLaserMat: {fileID: 4968119590167063255, guid: d99a8ba6332605441beb686c6bc38462, type: 3}
-  scissorsLaserMat: {fileID: -4307766137032950969, guid: 057e706d509bc0043954ce22638ea24d, type: 3}
+  paperLaserMat: {fileID: 2100000, guid: 56b2142379ab00945b8f095d241f47a0, type: 2}
+  scissorsLaserMat: {fileID: 2100000, guid: f1000e59e5f25af419e46cbe5020344f, type: 2}
   rockTrailObj: {fileID: 5177689579886747800, guid: a947c7f2f1b02224d9b73b6c85b52c0b, type: 3}
   paperTrailObj: {fileID: 8832113470481626584, guid: 8567c0a6f93b3eb4192a9de722a59c6c, type: 3}
   scissorsTrailObj: {fileID: 3356091097700256000, guid: f34acf10fc43cf84fa097d871a4c1764, type: 3}
