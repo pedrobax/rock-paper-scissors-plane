@@ -160,6 +160,7 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(0.15f);
 
         morphShape.SetActive(false);
+        playerRockObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         currentMeshRenderer.enabled = true;
         currentType = PlayerType.Rock;
@@ -198,6 +199,7 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(0.15f);
 
         morphShape.SetActive(false);
+        playerPaperObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         currentMeshRenderer.enabled = true;
         currentType = PlayerType.Paper;
