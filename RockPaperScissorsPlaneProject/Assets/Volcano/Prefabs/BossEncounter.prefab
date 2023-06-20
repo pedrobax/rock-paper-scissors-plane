@@ -25868,7 +25868,7 @@ MonoBehaviour:
   scissorsBullet: {fileID: 7818664103063930849, guid: 4edc13b3f26d94a4b95c318ea08a7b66, type: 3}
   bulletAmount: 50
   shootingAngle: 90
-  fireCooldown: 1.5
+  fireCooldown: 2
   startTime: 0
   volcano: {fileID: 7496075008480396585}
 --- !u!1 &5215074058490108407
