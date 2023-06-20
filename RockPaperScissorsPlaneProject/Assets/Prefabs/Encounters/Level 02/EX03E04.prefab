@@ -476,7 +476,7 @@ PrefabInstance:
     - target: {fileID: 556786880714957405, guid: a6d4fff9cdacf2f4081d11c566bdec95, type: 3}
       propertyPath: deathVFX
       value: 
-      objectReference: {fileID: 6260299754975489240, guid: b574a6d1abdd6b042927c982a3f997a3, type: 3}
+      objectReference: {fileID: 6260299754975489240, guid: 40656a30a4111144aa371c21308e6328, type: 3}
     - target: {fileID: 556786880714957405, guid: a6d4fff9cdacf2f4081d11c566bdec95, type: 3}
       propertyPath: unitName
       value: ChemBond

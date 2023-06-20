@@ -1681,7 +1681,7 @@ MonoBehaviour:
   soundSource: {fileID: 5200236984392672586}
   hitClip: {fileID: 8300000, guid: f21e684d14c524142842efa12f970fa7, type: 3}
   shieldVFX: {fileID: 5867600136002297323, guid: 391ec6f32a17a3d43851601745036002, type: 3}
-  deathVFX: {fileID: 6181710295968246962, guid: e355e1f0c8ea0214983f4ed3622be92a, type: 3}
+  deathVFX: {fileID: 6181710295968246962, guid: 88f3c62004c125d4d9eea9ed1d199763, type: 3}
   deathShakeTime: 1
   deathShakeIntensity: 2
   loot: {fileID: 8647987648394905962, guid: 47f2c791ad2e2ff47a2aa171beed0631, type: 3}
@@ -3329,7 +3329,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8958665384240154023, guid: 59cdb08c17a5c514a85d013acd231bdc, type: 3}
   m_PrefabInstance: {fileID: 7669490540473990694}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8767032535823105458
+--- !u!114 &4441665449002566792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602177217160461185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8f138a00c8e904eb5c1b7acdb30411, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 2
+  rb: {fileID: 0}
+  isActing: 0
+  hasActed: 0
+  targetTransform: {fileID: 4971875840638374496}
+  secondaryTargetTransform: {fileID: 0}
+  firePoint: {fileID: 0}
+  bulletAmount: 25
+  shootingAngle: 90
+--- !u!114 &5296081921777608770
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3345,10 +3366,28 @@ MonoBehaviour:
   rb: {fileID: 0}
   isActing: 0
   hasActed: 0
-  targetTransform: {fileID: 2987567473418314837}
+  targetTransform: {fileID: 0}
   secondaryTargetTransform: {fileID: 0}
   _actionList: {fileID: 8643345597982228079}
   action: 2
+--- !u!114 &5769852474843020857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602177217160461185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361e7b0a522ae294a98a113c4e716cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1
+  rb: {fileID: 0}
+  isActing: 0
+  hasActed: 0
+  targetTransform: {fileID: 7634666233423113128}
+  secondaryTargetTransform: {fileID: 0}
 --- !u!114 &6943886406137101561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3371,7 +3410,7 @@ MonoBehaviour:
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnType: 0
---- !u!114 &5296081921777608770
+--- !u!114 &8767032535823105458
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3387,49 +3426,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   isActing: 0
   hasActed: 0
-  targetTransform: {fileID: 0}
+  targetTransform: {fileID: 2987567473418314837}
   secondaryTargetTransform: {fileID: 0}
   _actionList: {fileID: 8643345597982228079}
   action: 2
---- !u!114 &4441665449002566792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602177217160461185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da8f138a00c8e904eb5c1b7acdb30411, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 2
-  rb: {fileID: 0}
-  isActing: 0
-  hasActed: 0
-  targetTransform: {fileID: 4971875840638374496}
-  secondaryTargetTransform: {fileID: 0}
-  firePoint: {fileID: 0}
-  bulletAmount: 25
-  shootingAngle: 90
---- !u!114 &5769852474843020857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602177217160461185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 361e7b0a522ae294a98a113c4e716cf6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 1
-  rb: {fileID: 0}
-  isActing: 0
-  hasActed: 0
-  targetTransform: {fileID: 7634666233423113128}
-  secondaryTargetTransform: {fileID: 0}
 --- !u!4 &1602177217160461187 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8958665384240154021, guid: 59cdb08c17a5c514a85d013acd231bdc, type: 3}
