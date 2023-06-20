@@ -1724,6 +1724,11 @@ MonoBehaviour:
   maxDuration: 30
   currentDuration: 0
   clearAtEnd: 0
+  spawnTimes: []
+  setWaitTime: 3
+  hasTutorial: 0
+  tutorialText: 
+  tutorialTimeToAppear: 0
 --- !u!1 &3140722200189827198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2239,6 +2244,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[4]
       value: 
       objectReference: {fileID: 3140722200030601921}
+    - target: {fileID: 7453044155810133825, guid: b53447f1a5d350142a827183e752d69d, type: 3}
+      propertyPath: accelerate
+      value: 
+      objectReference: {fileID: 3140722198801256632}
     - target: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2355,6 +2364,7 @@ MonoBehaviour:
   waitTime: 4
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &3140722198801256635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2459,6 +2469,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[4]
       value: 
       objectReference: {fileID: 3140722198661545705}
+    - target: {fileID: 7453044155810133825, guid: b53447f1a5d350142a827183e752d69d, type: 3}
+      propertyPath: accelerate
+      value: 
+      objectReference: {fileID: 3140722198885058895}
     - target: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2559,6 +2573,7 @@ MonoBehaviour:
   waitTime: 3.5
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &3140722198885058890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2679,6 +2694,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[4]
       value: 
       objectReference: {fileID: 3140722200414473071}
+    - target: {fileID: 7453044155810133825, guid: b53447f1a5d350142a827183e752d69d, type: 3}
+      propertyPath: accelerate
+      value: 
+      objectReference: {fileID: 3140722198910625477}
     - target: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2831,6 +2850,7 @@ MonoBehaviour:
   waitTime: 1.5
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!4 &6324606939912823654 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
@@ -2899,6 +2919,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[4]
       value: 
       objectReference: {fileID: 3140722198456647912}
+    - target: {fileID: 7453044155810133825, guid: b53447f1a5d350142a827183e752d69d, type: 3}
+      propertyPath: accelerate
+      value: 
+      objectReference: {fileID: 3140722198924223775}
     - target: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2999,6 +3023,7 @@ MonoBehaviour:
   waitTime: 2.5
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &3140722198924223770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3119,6 +3144,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[4]
       value: 
       objectReference: {fileID: 3140722199429928048}
+    - target: {fileID: 7453044155810133825, guid: b53447f1a5d350142a827183e752d69d, type: 3}
+      propertyPath: accelerate
+      value: 
+      objectReference: {fileID: 3140722199399972585}
     - target: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3271,6 +3300,7 @@ MonoBehaviour:
   waitTime: 4.5
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!4 &6324606939289500482 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
@@ -3339,6 +3369,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[4]
       value: 
       objectReference: {fileID: 3140722198925734703}
+    - target: {fileID: 7453044155810133825, guid: b53447f1a5d350142a827183e752d69d, type: 3}
+      propertyPath: accelerate
+      value: 
+      objectReference: {fileID: 3140722199471933603}
     - target: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3478,6 +3512,7 @@ MonoBehaviour:
   waitTime: 0.5
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &3140722199471933630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3559,6 +3594,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[4]
       value: 
       objectReference: {fileID: 3140722199534351713}
+    - target: {fileID: 7453044155810133825, guid: b53447f1a5d350142a827183e752d69d, type: 3}
+      propertyPath: accelerate
+      value: 
+      objectReference: {fileID: 3140722199898524222}
     - target: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3640,6 +3679,7 @@ MonoBehaviour:
   waitTime: 3
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &3140722199898524217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3779,6 +3819,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[4]
       value: 
       objectReference: {fileID: 3140722198495930521}
+    - target: {fileID: 7453044155810133825, guid: b53447f1a5d350142a827183e752d69d, type: 3}
+      propertyPath: accelerate
+      value: 
+      objectReference: {fileID: 3140722199911340293}
     - target: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3931,6 +3975,7 @@ MonoBehaviour:
   waitTime: 5
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!4 &6324606940875791526 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
@@ -3999,6 +4044,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[4]
       value: 
       objectReference: {fileID: 3140722198788699579}
+    - target: {fileID: 7453044155810133825, guid: b53447f1a5d350142a827183e752d69d, type: 3}
+      propertyPath: accelerate
+      value: 
+      objectReference: {fileID: 3140722200168389051}
     - target: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4099,6 +4148,7 @@ MonoBehaviour:
   waitTime: 5.5
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &3140722200168389046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4219,6 +4269,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[4]
       value: 
       objectReference: {fileID: 3140722198597864036}
+    - target: {fileID: 7453044155810133825, guid: b53447f1a5d350142a827183e752d69d, type: 3}
+      propertyPath: accelerate
+      value: 
+      objectReference: {fileID: 3140722200410178427}
     - target: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4319,6 +4373,7 @@ MonoBehaviour:
   waitTime: 1
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &3140722200410178422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4439,6 +4494,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[4]
       value: 
       objectReference: {fileID: 3140722198535875199}
+    - target: {fileID: 7453044155810133825, guid: b53447f1a5d350142a827183e752d69d, type: 3}
+      propertyPath: accelerate
+      value: 
+      objectReference: {fileID: 3140722200553264904}
     - target: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4555,6 +4614,7 @@ MonoBehaviour:
   waitTime: 2
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &3140722200553264907
 MonoBehaviour:
   m_ObjectHideFlags: 0

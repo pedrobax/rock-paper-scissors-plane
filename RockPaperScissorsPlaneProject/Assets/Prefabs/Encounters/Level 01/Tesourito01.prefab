@@ -880,6 +880,11 @@ MonoBehaviour:
   maxDuration: 30
   currentDuration: 0
   clearAtEnd: 0
+  spawnTimes: []
+  setWaitTime: 3
+  hasTutorial: 0
+  tutorialText: 
+  tutorialTimeToAppear: 0
 --- !u!1 &2787899528772007126
 GameObject:
   m_ObjectHideFlags: 0
@@ -2147,6 +2152,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[5]
       value: 
       objectReference: {fileID: 2787899528103274779}
+    - target: {fileID: 7453044155810133825, guid: b53447f1a5d350142a827183e752d69d, type: 3}
+      propertyPath: accelerate
+      value: 
+      objectReference: {fileID: 2787899527869337188}
     - target: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2299,6 +2308,7 @@ MonoBehaviour:
   waitTime: 2
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &2787899527869337195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2394,6 +2404,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[5]
       value: 
       objectReference: {fileID: 2787899529212875041}
+    - target: {fileID: 7453044155810133825, guid: b53447f1a5d350142a827183e752d69d, type: 3}
+      propertyPath: accelerate
+      value: 
+      objectReference: {fileID: 2787899528846619621}
     - target: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2570,6 +2584,7 @@ MonoBehaviour:
   waitTime: 12.5
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!1001 &2787899529216530845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2641,6 +2656,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[5]
       value: 
       objectReference: {fileID: 2787899528173384947}
+    - target: {fileID: 7453044155810133825, guid: b53447f1a5d350142a827183e752d69d, type: 3}
+      propertyPath: accelerate
+      value: 
+      objectReference: {fileID: 2787899529216530842}
     - target: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2758,6 +2777,7 @@ MonoBehaviour:
   waitTime: 13
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &2787899529216530841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2888,6 +2908,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[5]
       value: 
       objectReference: {fileID: 2787899529150426957}
+    - target: {fileID: 7453044155810133825, guid: b53447f1a5d350142a827183e752d69d, type: 3}
+      propertyPath: accelerate
+      value: 
+      objectReference: {fileID: 2787899529337123524}
     - target: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3004,6 +3028,7 @@ MonoBehaviour:
   waitTime: 8.5
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &2787899529337123529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3135,6 +3160,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[5]
       value: 
       objectReference: {fileID: 2787899528229816616}
+    - target: {fileID: 7453044155810133825, guid: b53447f1a5d350142a827183e752d69d, type: 3}
+      propertyPath: accelerate
+      value: 
+      objectReference: {fileID: 2787899529361203103}
     - target: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3266,6 +3295,7 @@ MonoBehaviour:
   waitTime: 12
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &2787899529361203102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3382,6 +3412,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[5]
       value: 
       objectReference: {fileID: 2787899529194577678}
+    - target: {fileID: 7453044155810133825, guid: b53447f1a5d350142a827183e752d69d, type: 3}
+      propertyPath: accelerate
+      value: 
+      objectReference: {fileID: 2787899529480852344}
     - target: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3498,6 +3532,7 @@ MonoBehaviour:
   waitTime: 8
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &2787899529480852349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3629,6 +3664,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[5]
       value: 
       objectReference: {fileID: 2787899528474604120}
+    - target: {fileID: 7453044155810133825, guid: b53447f1a5d350142a827183e752d69d, type: 3}
+      propertyPath: accelerate
+      value: 
+      objectReference: {fileID: 2787899529809466959}
     - target: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3729,6 +3768,7 @@ MonoBehaviour:
   waitTime: 9
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &2787899529809466956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3876,6 +3916,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[5]
       value: 
       objectReference: {fileID: 2787899529013704863}
+    - target: {fileID: 7453044155810133825, guid: b53447f1a5d350142a827183e752d69d, type: 3}
+      propertyPath: accelerate
+      value: 
+      objectReference: {fileID: 2787899529894572781}
     - target: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4052,6 +4096,7 @@ MonoBehaviour:
   waitTime: 14
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!1001 &2787899529937456445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4123,6 +4168,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[5]
       value: 
       objectReference: {fileID: 2787899528275922502}
+    - target: {fileID: 7453044155810133825, guid: b53447f1a5d350142a827183e752d69d, type: 3}
+      propertyPath: accelerate
+      value: 
+      objectReference: {fileID: 2787899529937456442}
     - target: {fileID: 8958665384240154021, guid: b53447f1a5d350142a827183e752d69d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4240,6 +4289,7 @@ MonoBehaviour:
   waitTime: 13.5
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
+  spawnType: 0
 --- !u!114 &2787899529937456441
 MonoBehaviour:
   m_ObjectHideFlags: 0
