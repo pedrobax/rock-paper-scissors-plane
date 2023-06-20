@@ -5096,6 +5096,9 @@ MonoBehaviour:
   - 28.5
   - 28.5
   setWaitTime: 5
+  hasTutorial: 0
+  tutorialText: 
+  tutorialTimeToAppear: 0
 --- !u!1001 &714437440100278730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5417,6 +5420,10 @@ PrefabInstance:
       propertyPath: targetList.Array.data[2]
       value: 
       objectReference: {fileID: 714437441183272226}
+    - target: {fileID: 3450973784264905494, guid: 59cdb08c17a5c514a85d013acd231bdc, type: 3}
+      propertyPath: loot
+      value: 
+      objectReference: {fileID: 8647987648394905962, guid: d0839e1f5a484ca4eab2de667e1254cf, type: 3}
     - target: {fileID: 3450973784264905494, guid: 59cdb08c17a5c514a85d013acd231bdc, type: 3}
       propertyPath: health
       value: 30
