@@ -274,7 +274,7 @@ MonoBehaviour:
   isAlive: 1
   respawnPosition: {x: 0, y: 0, z: -13}
   respawnTime: 2
-  respawnInvulnerabilityTime: 3
+  respawnInvulnerabilityTime: 2
   canTakeDamage: 1
   typeChangeCooldown: 0.1
   soundSource: {fileID: 7043786513488450958}

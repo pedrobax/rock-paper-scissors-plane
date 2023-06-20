@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public bool isAlive = true;
     public Vector3 respawnPosition;
     public float respawnTime = 1;
-    public float respawnInvulnerabilityTime = 3;
+    public float respawnInvulnerabilityTime = 1.5f;
     public bool canTakeDamage = true;
     public float typeChangeCooldown = 0.10f;
     [SerializeField] public AudioSource soundSource;
@@ -46,6 +46,7 @@ public class PlayerHealth : MonoBehaviour
     float morphTime = 0;
     float morphRate = 0;
     bool isMorphing = false;
+    bool isRespawning = false;
 
     private void Start()
     {
@@ -265,6 +266,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (lives > 0)
         {
+            isRespawning = true;
             lives--;
             Debug.Log("Player lost a life! Remaining lives: " + lives);
 
@@ -278,6 +280,10 @@ public class PlayerHealth : MonoBehaviour
             currentMeshRenderer.enabled = false;
             currentSkinnedMeshRenderer.enabled = false;
             canTakeDamage = false;
+            canSwitchType = false;
+            paperMeshRenderer.enabled = false;
+            rockMeshRenderer.enabled = false;
+            scissorsMeshRenderer.enabled = false;
             yield return new WaitForSeconds(respawnTime);
             transform.position = respawnPosition;
             if (currentType == PlayerType.Scissors) currentSkinnedMeshRenderer.enabled = true;
@@ -292,7 +298,12 @@ public class PlayerHealth : MonoBehaviour
             yield return new WaitForSeconds(respawnInvulnerabilityTime / 5);
             StartCoroutine(DamageFlash(respawnInvulnerabilityTime / 10));
             yield return new WaitForSeconds(respawnInvulnerabilityTime / 5);
+            paperMeshRenderer.enabled = true;
+            rockMeshRenderer.enabled = true;
+            scissorsMeshRenderer.enabled = true;
+            canSwitchType = true;
             canTakeDamage = true;
+            isRespawning = false;
         }
         else
         {
@@ -372,7 +383,7 @@ public class PlayerHealth : MonoBehaviour
     {
         canSwitchType = false;
         yield return new WaitForSeconds(typeChangeCooldown);
-        canSwitchType = true;
+        if(!isRespawning) canSwitchType = true;
     }
 
     public enum PlayerType
