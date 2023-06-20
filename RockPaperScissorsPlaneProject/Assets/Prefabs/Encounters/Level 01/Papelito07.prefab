@@ -2747,8 +2747,17 @@ PrefabInstance:
       propertyPath: muzzleFlashVFX
       value: 
       objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: skinnedMeshRenderer
+      value: 
+      objectReference: {fileID: 6020185404819137478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+--- !u!137 &6020185404819137478 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4589740067764756803, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+  m_PrefabInstance: {fileID: 7798535794481857157}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6173938241401678713 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4150008653819210236, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
@@ -3066,8 +3075,17 @@ PrefabInstance:
       propertyPath: muzzleFlashVFX
       value: 
       objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: skinnedMeshRenderer
+      value: 
+      objectReference: {fileID: 6020185403955148155}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+--- !u!137 &6020185403955148155 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4589740067764756803, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+  m_PrefabInstance: {fileID: 7798535794825761848}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6173938241460436420 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4150008653819210236, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
@@ -3385,8 +3403,17 @@ PrefabInstance:
       propertyPath: muzzleFlashVFX
       value: 
       objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: skinnedMeshRenderer
+      value: 
+      objectReference: {fileID: 6020185404152632526}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+--- !u!137 &6020185404152632526 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4589740067764756803, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+  m_PrefabInstance: {fileID: 7798535795165148557}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6173938241793449073 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4150008653819210236, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
@@ -3704,8 +3731,17 @@ PrefabInstance:
       propertyPath: muzzleFlashVFX
       value: 
       objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: skinnedMeshRenderer
+      value: 
+      objectReference: {fileID: 6020185405519807813}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+--- !u!137 &6020185405519807813 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4589740067764756803, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+  m_PrefabInstance: {fileID: 7798535795442263046}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6173938242043366904 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4150008653819210238, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
@@ -4023,8 +4059,17 @@ PrefabInstance:
       propertyPath: muzzleFlashVFX
       value: 
       objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: skinnedMeshRenderer
+      value: 
+      objectReference: {fileID: 6020185405086512731}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+--- !u!137 &6020185405086512731 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4589740067764756803, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+  m_PrefabInstance: {fileID: 7798535795825104664}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6173938242742796004 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4150008653819210236, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
@@ -4342,8 +4387,17 @@ PrefabInstance:
       propertyPath: muzzleFlashVFX
       value: 
       objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
+    - target: {fileID: 7647123226090438479, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+      propertyPath: skinnedMeshRenderer
+      value: 
+      objectReference: {fileID: 6020185405417381374}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+--- !u!137 &6020185405417381374 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4589740067764756803, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}
+  m_PrefabInstance: {fileID: 7798535796081441981}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6173938242948879681 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4150008653819210236, guid: 8ec18ac1113127d449e37b552648d6ee, type: 3}

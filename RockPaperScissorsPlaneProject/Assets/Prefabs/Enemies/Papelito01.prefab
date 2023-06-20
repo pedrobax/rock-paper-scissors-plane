@@ -215,7 +215,7 @@ MonoBehaviour:
   enemyType: 1
   rb: {fileID: 4150008653819210234}
   meshRenderer: {fileID: 0}
-  skinnedMeshRenderer: {fileID: 0}
+  skinnedMeshRenderer: {fileID: 4589740067764756803}
   soundSource: {fileID: 7754745170718169634}
   hitClip: {fileID: 8300000, guid: f21e684d14c524142842efa12f970fa7, type: 3}
   shieldVFX: {fileID: 3268028251387979328, guid: ffc74ad4b975bd044a798d18695c4595, type: 3}
@@ -225,6 +225,7 @@ MonoBehaviour:
   loot: {fileID: 0}
   hasLoot: 0
   isColliding: 0
+  muzzleFlashVFX: {fileID: 0}
 --- !u!114 &468775298264205813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +324,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3831ef2ff6fceb4681caf7a8079f5dc, type: 3}
+--- !u!137 &4589740067764756803 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7720341177403878967, guid: c3831ef2ff6fceb4681caf7a8079f5dc, type: 3}
+  m_PrefabInstance: {fileID: 6095095582609919860}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4925646187687668197 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1210703314210334353, guid: c3831ef2ff6fceb4681caf7a8079f5dc, type: 3}
