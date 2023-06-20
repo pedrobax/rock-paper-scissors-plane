@@ -1679,7 +1679,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &364075952
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2885,7 +2885,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &676641895
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5637,9 +5637,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Movement - WASD or \u2191\u2193\u2192\u2190 arrows\nShoot - K\nPrevious
-    type - J\nNext type - L\nPause - Esc\n\nDEVELOPER CHEATS:\nNext level - F2\nInfinite
-    lives - F3\nUnlock all types - F4 \n"
+  m_text: "Movement - WASD or \u2191\u2193\u2192\u2190 arrows\nShoot - K or X\nPrevious
+    type - J or Z\nNext type - L or C\nPause - Esc\n\nDEVELOPER CHEATS:\nNext level
+    - F2\nInfinite lives - F3\nUnlock all types - F4 \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5c4bcc3fe4d85e847bedd885c98dd310, type: 2}
   m_sharedMaterial: {fileID: -9055326081105245223, guid: 5c4bcc3fe4d85e847bedd885c98dd310, type: 2}
@@ -5946,7 +5946,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1777575036
 RectTransform:
   m_ObjectHideFlags: 0
