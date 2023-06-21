@@ -214,7 +214,7 @@ public class Volcano : MonoBehaviour
         }
         else if (currentPhase == CurrentPhase.SCISSORS && !isDefeated)
         {
-            if(antagonistHealth.health <= 200)
+            if(antagonistHealth.health <= 500)
             {
                 StartCoroutine(ExplosionSequence());
                 isDefeated = true;
