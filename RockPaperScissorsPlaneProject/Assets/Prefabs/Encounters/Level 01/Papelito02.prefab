@@ -13202,6 +13202,10 @@ PrefabInstance:
       propertyPath: secondaryTargetList.Array.data[0]
       value: 
       objectReference: {fileID: 5264062196329937476}
+    - target: {fileID: 3450973784264905494, guid: 0fbaeb3ee17ce4a43a46031f362c8ad8, type: 3}
+      propertyPath: loot
+      value: 
+      objectReference: {fileID: 8647987648394905962, guid: d0839e1f5a484ca4eab2de667e1254cf, type: 3}
     - target: {fileID: 8958665384240154021, guid: 0fbaeb3ee17ce4a43a46031f362c8ad8, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -3131,13 +3131,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341dafd04e0afdf4d8953c0b391b02cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 23
+  duration: 35
   rb: {fileID: 0}
   isActing: 0
   hasActed: 0
   targetTransform: {fileID: 7076695581804833640}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 20
+  waitTime: 32
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnType: 0
@@ -3400,13 +3400,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341dafd04e0afdf4d8953c0b391b02cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 23
+  duration: 35
   rb: {fileID: 0}
   isActing: 0
   hasActed: 0
   targetTransform: {fileID: 6980277211490851824}
   secondaryTargetTransform: {fileID: 0}
-  waitTime: 20
+  waitTime: 32
   randomSpawnPosition: 1
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnType: 0
