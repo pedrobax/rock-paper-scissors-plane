@@ -90,15 +90,21 @@ public class VolcanoLaserTrail : MonoBehaviour
                         switch (ph.currentType)
                         {
                             case PlayerHealth.PlayerType.Rock:
-                                ph.DieOrRespawnFunc();
-                                StartCoroutine(DamageCooldown(3));
+                                if(ph.canTakeDamage)
+                                {
+                                    ph.DieOrRespawnFunc();
+                                    StartCoroutine(DamageCooldown(3));
+                                }
                                 break;
                             case PlayerHealth.PlayerType.Paper:
                                 ph.IgnoreDamage();
                                 break;
                             case PlayerHealth.PlayerType.Scissors:
-                                ph.DieOrRespawnFunc();
-                                StartCoroutine(DamageCooldown(3));
+                                if(ph.canTakeDamage)
+                                {
+                                    ph.DieOrRespawnFunc();
+                                    StartCoroutine(DamageCooldown(3));
+                                }
                                 break;
                         }
                     }
@@ -109,12 +115,18 @@ public class VolcanoLaserTrail : MonoBehaviour
                         switch (ph.currentType)
                         {
                             case PlayerHealth.PlayerType.Rock:
-                                ph.DieOrRespawnFunc();
-                                StartCoroutine(DamageCooldown(3));
+                                if(ph.canTakeDamage)
+                                {
+                                    ph.DieOrRespawnFunc();
+                                    StartCoroutine(DamageCooldown(3));
+                                }
                                 break;
                             case PlayerHealth.PlayerType.Paper:
-                                ph.DieOrRespawnFunc();
-                                StartCoroutine(DamageCooldown(3));
+                                if(ph.canTakeDamage)
+                                {
+                                    ph.DieOrRespawnFunc();
+                                    StartCoroutine(DamageCooldown(3));
+                                }
                                 break;
                             case PlayerHealth.PlayerType.Scissors:
                                 ph.IgnoreDamage();
@@ -131,12 +143,18 @@ public class VolcanoLaserTrail : MonoBehaviour
                                 ph.IgnoreDamage();
                                 break;
                             case PlayerHealth.PlayerType.Paper:
-                                ph.DieOrRespawnFunc();
-                                StartCoroutine(DamageCooldown(3));
+                                if(ph.canTakeDamage)
+                                {
+                                    ph.DieOrRespawnFunc();
+                                    StartCoroutine(DamageCooldown(3));
+                                }
                                 break;
                             case PlayerHealth.PlayerType.Scissors:
-                                ph.DieOrRespawnFunc();
-                                StartCoroutine(DamageCooldown(3));
+                                if(ph.canTakeDamage)
+                                {
+                                    ph.DieOrRespawnFunc();
+                                    StartCoroutine(DamageCooldown(3));
+                                }
                                 break; 
                          }
                     } 
