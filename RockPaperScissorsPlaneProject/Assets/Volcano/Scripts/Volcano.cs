@@ -28,6 +28,7 @@ public class Volcano : MonoBehaviour
         antagonistHealth = GetComponent<AntagonistHealth>();
         meshCollider = GetComponent<MeshCollider>();
         meshCollider.sharedMesh = paperMesh;
+        meshCollider.enabled = false;
     }
 
     void Update()
@@ -40,6 +41,7 @@ public class Volcano : MonoBehaviour
         }
         if (isSpawning && volcanoHolder.transform.position.z <= 10)
         {
+            meshCollider.enabled = true;
             isSpawning = false;
             volcanoHolder.transform.position = new Vector3(volcanoHolder.transform.position.x, volcanoHolder.transform.position.y, 10);
         }
@@ -325,8 +327,10 @@ public class Volcano : MonoBehaviour
     {
         CinemachineShake.Instance.ShakeCamera(1f, 6f, CinemachineShake.ShakeType.FADING_IN);
         tremorExplosionSource.Play();
+        meshCollider.enabled = false;
         yield return new WaitForSeconds(6f);
         Explode();
+        meshCollider.enabled = true;
         if (isDefeated)
         {
             GameManager.FinishExam();
