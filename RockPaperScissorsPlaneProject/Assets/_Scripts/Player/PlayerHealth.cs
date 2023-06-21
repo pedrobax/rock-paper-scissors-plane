@@ -47,6 +47,8 @@ public class PlayerHealth : MonoBehaviour
     float morphRate = 0;
     bool isMorphing = false;
     bool isRespawning = false;
+    public bool hasTypeUI = false;
+    public TypeHUD typeHUD;
 
     private void Start()
     {
@@ -150,11 +152,13 @@ public class PlayerHealth : MonoBehaviour
         {
             morphAnimator.SetTrigger("PaperToRock");
             StartCoroutine(CountMorphTime(0));
+            if(hasTypeUI) typeHUD.ChangeTypeUI(2);
         } 
         if (currentType == PlayerType.Scissors)
         {
             morphAnimator.SetTrigger("ScissorsToRock");
             StartCoroutine(CountMorphTime(4));
+            if(hasTypeUI) typeHUD.ChangeTypeUI(4);
         } 
 
         yield return new WaitForSeconds(0.15f);
@@ -189,11 +193,13 @@ public class PlayerHealth : MonoBehaviour
         {
             morphAnimator.SetTrigger("RockToPaper");
             StartCoroutine(CountMorphTime(2));
+            if(hasTypeUI) typeHUD.ChangeTypeUI(0);
         } 
         if (currentType == PlayerType.Scissors)
         {
             morphAnimator.SetTrigger("ScissorsToPaper");
             StartCoroutine(CountMorphTime(5));
+            if(hasTypeUI) typeHUD.ChangeTypeUI(5);
         }
 
         yield return new WaitForSeconds(0.15f);
@@ -228,11 +234,13 @@ public class PlayerHealth : MonoBehaviour
         {
             morphAnimator.SetTrigger("RockToScissors");
             StartCoroutine(CountMorphTime(3));
+            if(hasTypeUI) typeHUD.ChangeTypeUI(1);
         } 
         if (currentType == PlayerType.Paper)
         {
             morphAnimator.SetTrigger("PaperToScissors");
             StartCoroutine(CountMorphTime(1));
+            if(hasTypeUI) typeHUD.ChangeTypeUI(3);
         }
 
         yield return new WaitForSeconds(0.15f);
