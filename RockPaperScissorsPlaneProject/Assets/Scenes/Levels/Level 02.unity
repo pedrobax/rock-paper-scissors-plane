@@ -15566,7 +15566,7 @@ PrefabInstance:
     - target: {fileID: 7043786513897475848, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
       propertyPath: muzzleFlashVFX
       value: 
-      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
+      objectReference: {fileID: 6877776639754932821, guid: 267c24c6d2a2041479f0087fe73a5e49, type: 3}
     - target: {fileID: 7043786514479697484, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -15594,7 +15594,7 @@ PrefabInstance:
     - target: {fileID: 7043786514479697486, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
       propertyPath: muzzleFlashVFX
       value: 
-      objectReference: {fileID: 6877776639754932821, guid: c2eea42c29bad96479a4363984e16212, type: 3}
+      objectReference: {fileID: 6877776639754932821, guid: e3677fecc928f2345b2ee178a872836e, type: 3}
     - target: {fileID: 7939063898920174523, guid: 46b8a39c7c9de234c91ef5869de45709, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
