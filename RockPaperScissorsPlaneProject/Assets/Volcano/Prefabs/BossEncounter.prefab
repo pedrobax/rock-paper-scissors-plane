@@ -40380,7 +40380,7 @@ MonoBehaviour:
   paperSummonDuration: 1
   paperDeathDuration: 5
   paperCurrentDuration: 0
-  paperHealthThreshold: 2200
+  paperHealthThreshold: 2000
   rockState: 0
   rockIdleDuration: 3
   rockEruptDuration: 5
@@ -40410,8 +40410,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Volcano
-  maxHealth: 2300
-  health: 2300
+  maxHealth: 2500
+  health: 2500
   scoreValue: 5000
   damageFlashDuration: 0.025
   enemyType: 1

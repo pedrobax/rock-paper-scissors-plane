@@ -13200,17 +13200,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7496075008480396564, guid: 7950445abe65b9b4db12eadc52dc82df, type: 3}
-      propertyPath: health
-      value: 2500
-      objectReference: {fileID: 0}
-    - target: {fileID: 7496075008480396564, guid: 7950445abe65b9b4db12eadc52dc82df, type: 3}
-      propertyPath: maxHealth
-      value: 2500
-      objectReference: {fileID: 0}
-    - target: {fileID: 7496075008480396585, guid: 7950445abe65b9b4db12eadc52dc82df, type: 3}
-      propertyPath: paperHealthThreshold
-      value: 2000
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7950445abe65b9b4db12eadc52dc82df, type: 3}
