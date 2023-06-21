@@ -66,7 +66,7 @@ MonoBehaviour:
   clearAtEnd: 0
   spawnTimes: []
   setWaitTime: 3
-  hasTutorial: 1
+  hasTutorial: 0
   tutorialText: IF YOU ARE IN SCISSORS PLANE MODE AND HIT A SCISSORS ENEMY YOU WILL
     BE DESTROYED
   tutorialTimeToAppear: 3.5

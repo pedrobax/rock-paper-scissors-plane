@@ -529,7 +529,7 @@ MonoBehaviour:
   targetTransform: {fileID: 5904810857949922642}
   secondaryTargetTransform: {fileID: 0}
   firePoint: {fileID: 0}
-  bulletAmount: 20
+  bulletAmount: 40
   shootingAngle: 40
 --- !u!114 &2924083780066130837
 MonoBehaviour:
@@ -550,7 +550,7 @@ MonoBehaviour:
   targetTransform: {fileID: 5904810857657765258}
   secondaryTargetTransform: {fileID: 0}
   firePoint: {fileID: 0}
-  bulletAmount: 20
+  bulletAmount: 40
   shootingAngle: 40
 --- !u!114 &2924083780066130838
 MonoBehaviour:
@@ -571,7 +571,7 @@ MonoBehaviour:
   targetTransform: {fileID: 5904810857989061240}
   secondaryTargetTransform: {fileID: 0}
   firePoint: {fileID: 0}
-  bulletAmount: 20
+  bulletAmount: 40
   shootingAngle: 40
 --- !u!114 &2924083780066130839
 MonoBehaviour:
@@ -592,7 +592,7 @@ MonoBehaviour:
   targetTransform: {fileID: 5904810858263133933}
   secondaryTargetTransform: {fileID: 0}
   firePoint: {fileID: 0}
-  bulletAmount: 20
+  bulletAmount: 40
   shootingAngle: 40
 --- !u!114 &2924083780066130832
 MonoBehaviour:
@@ -613,7 +613,7 @@ MonoBehaviour:
   targetTransform: {fileID: 5904810857059467513}
   secondaryTargetTransform: {fileID: 0}
   firePoint: {fileID: 0}
-  bulletAmount: 20
+  bulletAmount: 40
   shootingAngle: 40
 --- !u!114 &2924083780066130833
 MonoBehaviour:
@@ -634,7 +634,7 @@ MonoBehaviour:
   targetTransform: {fileID: 5904810858460833485}
   secondaryTargetTransform: {fileID: 0}
   firePoint: {fileID: 0}
-  bulletAmount: 20
+  bulletAmount: 40
   shootingAngle: 40
 --- !u!114 &2924083780066130834
 MonoBehaviour:
@@ -655,7 +655,7 @@ MonoBehaviour:
   targetTransform: {fileID: 5904810857639844947}
   secondaryTargetTransform: {fileID: 0}
   firePoint: {fileID: 0}
-  bulletAmount: 20
+  bulletAmount: 40
   shootingAngle: 40
 --- !u!114 &2924083780066130835
 MonoBehaviour:
@@ -676,7 +676,7 @@ MonoBehaviour:
   targetTransform: {fileID: 5904810858226499403}
   secondaryTargetTransform: {fileID: 0}
   firePoint: {fileID: 0}
-  bulletAmount: 20
+  bulletAmount: 40
   shootingAngle: 40
 --- !u!114 &2924083780066130844
 MonoBehaviour:
@@ -697,7 +697,7 @@ MonoBehaviour:
   targetTransform: {fileID: 5904810857566374017}
   secondaryTargetTransform: {fileID: 0}
   firePoint: {fileID: 0}
-  bulletAmount: 20
+  bulletAmount: 40
   shootingAngle: 40
 --- !u!114 &2924083780066130845
 MonoBehaviour:
@@ -718,7 +718,7 @@ MonoBehaviour:
   targetTransform: {fileID: 5904810857189837102}
   secondaryTargetTransform: {fileID: 0}
   firePoint: {fileID: 0}
-  bulletAmount: 20
+  bulletAmount: 40
   shootingAngle: 40
 --- !u!114 &2924083780066130862
 MonoBehaviour:
@@ -739,7 +739,7 @@ MonoBehaviour:
   targetTransform: {fileID: 5904810858381639689}
   secondaryTargetTransform: {fileID: 0}
   firePoint: {fileID: 0}
-  bulletAmount: 20
+  bulletAmount: 40
   shootingAngle: 40
 --- !u!114 &2924083780066130863
 MonoBehaviour:
@@ -760,7 +760,7 @@ MonoBehaviour:
   targetTransform: {fileID: 5904810857318291158}
   secondaryTargetTransform: {fileID: 0}
   firePoint: {fileID: 0}
-  bulletAmount: 20
+  bulletAmount: 40
   shootingAngle: 40
 --- !u!114 &2924083780066130856
 MonoBehaviour:
@@ -781,7 +781,7 @@ MonoBehaviour:
   targetTransform: {fileID: 5904810858768490169}
   secondaryTargetTransform: {fileID: 0}
   firePoint: {fileID: 0}
-  bulletAmount: 20
+  bulletAmount: 40
   shootingAngle: 40
 --- !u!114 &2924083780066130857
 MonoBehaviour:
@@ -802,7 +802,7 @@ MonoBehaviour:
   targetTransform: {fileID: 5904810858393292805}
   secondaryTargetTransform: {fileID: 0}
   firePoint: {fileID: 0}
-  bulletAmount: 20
+  bulletAmount: 40
   shootingAngle: 40
 --- !u!114 &2924083780066130858
 MonoBehaviour:
@@ -823,7 +823,7 @@ MonoBehaviour:
   targetTransform: {fileID: 5904810857825191585}
   secondaryTargetTransform: {fileID: 0}
   firePoint: {fileID: 0}
-  bulletAmount: 20
+  bulletAmount: 40
   shootingAngle: 40
 --- !u!114 &2924083780066130859
 MonoBehaviour:
@@ -844,7 +844,7 @@ MonoBehaviour:
   targetTransform: {fileID: 5904810857655574990}
   secondaryTargetTransform: {fileID: 0}
   firePoint: {fileID: 0}
-  bulletAmount: 20
+  bulletAmount: 40
   shootingAngle: 40
 --- !u!114 &2924083780066130861
 MonoBehaviour:
