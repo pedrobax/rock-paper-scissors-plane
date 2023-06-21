@@ -110,7 +110,7 @@ public class AntagonistHealth : MonoBehaviour
                 IgnoreDamage();
                 StartCoroutine(GetDamagedByScissorsCooldown());
             }
-            if (_playerHealth.currentType == PlayerHealth.PlayerType.Scissors && enemyType == EnemyType.Paper && canTakeScissorsDamage)
+            if (_playerHealth.currentType == PlayerHealth.PlayerType.Scissors && enemyType == EnemyType.Paper && canTakeScissorsDamage && other.GetComponent<PlayerHealth>().isRespawning == false)
             {
                 Debug.Log(unitName + " has taken " + 50000 + " damage! PAPER HIT BY SCISSORS: INSTANT DEATH");
                 TakeDamage(50000);

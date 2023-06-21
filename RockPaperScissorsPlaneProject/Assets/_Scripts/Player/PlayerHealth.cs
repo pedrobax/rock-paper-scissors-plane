@@ -46,7 +46,7 @@ public class PlayerHealth : MonoBehaviour
     float morphTime = 0;
     float morphRate = 0;
     bool isMorphing = false;
-    bool isRespawning = false;
+    public bool isRespawning = false;
     public bool hasTypeUI = false;
     public TypeHUD typeHUD;
 
@@ -250,6 +250,13 @@ public class PlayerHealth : MonoBehaviour
         scissorVisual.rotation = Quaternion.Euler(0, 0, 0);
         gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         currentSkinnedMeshRenderer.enabled = true;
+        if(isRespawning){
+         currentSkinnedMeshRenderer.enabled = false;
+         scissorsCollider.enabled = false;
+        }
+        else{
+            scissorsCollider.enabled = true;
+        }
         currentType = PlayerType.Scissors;
         playerScissorsObject.SetActive(true);
         playerRockObject.SetActive(false);
@@ -294,6 +301,7 @@ public class PlayerHealth : MonoBehaviour
             paperMeshRenderer.enabled = false;
             rockMeshRenderer.enabled = false;
             scissorsMeshRenderer.enabled = false;
+            currentSkinnedMeshRenderer.enabled = false;
             yield return new WaitForSeconds(respawnTime);
             transform.position = respawnPosition;
             if (currentType == PlayerType.Scissors) currentSkinnedMeshRenderer.enabled = true;
