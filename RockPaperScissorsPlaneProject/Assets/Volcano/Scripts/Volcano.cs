@@ -35,15 +35,15 @@ public class Volcano : MonoBehaviour
     {
         if (!isSpawning) DoActionLoop();
         
-        if (isSpawning && volcanoHolder.transform.position.z > 10)
+        if (isSpawning && volcanoHolder.transform.position.z > 0)
         {
             volcanoHolder.transform.Translate(Vector3.back * 200 * Time.deltaTime);
         }
-        if (isSpawning && volcanoHolder.transform.position.z <= 10)
+        if (isSpawning && volcanoHolder.transform.position.z <= 0)
         {
             meshCollider.enabled = true;
             isSpawning = false;
-            volcanoHolder.transform.position = new Vector3(volcanoHolder.transform.position.x, volcanoHolder.transform.position.y, 10);
+            volcanoHolder.transform.position = new Vector3(volcanoHolder.transform.position.x, volcanoHolder.transform.position.y, 0);
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
