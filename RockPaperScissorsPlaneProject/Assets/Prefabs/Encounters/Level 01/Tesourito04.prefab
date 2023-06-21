@@ -63,6 +63,11 @@ MonoBehaviour:
   maxDuration: 60
   currentDuration: 0
   clearAtEnd: 0
+  spawnTimes: []
+  setWaitTime: 3
+  hasTutorial: 0
+  tutorialText: 
+  tutorialTimeToAppear: 0
 --- !u!1001 &476108923162403635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -150,6 +155,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TesouritoAttack (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6925161568249493065, guid: 3f5610b174c80f243a5c14c6c0f70028, type: 3}
+      propertyPath: loot
+      value: 
+      objectReference: {fileID: 8647987648394905962, guid: d0839e1f5a484ca4eab2de667e1254cf, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f5610b174c80f243a5c14c6c0f70028, type: 3}
 --- !u!1 &5288410228260622217 stripped
