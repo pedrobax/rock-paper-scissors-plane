@@ -38,7 +38,7 @@ public class Volcano : MonoBehaviour
         {
             volcanoHolder.transform.Translate(Vector3.back * 200 * Time.deltaTime);
         }
-        if (isSpawning && volcanoHolder.transform.position.z <= 0)
+        if (isSpawning && volcanoHolder.transform.position.z <= 10)
         {
             isSpawning = false;
             volcanoHolder.transform.position = new Vector3(volcanoHolder.transform.position.x, volcanoHolder.transform.position.y, 10);
@@ -214,7 +214,7 @@ public class Volcano : MonoBehaviour
         }
         else if (currentPhase == CurrentPhase.SCISSORS && !isDefeated)
         {
-            if(antagonistHealth.health <= 500)
+            if(antagonistHealth.health <= 700)
             {
                 StartCoroutine(ExplosionSequence());
                 isDefeated = true;
