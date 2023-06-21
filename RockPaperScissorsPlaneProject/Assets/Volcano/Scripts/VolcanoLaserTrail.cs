@@ -42,9 +42,13 @@ public class VolcanoLaserTrail : MonoBehaviour
                 Gizmos.DrawLine(lineSegmentStart, lineSegmentEnd);
         }
     }
-    
-    void Update()
+
+    void FixedUpdate()
     {
+        if(transform.position.z < -20)
+        {
+            Destroy(gameObject);
+        }
         if(transform.parent == null)
         {
             isActive = false;
@@ -55,23 +59,20 @@ public class VolcanoLaserTrail : MonoBehaviour
         }
         if(!isActive)
             {
-                transform.Translate(new Vector3(0, 0, -trailSpeed) * Time.deltaTime);
+                transform.position += (new Vector3(0, 0, -trailSpeed * Time.fixedDeltaTime));
             }  
-    }
 
-    void FixedUpdate()
-    {
         for (int i = 0; i < trailRenderer.positionCount; i++)
             {
                 Vector3 position = trailRenderer.GetPosition(i);
-                position += new Vector3(0,0,-trailSpeed) * Time.deltaTime;
+                position += new Vector3(0,0,-trailSpeed * Time.fixedDeltaTime);
                 trailRenderer.SetPosition(i, position);
 
                 if(i == 0)
                 {
                     i++;
                     Vector3 position2 = trailRenderer.GetPosition(i);
-                    position2 += new Vector3(0,0,-trailSpeed) * Time.deltaTime;
+                    position2 += new Vector3(0,0,-trailSpeed * Time.fixedDeltaTime);
                     trailRenderer.SetPosition(i, position2);
                 } 
 
