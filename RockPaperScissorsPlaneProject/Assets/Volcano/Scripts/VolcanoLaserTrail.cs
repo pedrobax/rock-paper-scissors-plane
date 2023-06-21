@@ -55,7 +55,7 @@ public class VolcanoLaserTrail : MonoBehaviour
         }
         if(!isActive)
             {
-                transform.position += new Vector3(0,0,-trailSpeed * 2) * Time.deltaTime;
+                transform.Translate(new Vector3(0, 0, -trailSpeed) * Time.deltaTime);
             }  
     }
 
