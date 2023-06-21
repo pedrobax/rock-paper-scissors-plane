@@ -34,14 +34,14 @@ public class Volcano : MonoBehaviour
     {
         if (!isSpawning) DoActionLoop();
         
-        if (isSpawning && volcanoHolder.transform.position.z > 0)
+        if (isSpawning && volcanoHolder.transform.position.z > 10)
         {
             volcanoHolder.transform.Translate(Vector3.back * 200 * Time.deltaTime);
         }
         if (isSpawning && volcanoHolder.transform.position.z <= 0)
         {
             isSpawning = false;
-            volcanoHolder.transform.position = new Vector3(volcanoHolder.transform.position.x, volcanoHolder.transform.position.y, 0);
+            volcanoHolder.transform.position = new Vector3(volcanoHolder.transform.position.x, volcanoHolder.transform.position.y, 10);
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
