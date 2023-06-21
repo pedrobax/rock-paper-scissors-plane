@@ -22,6 +22,7 @@ public class PauseMenu : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1f;
+        UnityEngine.Cursor.visible = false;
         transform.gameObject.SetActive(false);
         pauseMenuObject.SetActive(false);
         optionsMenuObject.SetActive(false);
@@ -31,6 +32,7 @@ public class PauseMenu : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f;
+        Cursor.visible = false;
         Destroy(FindObjectOfType<GameManager>().gameObject);
         SceneManager.LoadScene(1);
     }
@@ -38,12 +40,14 @@ public class PauseMenu : MonoBehaviour
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
+        UnityEngine.Cursor.visible = true;
         Destroy(FindObjectOfType<GameManager>().gameObject);
         SceneManager.LoadScene(0);
     }
 
     public void GoToOptionsMenu()
     {      
+        UnityEngine.Cursor.visible = true;
         soundMenuObject.SetActive(false);
         pauseMenuObject.SetActive(false);
         optionsMenuObject.SetActive(true);

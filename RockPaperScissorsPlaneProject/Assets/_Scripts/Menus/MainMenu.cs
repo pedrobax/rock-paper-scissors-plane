@@ -9,7 +9,8 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         if (FindObjectOfType<GameManager>() != null) Destroy(FindObjectOfType<GameManager>().gameObject);
-        StartCoroutine(LoadAsynchronously(1));
+        UnityEngine.Cursor.visible = false;
+        SceneManager.LoadScene(1);
     }
 
     public void QuitGame()
@@ -18,7 +19,7 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    IEnumerator LoadAsynchronously(int sceneIndex)
+    /*IEnumerator LoadAsynchronously(int sceneIndex)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
         while (!operation.isDone)
@@ -27,5 +28,5 @@ public class MainMenu : MonoBehaviour
             Debug.Log(progress);
             yield return null;
         }
-    }
+    }*/
 }
