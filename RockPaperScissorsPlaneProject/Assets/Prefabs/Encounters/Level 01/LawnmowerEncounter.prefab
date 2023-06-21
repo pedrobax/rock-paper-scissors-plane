@@ -1521,6 +1521,7 @@ GameObject:
   - component: {fileID: 7076695582142859499}
   - component: {fileID: 7076695582142859498}
   - component: {fileID: 7076695582142859477}
+  - component: {fileID: 7827521826774772612}
   m_Layer: 0
   m_Name: Lawnmower
   m_TagString: EnemyScissors
@@ -2053,6 +2054,20 @@ MonoBehaviour:
   bullet8Prefab: {fileID: 0}
   bullet9Prefab: {fileID: 0}
   bullet10Prefab: {fileID: 0}
+--- !u!114 &7827521826774772612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6569242560763016029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbf3c9194aeae014cafba71ca7cba4d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minion01: {fileID: 2190697276061089419}
+  minion02: {fileID: 1602177217160461185}
 --- !u!1 &6738148682371094375
 GameObject:
   m_ObjectHideFlags: 0
