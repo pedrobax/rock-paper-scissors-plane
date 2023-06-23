@@ -11,7 +11,7 @@ public class DeathZone : MonoBehaviour
             other.CompareTag("BulletEnemyRock") || other.CompareTag("BulletEnemyPaper") || other.CompareTag("BulletEnemyScissors"))
         {
             Destroy(other.gameObject);
-            Debug.Log(other.gameObject.name + " destroyed by death zone!");
+            //Debug.Log(other.gameObject.name + " destroyed by death zone!");
         }
     }
 }

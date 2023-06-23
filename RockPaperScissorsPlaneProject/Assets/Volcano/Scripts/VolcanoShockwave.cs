@@ -30,7 +30,7 @@ public class VolcanoShockwave : MonoBehaviour
             if (Time.time - currentCooldown >= fireCooldown)
             {
                 bulletType = (BulletType)Random.Range(0, 3);
-                Debug.Log(bulletType);
+                //Debug.Log(bulletType);
                 Shoot();
                 currentCooldown = Time.time;
             }

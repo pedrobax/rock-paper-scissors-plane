@@ -21,7 +21,7 @@ public class TesouritoAnimation : MonoBehaviour
     {
         if(accelerate.isActing)
         {
-            Debug.Log("tesourito is moving");
+            //Debug.Log("tesourito is moving");
             animator.SetBool("isMoving", true);
         }
         else

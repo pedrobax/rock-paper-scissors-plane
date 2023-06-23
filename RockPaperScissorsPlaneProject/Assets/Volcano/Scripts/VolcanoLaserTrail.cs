@@ -86,7 +86,7 @@ public class VolcanoLaserTrail : MonoBehaviour
                 {
                     if (trailHitObject.collider.gameObject.tag == "Player" && canDamagePlayer && type == LaserType.Rock)
                     {    
-                        Debug.Log("player hit by ROCK laser");
+                        //Debug.Log("player hit by ROCK laser");
                         PlayerHealth ph = trailHitObject.collider.gameObject.GetComponent<PlayerHealth>();  
                         switch (ph.currentType)
                         {
@@ -111,7 +111,7 @@ public class VolcanoLaserTrail : MonoBehaviour
                     }
                     else if(trailHitObject.collider.gameObject.tag == "Player" && canDamagePlayer && type == LaserType.Paper)
                     {
-                        Debug.Log("player hit by Paper laser");
+                        //Debug.Log("player hit by Paper laser");
                         PlayerHealth ph = trailHitObject.collider.gameObject.GetComponent<PlayerHealth>();  
                         switch (ph.currentType)
                         {
@@ -136,7 +136,7 @@ public class VolcanoLaserTrail : MonoBehaviour
                     } 
                     else if(trailHitObject.collider.gameObject.tag == "Player" && canDamagePlayer && type == LaserType.Scissors)
                     {
-                        Debug.Log("player hit by Scissors laser");
+                        //Debug.Log("player hit by Scissors laser");
                         PlayerHealth ph = trailHitObject.collider.gameObject.GetComponent<PlayerHealth>();  
                         switch (ph.currentType)
                         {

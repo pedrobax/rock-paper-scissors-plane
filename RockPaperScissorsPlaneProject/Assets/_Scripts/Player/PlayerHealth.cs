@@ -177,7 +177,7 @@ public class PlayerHealth : MonoBehaviour
         currentMeshRenderer = rockMeshRenderer;
         if (rockMeshRenderer.material.color != rockOriginalColor) rockMeshRenderer.material.color = rockOriginalColor;
         StartCoroutine(CountTransformCooldown());
-        Debug.Log("You are now a Rock!");
+        //Debug.Log("You are now a Rock!");
     }
 
     IEnumerator SwitchTypeToPaper()
@@ -218,7 +218,7 @@ public class PlayerHealth : MonoBehaviour
         currentMeshRenderer = paperMeshRenderer;
         if (paperMeshRenderer.material.color != paperOriginalColor) paperMeshRenderer.material.color = paperOriginalColor;
         StartCoroutine(CountTransformCooldown());
-        Debug.Log("You are now a Paper!");
+        //Debug.Log("You are now a Paper!");
     }
     
 
@@ -265,13 +265,13 @@ public class PlayerHealth : MonoBehaviour
         paperCollider.enabled = false;
         scissorsCollider.enabled = true;
         StartCoroutine(CountTransformCooldown());
-        Debug.Log("You are now Scissors!");
+        //Debug.Log("You are now Scissors!");
     }
 
     void GetALife()
     {
         lives++;
-        Debug.Log("You got an extra life! You have " + lives + " remaining lives!");
+        //Debug.Log("You got an extra life! You have " + lives + " remaining lives!");
     }
 
     public void DieOrRespawnFunc()
@@ -285,7 +285,7 @@ public class PlayerHealth : MonoBehaviour
         {
             isRespawning = true;
             lives--;
-            Debug.Log("Player lost a life! Remaining lives: " + lives);
+            //Debug.Log("Player lost a life! Remaining lives: " + lives);
 
             soundSource.Play();
             CinemachineShake.Instance.ShakeCamera(5f, 1f, CinemachineShake.ShakeType.FADING_OUT);
@@ -383,7 +383,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void IgnoreDamage()
     {
-        Debug.Log("Damage ignored by type!");
+        //Debug.Log("Damage ignored by type!");
         if(currentType == PlayerType.Rock)
         {
             GameObject shieldVfx = Instantiate(rockShieldVFX, transform.position, transform.rotation);

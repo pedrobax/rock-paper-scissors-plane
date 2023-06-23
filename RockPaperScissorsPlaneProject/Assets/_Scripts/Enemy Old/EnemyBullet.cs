@@ -26,7 +26,7 @@ public class EnemyBullet : Bullet
         {
             if(other.GetComponent<PlayerHealth>().canTakeDamage)
             {
-                Debug.Log("Enemy Bullet destroyed by collision!");
+                //Debug.Log("Enemy Bullet destroyed by collision!");
                 Instantiate(hitVFX, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
                 Destroy(gameObject);
             }
@@ -55,7 +55,7 @@ public class EnemyBullet : Bullet
             transform.position.z < startingBulletPosition.z - maxRange)
         {
             Destroy(gameObject);
-            Debug.Log("Enemy Bullet destroyed by distance!");
+            //Debug.Log("Enemy Bullet destroyed by distance!");
         }
     }
 
