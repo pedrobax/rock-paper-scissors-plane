@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    void Start()
+    {
+        Cursor.Renderer.enabled = true;
+        Time.timeScale = 1;
+    }
     //Functions for the buttons on the Main Menu UI
     public void PlayGame()
     {

@@ -2338,6 +2338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   teleportDistance: 2000
+  teleportPosition: -2000
   speed: 6
   teleportBack: 1
 --- !u!1 &522998268
@@ -5774,9 +5775,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Movement - WASD or \u2191\u2193\u2192\u2190 arrows\nShoot - K or X\nPrevious
-    type - J or Z\nNext type - L or C\nPause - Esc\n\nDEVELOPER CHEATS:\nNext level
-    - F2\nInfinite lives - F3\nUnlock all types - F4 \n"
+  m_text: "Movement - WASD or \u2191\u2193\u2192\u2190 arrows\nShoot - K\nPrevious
+    type - J\nNext type - L\nPause - Esc\n\nDEVELOPER CHEATS:\nNext level - F2\nInfinite
+    lives - F3\nUnlock all types - F4 \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5c4bcc3fe4d85e847bedd885c98dd310, type: 2}
   m_sharedMaterial: {fileID: -9055326081105245223, guid: 5c4bcc3fe4d85e847bedd885c98dd310, type: 2}

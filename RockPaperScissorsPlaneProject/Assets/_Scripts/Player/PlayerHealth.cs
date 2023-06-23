@@ -349,6 +349,7 @@ public class PlayerHealth : MonoBehaviour
             if (currentType == PlayerType.Scissors) Instantiate(scissorsDeathVFX, transform.position, transform.rotation);
             Time.timeScale = 0.25f;
             yield return new WaitForSeconds(0.5f);
+            Cursor.Renderer.enabled = true;
             isAlive = false;
         }
     }
