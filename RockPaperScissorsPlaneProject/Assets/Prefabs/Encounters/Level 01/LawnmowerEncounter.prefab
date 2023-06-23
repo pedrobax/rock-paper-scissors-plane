@@ -2374,7 +2374,7 @@ MonoBehaviour:
   - {fileID: 503847722456796200}
   isEncounterDone: 0
   currentEnemyNumber: 0
-  maxDuration: 120
+  maxDuration: 20000
   currentDuration: 0
   clearAtEnd: 1
   spawnTimes: []
