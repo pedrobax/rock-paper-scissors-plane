@@ -2337,8 +2337,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  teleportDistance: 0
+  teleportDistance: 2000
   speed: 6
+  teleportBack: 1
 --- !u!1 &522998268
 GameObject:
   m_ObjectHideFlags: 0
@@ -6082,7 +6083,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1777575036
 RectTransform:
   m_ObjectHideFlags: 0
