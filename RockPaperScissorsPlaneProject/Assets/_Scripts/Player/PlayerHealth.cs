@@ -216,11 +216,9 @@ public class PlayerHealth : MonoBehaviour
         gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         if(isRespawning){
          currentMeshRenderer.enabled = false;
-         scissorsCollider.enabled = false;
          paperMeshRenderer.enabled = false;
         }
         else{
-            currentCollider.enabled = true;
             currentMeshRenderer.enabled = true;
             paperMeshRenderer.enabled = true;
         }
