@@ -9422,9 +9422,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  teleportDistance: 200
+  teleportDistance: 1880
+  teleportPosition: -1780
   speed: 6
-  teleportBack: 0
+  teleportBack: 1
 --- !u!1 &1282839855
 GameObject:
   m_ObjectHideFlags: 0

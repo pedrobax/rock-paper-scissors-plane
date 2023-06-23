@@ -5326,7 +5326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 057e706d509bc0043954ce22638ea24d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -3380
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 057e706d509bc0043954ce22638ea24d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5393,9 +5393,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  teleportDistance: 0
+  teleportDistance: 3300
+  teleportPosition: -3400
   speed: 6
-  teleportBack: 0
+  teleportBack: 1
 --- !u!1 &973577147
 GameObject:
   m_ObjectHideFlags: 0

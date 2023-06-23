@@ -5,6 +5,7 @@ using UnityEngine;
 public class Cloud : Movement
 {
     [SerializeField] float teleportDistance = 2000; //distance to teleport when hitting limit zone UNUSED
+    public float teleportPosition = -2000;
     [SerializeField] float speed; //linear speed of object
     public bool teleportBack = false;
 
@@ -18,7 +19,7 @@ public class Cloud : Movement
     // Update is called once per frame
     void Update()
     {
-        if(teleportBack && transform.position.z < -2000)
+        if(teleportBack && transform.position.z < teleportPosition)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + teleportDistance);
         }
