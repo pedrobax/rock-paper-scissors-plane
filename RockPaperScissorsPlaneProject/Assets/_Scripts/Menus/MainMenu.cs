@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     void Start()
     {
-        Cursor.Renderer.enabled = true;
+        UnityEngine.Cursor.visible = true;
         Time.timeScale = 1;
     }
     //Functions for the buttons on the Main Menu UI

@@ -166,7 +166,14 @@ public class PlayerHealth : MonoBehaviour
         morphShape.SetActive(false);
         playerRockObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-        currentMeshRenderer.enabled = true;
+        if(isRespawning){
+         currentMeshRenderer.enabled = false;
+         rockMeshRenderer.enabled = false;
+        }
+        else{
+            rockMeshRenderer.enabled = true;
+            currentMeshRenderer.enabled = true;
+        }
         currentType = PlayerType.Rock;
         playerRockObject.SetActive(true);
         playerPaperObject.SetActive(false);
@@ -207,7 +214,16 @@ public class PlayerHealth : MonoBehaviour
         morphShape.SetActive(false);
         playerPaperObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-        currentMeshRenderer.enabled = true;
+        if(isRespawning){
+         currentMeshRenderer.enabled = false;
+         scissorsCollider.enabled = false;
+         paperMeshRenderer.enabled = false;
+        }
+        else{
+            currentCollider.enabled = true;
+            currentMeshRenderer.enabled = true;
+            paperMeshRenderer.enabled = true;
+        }
         currentType = PlayerType.Paper;
         playerPaperObject.SetActive(true);
         playerRockObject.SetActive(false);
@@ -349,7 +365,7 @@ public class PlayerHealth : MonoBehaviour
             if (currentType == PlayerType.Scissors) Instantiate(scissorsDeathVFX, transform.position, transform.rotation);
             Time.timeScale = 0.25f;
             yield return new WaitForSeconds(0.5f);
-            Cursor.Renderer.enabled = true;
+            UnityEngine.Cursor.visible = true;
             isAlive = false;
         }
     }
